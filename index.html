@@ -14,11 +14,16 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://notanagency.cz/">
   <meta property="og:locale" content="cs_CZ">
-  <meta property="og:image" content="https://notanagency.cz/assets/zuzana-hoskova-balanced.jpg">
-  <meta property="og:image:alt" content="Portrét Zuzany Hoškové, externí CMO">
+  <meta property="og:image" content="https://notanagency.cz/assets/og-zuzana.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Zuzana Hošková, externí CMO — Not an Agency">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Zuzana Hošková | Externí CMO pro marketing a PR">
   <meta name="twitter:description" content="Pomáhám malým firmám, osobním značkám, kultuře a nezisku se strategií, marketingem a PR – jako externí CMO, ne agentura.">
+  <meta name="twitter:image" content="https://notanagency.cz/assets/og-zuzana.jpg">
+  <meta name="twitter:image:alt" content="Zuzana Hošková, externí CMO — Not an Agency">
   <title>Zuzana Hošková — Nejsem agentura</title>
   <script type="application/ld+json">
     {
@@ -111,9 +116,16 @@
       letter-spacing: .015em;
       text-align: right;
     }
-    .nav { display: flex; align-items: center; gap: 28px; font-size: 12px; font-weight: 600; }
+    .nav { position: relative; display: flex; align-items: center; font-size: 12px; font-weight: 600; }
+    .nav-menu { display: flex; align-items: center; gap: 28px; }
     .nav a:not(.nav-cta) { color: #555b53; transition: color .2s ease; }
     .nav a:not(.nav-cta):hover { color: var(--ink); }
+    .nav-toggle { display: none; align-items: center; justify-content: center; width: 42px; height: 42px; padding: 10px; border: 1px solid var(--line); border-radius: 3px; background: transparent; color: var(--ink); cursor: pointer; }
+    .nav-toggle-icon { display: grid; width: 18px; gap: 4px; }
+    .nav-toggle-icon span { display: block; height: 1.5px; background: currentColor; transition: transform .2s ease, opacity .2s ease; }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-icon span:first-child { transform: translateY(5.5px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-icon span:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-icon span:last-child { transform: translateY(-5.5px) rotate(-45deg); }
     .nav-cta {
       padding: 12px 17px;
       border: 1px solid var(--ink);
@@ -390,9 +402,12 @@
       .about-photo::after { right: 0; }
       .wrap { width: min(100% - 40px, 560px); }
       .topbar { height: 70px; }
-      .nav { gap: 16px; }
-      .nav a:not(.nav-cta) { display: none; }
-      .nav-cta { padding: 10px 12px; }
+      .nav-toggle { display: inline-flex; }
+      .nav-menu { position: absolute; top: calc(100% + 15px); right: 0; display: none; width: min(340px, calc(100vw - 36px)); align-items: stretch; gap: 0; padding: 8px 18px 16px; border: 1px solid var(--line); background: var(--paper); box-shadow: 0 16px 38px rgb(36 33 38 / 12%); }
+      .nav.is-open .nav-menu { display: flex; flex-direction: column; }
+      .nav-menu a:not(.nav-cta) { display: block; padding: 14px 0; border-bottom: 1px solid var(--line); }
+      .nav-menu .nav-cta { margin-top: 14px; padding: 12px; text-align: center; }
+      .nav-menu .language-switch { justify-content: center; margin-top: 12px; padding: 10px 0 0; border-top: 1px solid var(--line); border-left: 0; }
       .hero { grid-template-columns: 1fr; gap: 48px; padding: 65px 0 70px; }
       .hero-copy { max-width: 470px; }
       .portrait-wrap { width: min(83%, 410px); margin: 0 auto; }
@@ -455,15 +470,19 @@
       <span class="brand-caption" data-i18n="brandCaption">FRACTIONAL CMO<br>DIRECTION<br>STRATEGY</span>
     </a>
     <nav class="nav" aria-label="Main navigation" data-i18n-aria="navLabel">
-      <a href="#about" data-i18n="navAbout">About Zuzana</a>
-      <a href="#approach" data-i18n="navApproach">Services</a>
-      <a href="#collaboration" data-i18n="navCollaboration">Working together</a>
-      <a href="#work" data-i18n="navWork" hidden>Case studies</a>
-      <a href="#references" data-i18n="navReferences">References</a>
-      <a class="nav-cta" href="#contact"><span data-i18n="navContact">Let's talk</span> <span aria-hidden="true">↗</span></a>
-      <div class="language-switch" role="group" aria-label="Choose language" data-i18n-aria="languageLabel">
-        <button class="language-button" type="button" lang="en" aria-pressed="false" data-language="en">EN</button>
-        <button class="language-button" type="button" lang="cs" aria-pressed="true" data-language="cs">CZ</button>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Otevřít menu" data-i18n-aria="menuOpenLabel">
+        <span class="nav-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+      <div class="nav-menu" id="nav-menu">
+        <a href="#about" data-i18n="navAbout">About Zuzana</a>
+        <a href="#approach" data-i18n="navApproach">Services</a>
+        <a href="#collaboration" data-i18n="navCollaboration">Working together</a>
+        <a href="#references" data-i18n="navReferences">References</a>
+        <a class="nav-cta" href="#contact"><span data-i18n="navContact">Let's talk</span> <span aria-hidden="true">↗</span></a>
+        <div class="language-switch" role="group" aria-label="Choose language" data-i18n-aria="languageLabel">
+          <button class="language-button" type="button" lang="en" aria-pressed="false" data-language="en">EN</button>
+          <button class="language-button" type="button" lang="cs" aria-pressed="true" data-language="cs">CZ</button>
+        </div>
       </div>
     </nav>
   </header>
@@ -625,7 +644,7 @@
       </div>
     </section>
 
-    <section class="section wrap" id="work" hidden>
+    <section class="section wrap" id="work" hidden aria-hidden="true">
       <div class="section-heading">
         <div>
           <p class="eyebrow" data-i18n="workEyebrow">Selected work</p>
@@ -748,8 +767,11 @@
         description: "Fractional CMO Zuzana Hošková provides marketing strategy and PR for small businesses, personal brands, culture, and nonprofits.",
         ogDescription: "I am not an agency. I am Zuzana, your fractional CMO.",
         ogLocale: "en_US",
+        ogImageAlt: "Zuzana Hošková, fractional CMO — Not an Agency",
         brandCaption: "FRACTIONAL CMO<br>DIRECTION<br>STRATEGY",
         navLabel: "Main navigation",
+        menuOpenLabel: "Open menu",
+        menuCloseLabel: "Close menu",
         languageLabel: "Choose language",
         homeLabel: "Not an Agency home",
         navAbout: "About Zuzana",
@@ -873,8 +895,11 @@
         description: "Externí marketingová ředitelka a CMO Zuzana Hošková pomáhá malým firmám, osobním značkám, kultuře a nezisku se strategií a PR.",
         ogDescription: "Nejsem agentura. Jsem Zuzana, váš externí CMO.",
         ogLocale: "cs_CZ",
+        ogImageAlt: "Zuzana Hošková, externí CMO — Not an Agency",
         brandCaption: "FRACTIONAL CMO<br>DIRECTION<br>STRATEGY",
         navLabel: "Hlavní navigace",
+        menuOpenLabel: "Otevřít menu",
+        menuCloseLabel: "Zavřít menu",
         languageLabel: "Zvolte jazyk",
         homeLabel: "Domů — Not an Agency",
         navAbout: "Kdo je Zuzana?",
@@ -994,7 +1019,30 @@
     };
 
     const languageButtons = document.querySelectorAll("[data-language]");
+    const nav = document.querySelector(".nav");
+    const navToggle = document.querySelector(".nav-toggle");
+    const navMenu = document.querySelector(".nav-menu");
     const contactLink = document.querySelector(".contact-action");
+    const closeMenu = () => {
+      nav.classList.remove("is-open");
+      navToggle.setAttribute("aria-expanded", "false");
+      navToggle.setAttribute("aria-label", translations[document.documentElement.lang].menuOpenLabel);
+    };
+    navToggle.addEventListener("click", () => {
+      const isExpanded = navToggle.getAttribute("aria-expanded") === "true";
+      nav.classList.toggle("is-open", !isExpanded);
+      navToggle.setAttribute("aria-expanded", String(!isExpanded));
+      navToggle.setAttribute("aria-label", translations[document.documentElement.lang][isExpanded ? "menuOpenLabel" : "menuCloseLabel"]);
+    });
+    navMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && nav.classList.contains("is-open")) {
+        closeMenu();
+        navToggle.focus();
+      }
+    });
     const setLanguage = (language) => {
       const copy = translations[language];
       document.documentElement.lang = language;
@@ -1003,6 +1051,10 @@
       document.querySelector('meta[property="og:description"]').content = copy.ogDescription;
       document.querySelector('meta[property="og:title"]').content = copy.ogTitle;
       document.querySelector('meta[property="og:locale"]').content = copy.ogLocale;
+      document.querySelector('meta[property="og:image:alt"]').content = copy.ogImageAlt;
+      document.querySelector('meta[name="twitter:title"]').content = copy.ogTitle;
+      document.querySelector('meta[name="twitter:description"]').content = copy.ogDescription;
+      document.querySelector('meta[name="twitter:image:alt"]').content = copy.ogImageAlt;
       document.querySelectorAll("[data-i18n]").forEach((element) => {
         element.innerHTML = copy[element.dataset.i18n];
       });
@@ -1021,7 +1073,10 @@
     };
 
     languageButtons.forEach((button) => {
-      button.addEventListener("click", () => setLanguage(button.dataset.language));
+      button.addEventListener("click", () => {
+        setLanguage(button.dataset.language);
+        closeMenu();
+      });
     });
 
     setLanguage("cs");
