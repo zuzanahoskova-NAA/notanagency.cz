@@ -90,7 +90,7 @@
       background: var(--paper);
       border-bottom: 1px solid var(--line);
     }
-    #about, #approach, #work, #references, #contact { scroll-margin-top: 100px; }
+    #about, #approach, #work, #results, #references, #contact { scroll-margin-top: 100px; }
     .brand { display: flex; align-items: center; gap: 12px; }
     .brand-mark {
       display: flex;
@@ -279,6 +279,7 @@
     .about-copy .eyebrow { margin-bottom: 15px; }
     .about-copy h2 { margin: 0 0 25px; font-family: var(--serif); font-size: clamp(38px, 4.7vw, 57px); font-weight: 500; letter-spacing: -.055em; line-height: 1.07; }
     .about-copy p { margin: 0 0 17px; color: var(--muted); font-size: 13px; line-height: 1.85; }
+    .about-section > .results { grid-column: 1 / -1; padding: 48px 0 0; }
 
     .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
     .project-card { min-width: 0; }
@@ -451,6 +452,47 @@
         <p data-i18n="aboutStoryThree">For the past 10 years, I have worked as an independent professional. I have led marketing and PR for Jatka78 theatre, dance company DEKKADANCERS, Fotograf Zone, and the Prague Pride festival. I have brought major theatre projects—such as <em>My Country</em> and <em>The Story of the Astronomical Clock</em>—as well as independent film projects into the media spotlight.</p>
         <p data-i18n="aboutStoryFour">I love being there at the start of new projects, and stepping into ongoing ones to evaluate them and help them move forward. At work, I like a clear direction, strategy, and goal; in my free time, I happily leave all that behind. In winter, you’re most likely to find me travelling solo around Southeast Asia—often with no plan at all and a small backpack.</p>
       </div>
+      <section class="results" id="results">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow" data-i18n="resultsEyebrow">Experience that adds up</p>
+            <h2 data-i18n="resultsTitle">A few things I'm proud of</h2>
+          </div>
+          <p data-i18n="resultsIntro">A track record shaped by journalism, PR, and work with people who care about what they put into the world.</p>
+        </div>
+        <div class="result-grid">
+          <article class="result-card">
+            <span class="result-number" data-i18n="resultTwoNumber">7 years</span>
+            <h3 data-i18n="resultTwoTitle">In the media</h3>
+            <p data-i18n="resultTwoCopy">A journalist's perspective on what makes a story clear and worth sharing.</p>
+          </article>
+          <article class="result-card">
+            <span class="result-number" data-i18n="resultOneNumber">13 years</span>
+            <h3 data-i18n="resultOneTitle">In PR and marketing</h3>
+            <p data-i18n="resultOneCopy">Building experience across communication, campaigns, and brand strategy.</p>
+          </article>
+          <article class="result-card">
+            <span class="result-number" data-i18n="resultSixNumber">38,000+</span>
+            <h3 data-i18n="resultSixTitle">Theatre and cinema audiences</h3>
+            <p data-i18n="resultSixCopy">In 2025.</p>
+          </article>
+          <article class="result-card">
+            <span class="result-number" data-i18n="resultThreeNumber">85%</span>
+            <h3 data-i18n="resultThreeTitle">Average audience attendance</h3>
+            <p data-i18n="resultThreeCopy">At the cultural events I promote.</p>
+          </article>
+          <article class="result-card">
+            <span class="result-number" data-i18n="resultFourNumber">500+</span>
+            <h3 data-i18n="resultFourTitle">Media placements</h3>
+            <p data-i18n="resultFourCopy">Per year.</p>
+          </article>
+          <article class="result-card">
+            <span class="result-number" data-i18n="resultFiveNumber">20+</span>
+            <h3 data-i18n="resultFiveTitle">Clients and projects</h3>
+            <p data-i18n="resultFiveCopy">Short- and long-term collaborations.</p>
+          </article>
+        </div>
+      </section>
     </section>
 
     <section class="approach wrap" id="approach">
@@ -540,48 +582,6 @@
           <h3 data-i18n="caseTwoTitle">PR k Mé vlasti</h3>
           <p class="project-card-copy" data-i18n="caseTwoCopy">Public relations pro kulturní projekt Má vlast.</p>
           <p class="project-meta" data-i18n="caseTwoMeta">Case study · detail projektu doplníme</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="results wrap" id="results">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow" data-i18n="resultsEyebrow">Experience that adds up</p>
-          <h2 data-i18n="resultsTitle">A few things I'm proud of</h2>
-        </div>
-        <p data-i18n="resultsIntro">A track record shaped by journalism, PR, and work with people who care about what they put into the world.</p>
-      </div>
-      <div class="result-grid">
-        <article class="result-card">
-          <span class="result-number" data-i18n="resultTwoNumber">7 years</span>
-          <h3 data-i18n="resultTwoTitle">In the media</h3>
-          <p data-i18n="resultTwoCopy">A journalist's perspective on what makes a story clear and worth sharing.</p>
-        </article>
-        <article class="result-card">
-          <span class="result-number" data-i18n="resultOneNumber">13 years</span>
-          <h3 data-i18n="resultOneTitle">In PR and marketing</h3>
-          <p data-i18n="resultOneCopy">Building experience across communication, campaigns, and brand strategy.</p>
-        </article>
-        <article class="result-card">
-          <span class="result-number" data-i18n="resultSixNumber">38,000+</span>
-          <h3 data-i18n="resultSixTitle">Theatre and cinema audiences</h3>
-          <p data-i18n="resultSixCopy">In 2025.</p>
-        </article>
-        <article class="result-card">
-          <span class="result-number" data-i18n="resultThreeNumber">85%</span>
-          <h3 data-i18n="resultThreeTitle">Average audience attendance</h3>
-          <p data-i18n="resultThreeCopy">At the cultural events I promote.</p>
-        </article>
-        <article class="result-card">
-          <span class="result-number" data-i18n="resultFourNumber">500+</span>
-          <h3 data-i18n="resultFourTitle">Media placements</h3>
-          <p data-i18n="resultFourCopy">Per year.</p>
-        </article>
-        <article class="result-card">
-          <span class="result-number" data-i18n="resultFiveNumber">20+</span>
-          <h3 data-i18n="resultFiveTitle">Clients and projects</h3>
-          <p data-i18n="resultFiveCopy">Short- and long-term collaborations.</p>
         </article>
       </div>
     </section>
