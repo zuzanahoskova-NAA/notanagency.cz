@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="author" content="Zuzana Hošková">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="description" content="Externí marketingová ředitelka a CMO Zuzana Hošková pomáhá malým firmám, osobním značkám, kultuře a nezisku se strategií a PR.">
+  <link rel="canonical" href="https://notanagency.cz/">
+  <meta property="og:title" content="Externí CMO Zuzana Hošková | Marketing a PR">
+  <meta property="og:description" content="Nejsem agentura. Jsem Zuzana, váš externí CMO.">
+  <meta property="og:site_name" content="Not an Agency">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://notanagency.cz/">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:image" content="https://notanagency.cz/assets/zuzana-hoskova-balanced.jpg">
+  <meta property="og:image:alt" content="Portrét Zuzany Hoškové, externí CMO">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Zuzana Hošková — Nejsem agentura</title>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://notanagency.cz/#zuzana-hoskova",
+      "name": "Zuzana Hošková",
+      "url": "https://notanagency.cz/",
+      "image": "https://notanagency.cz/assets/zuzana-hoskova-balanced.jpg",
+      "jobTitle": "Externí CMO",
+      "description": "Externí CMO se zaměřením na marketingovou strategii, vedení marketingu, public relations, kulturu a neziskový sektor.",
+      "email": "zuzana@notanagency.cz",
+      "telephone": "+420608427516",
+      "sameAs": [
+        "https://www.linkedin.com/in/iamnotanagency/"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kouřimská 2351/12",
+        "addressLocality": "Praha",
+        "postalCode": "130 00",
+        "addressCountry": "CZ"
+      },
+      "knowsAbout": [
+        "Marketingová strategie",
+        "Externí marketingové vedení",
+        "Public relations",
+        "Kulturní marketing",
+        "Neziskový sektor"
+      ]
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #ffffff;
+      --ink: #191818;
+      --muted: #6f6a69;
+      --rose: #bd9699;
+      --line: #e4dfe0;
+      --soft: #faf7f7;
+      --serif: "DM Sans", Arial, sans-serif;
+      --sans: "DM Sans", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; }
+    .wrap { width: min(1160px, calc(100% - 64px)); margin-inline: auto; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+    }
+    #about, #approach, #work, #references, #contact { scroll-margin-top: 100px; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-mark {
+      display: flex;
+      flex-direction: column;
+      font-size: 21px;
+      letter-spacing: -.09em;
+      line-height: .78;
+    }
+    .brand-mark b { font-weight: 700; }
+    .brand-mark strong { font-size: inherit; font-weight: 400; }
+    .brand-caption {
+      padding-left: 9px;
+      border-left: 1px solid var(--rose);
+      color: var(--muted);
+      font-size: 8px;
+      line-height: 1.25;
+      letter-spacing: .015em;
+      text-align: right;
+    }
+    .nav { display: flex; align-items: center; gap: 28px; font-size: 12px; font-weight: 600; }
+    .nav a:not(.nav-cta) { color: #555b53; transition: color .2s ease; }
+    .nav a:not(.nav-cta):hover { color: var(--ink); }
+    .nav-cta {
+      padding: 12px 17px;
+      border: 1px solid var(--ink);
+      border-radius: 3px;
+      transition: background .2s ease, color .2s ease;
+    }
+    .nav-cta:hover { color: var(--paper); background: var(--ink); }
+    .language-switch { display: flex; align-items: center; gap: 3px; padding-left: 15px; border-left: 1px solid var(--line); }
+    .language-button { padding: 6px 5px; border: 0; background: transparent; color: #777b72; font: inherit; font-size: 10px; font-weight: 700; cursor: pointer; }
+    .language-button[aria-pressed="true"] { color: var(--ink); }
+    .language-button:hover { color: var(--ink); }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.12fr .88fr;
+      gap: 7.5%;
+      align-items: center;
+      padding: 88px 0 96px;
+    }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 24px;
+      color: #60675d;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { width: 22px; height: 1px; background: #858b7e; content: ""; }
+    h1 {
+      max-width: 650px;
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(42px, 5.8vw, 76px);
+      font-weight: 600;
+      letter-spacing: -.075em;
+      line-height: .99;
+    }
+    h1 em { color: var(--rose); font-style: normal; font-weight: 600; }
+    .hero-copy {
+      max-width: 395px;
+      margin: 27px 0 31px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+    .button {
+      display: inline-flex;
+      min-height: 49px;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      padding: 0 19px;
+      border: 1px solid var(--ink);
+      border-radius: 3px;
+      background: var(--ink);
+      color: white;
+      font-size: 12px;
+      font-weight: 600;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); background: #504547; }
+    .button span { font-size: 17px; line-height: 1; }
+    .availability { display: inline-flex; align-items: center; gap: 8px; margin: 22px 0 0 18px; color: #62675e; font-size: 10px; }
+    .availability::before { width: 7px; height: 7px; border-radius: 50%; background: var(--rose); content: ""; }
+
+    .portrait-wrap { position: relative; width: min(100%, 410px); margin-left: auto; padding: 0 14px 14px 0; }
+    .portrait-wrap::after {
+      position: absolute;
+      z-index: -1;
+      right: 0;
+      bottom: 0;
+      width: calc(100% - 14px);
+      height: calc(100% - 14px);
+      border-radius: 50%;
+      background: var(--rose);
+      content: "";
+    }
+    .portrait {
+      height: auto;
+      aspect-ratio: 1;
+      object-fit: cover;
+      object-position: center 38%;
+      border-radius: 50%;
+      filter: saturate(.9) contrast(.97) sepia(.035);
+    }
+    .photo-note {
+      position: absolute;
+      right: -24px;
+      bottom: 34px;
+      padding: 13px 15px;
+      background: var(--paper);
+      box-shadow: 0 8px 24px #19181812;
+      font-family: var(--serif);
+      font-size: 15px;
+      font-style: italic;
+      transform: rotate(-3deg);
+    }
+    .photo-note span { color: var(--rose); }
+
+    .proof {
+      display: block;
+      padding: 22px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .proof-label { display: block; margin-bottom: 19px; color: var(--muted); font-size: 9px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+    .proof-logos { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: center; gap: 20px 28px; color: var(--ink); }
+    .client-logo { display: flex; min-height: 62px; align-items: center; justify-content: center; color: var(--ink); text-align: center; text-decoration: none; }
+    .client-logo:focus-visible { outline: 2px solid var(--rose); outline-offset: 5px; }
+    .client-logo img { width: auto; max-width: min(100%, 150px); max-height: 42px; object-fit: contain; filter: brightness(0); }
+    .client-logo-dekka img { max-height: 42px; filter: grayscale(1); }
+    .client-logo-cka img { width: min(260px, 100%); max-width: min(100%, 260px); max-height: 34px; }
+    .client-logo-award img { width: min(220px, 100%); max-width: min(100%, 220px); max-height: 40px; filter: none; }
+    .client-logo-fotograf img { width: min(220px, 100%); max-width: min(100%, 220px); max-height: 34px; }
+    .client-logo-lonely img { width: min(180px, 100%); max-width: min(100%, 180px); max-height: 42px; }
+    .client-logo-jatka img { width: min(120px, 100%); }
+    .client-logo-bwt img { width: min(124px, 100%); }
+    .client-logo-marianne img { width: min(150px, 100%); }
+    .client-logo-home img { width: min(120px, 100%); }
+    .client-logo-pride { gap: 7px; }
+    .client-logo-pride img { width: 27px; max-height: 27px; }
+    .client-logo-pride .logo-wordmark { font-size: clamp(9px, 1.05vw, 12px); font-weight: 700; letter-spacing: .01em; text-transform: uppercase; }
+    .logo-wordmark { font-family: var(--sans); font-size: clamp(11px, 1.35vw, 15px); font-weight: 600; letter-spacing: -.04em; line-height: 1.35; }
+    .client-logo-story .logo-wordmark { font-family: var(--serif); font-size: clamp(11px, 1.3vw, 15px); font-weight: 600; letter-spacing: -.045em; }
+
+    .section { padding: 108px 0; }
+    .section-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; margin-bottom: 39px; }
+    .section h2 { margin: 0; font-family: var(--serif); font-size: clamp(37px, 4.7vw, 57px); font-weight: 500; letter-spacing: -.055em; line-height: 1.07; }
+    .section-heading p { max-width: 285px; margin: 0 0 5px; color: var(--muted); font-size: 12px; line-height: 1.8; }
+    .approach { padding: 90px 0; border-top: 1px solid var(--line); }
+    .approach .section-heading { margin-bottom: 30px; }
+    .approach .section-heading p { max-width: 420px; }
+    .approach-story { margin: 0 0 48px; padding: 24px 28px; border-left: 2px solid var(--rose); background: var(--soft); color: var(--ink); font-family: var(--serif); font-size: clamp(21px, 2.6vw, 29px); font-style: italic; line-height: 1.4; }
+    .approach-story p { margin: 0; }
+    .approach-subtitle { margin: 0 0 22px; font-family: var(--serif); font-size: clamp(25px, 3vw, 34px); font-weight: 500; letter-spacing: -.04em; }
+    .service-intro { max-width: 860px; margin: -7px 0 28px; color: var(--muted); font-size: 13px; line-height: 1.85; }
+    .service-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .service-card { padding: 24px; border-top: 2px solid var(--rose); background: var(--soft); }
+    .service-card h3 { margin: 0 0 11px; font-size: 15px; font-weight: 600; line-height: 1.45; }
+    .service-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
+    .service-card-result h3 { display: flex; align-items: center; gap: 9px; }
+    .service-card-result svg { width: 20px; height: 20px; flex: 0 0 auto; color: var(--rose); }
+    .approach-practice { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(240px, .6fr); align-items: start; gap: 30px; margin-top: 58px; padding: 30px; border: 1px solid #d9c4c5; background: white; }
+    .practice-list { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
+    .practice-list li { padding: 16px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; line-height: 1.8; }
+    .practice-list strong { color: var(--ink); }
+    .practice-photo { margin: 0; padding: 8px; border: 1px solid var(--line); border-top: 2px solid var(--rose); background: var(--soft); }
+    .practice-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; filter: saturate(.9) contrast(1.04) brightness(1.02) sepia(.025); }
+    .approach-process { margin-top: 58px; }
+    .process-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 34px; margin: 0; padding: 0; list-style: none; counter-reset: process; }
+    .process-list li { position: relative; min-width: 0; padding: 60px 22px 22px; border-top: 2px solid var(--rose); background: var(--soft); counter-increment: process; }
+    .process-list li::before { position: absolute; top: 16px; left: 22px; display: grid; width: 28px; height: 28px; place-items: center; border: 1px solid var(--rose); border-radius: 50%; background: white; color: var(--rose); font-size: 11px; font-weight: 700; letter-spacing: .04em; content: "0" counter(process); }
+    .process-list li:not(:last-child)::after { position: absolute; top: 17px; right: -27px; color: var(--rose); font-size: 21px; line-height: 1; content: "→"; }
+    .process-list h4 { margin: 0 0 9px; font-size: 14px; font-weight: 600; line-height: 1.5; }
+    .process-list p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.8; }
+    .about-section { display: grid; grid-template-columns: minmax(0, 1.18fr) minmax(0, .82fr); align-items: start; gap: 0; padding: 96px 0; border-top: 1px solid var(--line); }
+    .about-photo { position: relative; max-width: none; margin: 0; }
+    .about-photo::after { position: absolute; z-index: -1; right: -13px; bottom: -13px; width: 78%; height: 72%; background: var(--rose); content: ""; }
+    .about-photo img { width: 100%; aspect-ratio: 1.33; object-fit: cover; object-position: center; filter: saturate(.96) contrast(.97) brightness(1.035) sepia(.035); }
+    .about-copy { position: relative; z-index: 1; margin: 34px 0 0 -90px; padding: 25px 24px; border: 1px solid #d9c4c5; border-top: 2px solid var(--rose); background: var(--soft); }
+    .about-copy .eyebrow { margin-bottom: 15px; }
+    .about-copy h2 { margin: 0 0 25px; font-family: var(--serif); font-size: clamp(38px, 4.7vw, 57px); font-weight: 500; letter-spacing: -.055em; line-height: 1.07; }
+    .about-copy p { margin: 0 0 17px; color: var(--muted); font-size: 13px; line-height: 1.85; }
+
+    .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .project-card { min-width: 0; }
+    .project-art { position: relative; display: flex; min-height: 285px; align-items: center; justify-content: center; overflow: hidden; padding: 32px; background: #f0edef; }
+    .project-art::after { position: absolute; right: -40px; bottom: -90px; width: 240px; height: 240px; border: 1px solid #bd969966; border-radius: 50%; content: ""; }
+    .project-art-dekka { min-height: 0; aspect-ratio: 1.55; padding: 0; background: #eee9e8; }
+    .project-art-dekka::before, .project-art-dekka::after { display: none; }
+    .project-art-dekka .project-photo { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; object-fit: cover; filter: none; }
+    .project-art-dekka::before { position: absolute; top: -105px; left: -80px; width: 290px; height: 290px; border: 1px solid #bd969966; border-radius: 50%; content: ""; }
+    .project-art-mavlast { min-height: 0; aspect-ratio: 1.55; padding: 0; background: #c4a943; }
+    .project-art-mavlast::after { display: none; }
+    .project-art-mavlast .project-photo { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; object-fit: contain; filter: none; }
+    .project-art img { position: relative; z-index: 1; width: auto; max-width: 42%; max-height: 90px; object-fit: contain; filter: grayscale(1); }
+    .project-art-title { position: relative; z-index: 1; max-width: 340px; font-size: clamp(32px, 4vw, 52px); font-weight: 600; letter-spacing: -.075em; line-height: .96; text-align: center; text-transform: uppercase; }
+    .project-art-mavlast { background: #c4a943; }
+    .project-art-mavlast .project-art-title { font-family: var(--serif); font-size: clamp(42px, 5vw, 64px); font-weight: 500; letter-spacing: -.065em; text-transform: none; }
+    .project-tag { margin: 18px 0 9px; color: var(--rose); font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .project-card h3 { margin: 0 0 8px; font-family: var(--serif); font-size: 24px; font-weight: 600; letter-spacing: -.045em; line-height: 1.15; }
+    .project-card-copy { max-width: 480px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.75; }
+    .project-meta { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--line); color: var(--muted); font-size: 10px; }
+
+    .testimonials { padding: 80px 0; background: var(--soft); border-block: 1px solid var(--line); }
+    .quote-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .quote-card { display: flex; min-height: 170px; flex-direction: column; justify-content: space-between; padding: 21px; border: 1px solid var(--line); background: white; }
+    .quote-mark { color: var(--rose); font-family: Georgia, serif; font-size: 36px; line-height: .8; }
+    .quote-placeholder { margin: 18px 0 24px; color: var(--muted); font-size: 12px; line-height: 1.65; }
+    .quote-author { margin: 0; font-size: 11px; font-weight: 600; }
+    .quote-role { display: block; margin-top: 4px; color: var(--muted); font-size: 10px; font-weight: 400; }
+    .references-brands { margin-top: 52px; padding-top: 30px; border-top: 1px solid var(--line); }
+
+    .results { padding: 88px 0; }
+    .result-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .result-card { padding: 23px; border-top: 1px solid var(--rose); background: var(--soft); }
+    .result-number { display: block; margin-bottom: 14px; font-size: clamp(30px, 4vw, 46px); font-weight: 600; letter-spacing: -.075em; line-height: 1; }
+    .result-card h3 { margin: 0 0 7px; font-size: 13px; font-weight: 600; }
+    .result-card p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.65; }
+
+    .contact {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      margin-top: 30px;
+      padding: 54px 50px;
+      border-top: 2px solid var(--rose);
+      background: var(--soft);
+    }
+    .contact h2 { max-width: 570px; }
+    .contact h2 em { color: var(--rose); font-style: normal; font-weight: 600; }
+    .contact-copy { max-width: 335px; margin: 15px 0 0; color: var(--muted); font-size: 12px; line-height: 1.8; }
+    .contact-details { display: grid; justify-items: start; gap: 9px; margin-top: 18px; font-size: 13px; font-weight: 600; }
+    .contact-details a:hover { color: var(--rose); }
+    .contact-name { margin: 0 0 2px; font-size: 15px; }
+    .contact-invoice { margin: 4px 0 0; color: var(--muted); font-size: 11px; font-weight: 400; line-height: 1.7; }
+    .contact-invoice + .contact-invoice { margin-top: -7px; }
+    .contact-action { flex: 0 0 auto; }
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 22px 0 27px;
+      border-top: 1px solid var(--line);
+      color: #74786f;
+      font-size: 10px;
+    }
+    .footer-brand .brand-mark { font-size: clamp(24px, 3vw, 30px); }
+    .footer-brand .brand-caption { font-size: 8px; }
+    .footer-links { display: flex; gap: 22px; }
+    .footer-links a:hover { color: var(--ink); }
+
+    @media (max-width: 900px) {
+      .about-section { grid-template-columns: 1fr; gap: 0; }
+      .about-photo { width: min(100vw, 680px); margin: 0 auto; }
+      .about-copy { width: min(100%, 660px); margin: -58px 0 0; padding: 22px; }
+      .approach-practice { grid-template-columns: 1fr; }
+      .practice-photo { width: min(100%, 420px); }
+    }
+
+    @media (max-width: 760px) {
+      .about-photo { margin-inline: calc((100% - 100vw) / 2); }
+      .about-photo::after { right: 0; }
+      .wrap { width: min(100% - 40px, 560px); }
+      .topbar { height: 70px; }
+      .nav { gap: 16px; }
+      .nav a:not(.nav-cta) { display: none; }
+      .nav-cta { padding: 10px 12px; }
+      .hero { grid-template-columns: 1fr; gap: 48px; padding: 65px 0 70px; }
+      .hero-copy { max-width: 470px; }
+      .portrait-wrap { width: min(83%, 410px); margin: 0 auto; }
+      .proof-logos { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px 20px; }
+      .process-list { grid-template-columns: 1fr; gap: 34px; }
+      .process-list li:not(:last-child)::after { top: auto; right: 50%; bottom: -30px; transform: translateX(50%); content: "↓"; }
+      .about-section { padding: 72px 0; }
+      .about-copy p { font-size: 12px; }
+      .references-brands { margin-top: 40px; padding-top: 24px; }
+      .section { padding: 76px 0; }
+      .section-heading { align-items: flex-start; flex-direction: column; gap: 14px; }
+      .projects { gap: 32px; }
+      .quote-grid, .result-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .result-card:nth-child(n) { grid-column: auto; }
+      .approach { padding: 68px 0; }
+      .contact { align-items: flex-start; flex-direction: column; padding: 40px 30px; }
+    }
+    @media (max-width: 480px) {
+      .wrap { width: calc(100% - 36px); }
+      h1 { font-size: clamp(50px, 15vw, 68px); }
+      .availability { display: flex; margin: 20px 0 0; }
+      .projects { grid-template-columns: 1fr; }
+      .about-copy { margin-top: -48px; padding: 18px; }
+      .about-copy h2 { margin-bottom: 20px; }
+      .about-copy p { font-size: 13px; }
+      .project-image { aspect-ratio: 1.35; }
+      .proof-logos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+      .approach-story { margin-bottom: 36px; padding: 21px 20px; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service-card, .approach-practice { padding: 20px; }
+      .process-list li { padding: 60px 20px 20px; }
+      .quote-grid, .result-grid { grid-template-columns: 1fr; }
+      .footer { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar wrap">
+    <a class="brand" href="#" aria-label="Not an Agency home">
+      <span class="brand-mark" aria-hidden="true"><span><b>not</b> an</span><strong>agency</strong></span>
+      <span class="brand-caption" data-i18n="brandCaption">FRACTIONAL CMO<br>DIRECTION<br>STRATEGY</span>
+    </a>
+    <nav class="nav" aria-label="Main navigation" data-i18n-aria="navLabel">
+      <a href="#about" data-i18n="navAbout">About Zuzana</a>
+      <a href="#approach" data-i18n="navApproach">Services</a>
+      <a href="#work" data-i18n="navWork" hidden>Case studies</a>
+      <a href="#references" data-i18n="navReferences">References</a>
+      <a class="nav-cta" href="#contact"><span data-i18n="navContact">Let's talk</span> <span aria-hidden="true">↗</span></a>
+      <div class="language-switch" role="group" aria-label="Choose language" data-i18n-aria="languageLabel">
+        <button class="language-button" type="button" lang="en" aria-pressed="false" data-language="en">EN</button>
+        <button class="language-button" type="button" lang="cs" aria-pressed="true" data-language="cs">CZ</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow" data-i18n="heroEyebrow">Senior marketing leadership, on your team</p>
+        <h1 id="hero-title" data-i18n="heroTitle">I am not an<br>agency. I am<br>Zuzana, your<br><em>fractional CMO.</em></h1>
+        <p class="hero-copy" data-i18n="heroCopy">I bring senior-level marketing leadership to ambitious businesses—building the strategy, team, and momentum to help you grow, without the agency overhead.</p>
+        <a class="button" href="#contact"><span data-i18n="heroCta">Let's move your project forward</span> <span aria-hidden="true">↗</span></a>
+        <p class="availability" data-i18n="availability">Independent CMO · Personally invested in your growth</p>
+      </div>
+      <div class="portrait-wrap">
+        <img class="portrait" src="assets/zuzana-hoskova-balanced.jpg" alt="Zuzana Hošková" data-i18n-alt="heroImageAlt" fetchpriority="high">
+        <div class="photo-note"><span data-i18n="photoNote">A strategic boost for your team.</span></div>
+      </div>
+    </section>
+
+    <section class="about-section wrap" id="about">
+      <figure class="about-photo">
+        <img src="assets/zuzana-borneo-museum-wide.jpg" alt="Zuzana Hošková in front of the Borneo Cultures Museum" data-i18n-alt="aboutImageAlt" loading="lazy">
+      </figure>
+      <div class="about-copy">
+        <p class="eyebrow" data-i18n="aboutEyebrow">A little about me</p>
+        <h2 data-i18n="aboutTitle">Who is Zuzana?</h2>
+        <p data-i18n="aboutStoryOne">My name is Zuzana Hošková. My entire professional life has been intertwined with art, design, architecture, and the social impact sector. I graduated in the History and Theory of Design and New Media at UMPRUM (Academy of Arts, Architecture and Design in Prague). I never became a curator or art historian, though—I was more interested in making these subjects accessible and finding ways to bring them to the public. For seven years, I worked in the media, writing about architecture, design, fashion, and the role of women in society.</p>
+        <p data-i18n="aboutStoryTwo">I learned how to bring even complex topics into mainstream media, built a network of journalistic contacts, and gradually moved into public relations. In 2013, I became the spokesperson for the Czech Chamber of Architects, where I promoted the architectural profession, advocated for architectural competitions, and fought to save significant cultural heritage sites. I was also there at the birth of the Czech Architecture Award.</p>
+        <p data-i18n="aboutStoryThree">For the past 10 years, I have worked as an independent professional. I have led marketing and PR for Jatka78 theatre, dance company DEKKADANCERS, Fotograf Zone, and the Prague Pride festival. I have brought major theatre projects—such as <em>My Country</em> and <em>The Story of the Astronomical Clock</em>—as well as independent film projects into the media spotlight.</p>
+        <p data-i18n="aboutStoryFour">I love being there at the start of new projects, and stepping into ongoing ones to evaluate them and help them move forward. At work, I like a clear direction, strategy, and goal; in my free time, I happily leave all that behind. In winter, you’re most likely to find me travelling solo around Southeast Asia—often with no plan at all and a small backpack.</p>
+      </div>
+    </section>
+
+    <section class="approach wrap" id="approach">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow" data-i18n="approachEyebrow">My approach</p>
+          <h2 data-i18n="approachTitle">Fractional CMO: Marketing leadership and strategy focused on personal brands, culture, and nonprofits</h2>
+        </div>
+      </div>
+      <div class="approach-story">
+        <p data-i18n="approachStoryThree">Brands are made of stories. Let's write yours.</p>
+      </div>
+      <p class="service-intro" data-i18n="approachIntro">As an external CMO, I provide marketing leadership and strategy for small businesses, personal brands, cultural projects, and nonprofit organizations. I help set a clear direction, align your team, and choose marketing activities that make sense for your goals and budget. My work can also include PR strategy and media relations.</p>
+      <p class="service-intro" data-i18n="areaCmoCopy">I know these environments inside out. I won't recommend unreasonably large campaign budgets or paid tools AI can easily replace. I can work with small budgets because I know the most important things are the right strategy, elegant processes, and relationships built over years. I've built brands with annual marketing budgets in the low tens of thousands of Czech crowns. I won't bury you in marketing jargon or processes; I'll choose what works for you.</p>
+      <div class="service-grid">
+        <article class="service-card">
+          <h3 data-i18n="areaConsultingTitle">Marketing consulting and training</h3>
+          <p data-i18n="areaConsultingCopy">Don't have the budget for a marketing hire, so everything falls on your shoulders? With the right direction and priorities, you can stop wasting your energy and money. Or perhaps you have a social media manager and an online specialist, but lack a broader strategy? I'll bring a holistic view of your brand to your team's work and uncover both weak spots and untapped potential.</p>
+        </article>
+        <article class="service-card">
+          <h3 data-i18n="areaAuditTitle">Marketing audit and process setup</h3>
+          <p data-i18n="areaAuditCopy">Have you been active in the public sphere for a while but feel ready to take your brand further? Are you drowning in tasks and unsure where the problem lies? Instead of hiring another team member, we'll pause, assess your strengths and weaknesses, identify why some processes aren't working, and clarify roles and responsibilities within the team.</p>
+        </article>
+        <article class="service-card">
+          <h3 data-i18n="areaCreativeTitle">Creative direction for marketing campaigns</h3>
+          <p data-i18n="areaCreativeCopy">Launching a new project and not sure where to start with marketing? I'll develop a complete strategy—from the visual photoshoot, trailer, and videos to the right tone of voice for your copy and recommendations for social media content. I'll create an integrated schedule so every step connects and makes sense.</p>
+        </article>
+        <article class="service-card">
+          <h3 data-i18n="areaPrTitle">PR strategy and public relations</h3>
+          <p data-i18n="areaPrCopy">Is your marketing working, but your project needs more media visibility? I'll develop a comprehensive PR strategy, write your press release, prepare a bulletproof press kit, and distribute it to the right journalists. As a former journalist, I know how to shape even a niche topic, develop its story, and find the right people to pitch. I stay behind the scenes—you get seen.</p>
+        </article>
+        <article class="service-card">
+          <h3 data-i18n="areaCultureTitle">Connect your brand with culture</h3>
+          <p data-i18n="areaCultureCopy">Do you represent a commercial business looking for a meaningful connection with culture, the arts, or social-impact projects? Get in touch. I create tailored partnerships and barter collaborations that go beyond a logo on a poster—they have real impact, fit naturally into your communications, and bring value to both partners and their audiences.</p>
+        </article>
+        <article class="service-card service-card-result">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m8 12 2.5 2.5L16.5 9"></path></svg><span data-i18n="areaResultTitle">And the result?</span></h3>
+          <p data-i18n="areaResultCopy">Exceptionally professional, clear work precisely tailored to your target audience.</p>
+        </article>
+      </div>
+      <div class="approach-practice">
+        <div>
+          <h3 class="approach-subtitle" data-i18n="practiceTitle">How I work: what I do and what I don't</h3>
+          <ul class="practice-list">
+            <li data-i18n="practiceExternal"><strong>I'm an external partner, not an in-house employee.</strong> I work externally within an agreed scope and schedule. I usually work from Prague, sometimes from a different time zone.</li>
+            <li data-i18n="practiceLead"><strong>I lead marketing as a whole.</strong> I understand all areas of marketing because that breadth is essential to my work and to a holistic perspective, but I don't claim to be a specialist in every discipline. For example, I don't set up PPC campaigns. I can help you understand why they're not working and connect you with experts who can train you or take over campaign management.</li>
+            <li data-i18n="practiceSocial"><strong>I set the strategy for social media, but I don't manage the channels.</strong> I work alongside your social media manager as a strategic partner—bringing ideas, shaping Reels scripts, and keeping the overall direction on track.</li>
+          </ul>
+        </div>
+        <figure class="practice-photo">
+          <img src="assets/zuzana-work.jpg" alt="Zuzana's published work and professional notes" data-i18n-alt="practiceImageAlt" loading="lazy">
+        </figure>
+      </div>
+      <div class="approach-process">
+        <h3 class="approach-subtitle" data-i18n="processTitle">How does our collaboration work?</h3>
+        <ol class="process-list">
+          <li><h4 data-i18n="processMeetingTitle">Introductory meeting</h4><p data-i18n="processMeetingCopy">We'll meet to discuss our expectations and your project's priorities.</p></li>
+          <li><h4 data-i18n="processProposalTitle">A tailored proposal</h4><p data-i18n="processProposalCopy">I'll propose a solution, next steps, an estimated time commitment, and send you a tailored quote.</p></li>
+          <li><h4 data-i18n="processStartTitle">Getting started and payment terms</h4><p data-i18n="processStartCopy">Once you approve the proposal, we'll get to work. One-off consultations and new projects require a 50% advance payment. For ongoing collaborations, I invoice for the actual time worked at the end of each month.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section wrap" id="work" hidden>
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow" data-i18n="workEyebrow">Selected work</p>
+          <h2 data-i18n="workTitle">Case studies</h2>
+        </div>
+        <p data-i18n="workIntro">Two projects, each with its own story, audience, and communication challenge.</p>
+      </div>
+      <div class="projects">
+        <article class="project-card">
+          <div class="project-art project-art-dekka" aria-label="Dekkadancers and Lži, které muži říkají" data-i18n-aria="caseOneArt">
+            <img class="project-photo" src="assets/lzi-ktere-muzi-rikaji.jpg" alt="Dancer covered in pink paint holding a roller" data-i18n-alt="caseOnePhotoAlt" loading="lazy">
+          </div>
+          <p class="project-tag" data-i18n="caseOneTag">Premiéra · Dekkadancers</p>
+          <h3 data-i18n="caseOneTitle">Lži, které muži říkají</h3>
+          <p class="project-card-copy" data-i18n="caseOneCopy">Příprava premiéry a komunikace představení souboru Dekkadancers.</p>
+          <p class="project-meta" data-i18n="caseOneMeta">Case study · detail projektu doplníme</p>
+        </article>
+        <article class="project-card">
+          <div class="project-art project-art-mavlast" aria-label="Má vlast" data-i18n-aria="caseTwoArt">
+            <img class="project-photo" src="assets/ma-vlast-illustration.jpg" alt="Illustration of riders on horseback among trees" data-i18n-alt="caseTwoPhotoAlt" loading="lazy">
+          </div>
+          <p class="project-tag" data-i18n="caseTwoTag">Public relations · kultura</p>
+          <h3 data-i18n="caseTwoTitle">PR k Mé vlasti</h3>
+          <p class="project-card-copy" data-i18n="caseTwoCopy">Public relations pro kulturní projekt Má vlast.</p>
+          <p class="project-meta" data-i18n="caseTwoMeta">Case study · detail projektu doplníme</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="results wrap" id="results">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow" data-i18n="resultsEyebrow">Experience that adds up</p>
+          <h2 data-i18n="resultsTitle">A few things I'm proud of</h2>
+        </div>
+        <p data-i18n="resultsIntro">A track record shaped by journalism, PR, and work with people who care about what they put into the world.</p>
+      </div>
+      <div class="result-grid">
+        <article class="result-card">
+          <span class="result-number" data-i18n="resultTwoNumber">7 years</span>
+          <h3 data-i18n="resultTwoTitle">In the media</h3>
+          <p data-i18n="resultTwoCopy">A journalist's perspective on what makes a story clear and worth sharing.</p>
+        </article>
+        <article class="result-card">
+          <span class="result-number" data-i18n="resultOneNumber">13 years</span>
+          <h3 data-i18n="resultOneTitle">In PR and marketing</h3>
+          <p data-i18n="resultOneCopy">Building experience across communication, campaigns, and brand strategy.</p>
+        </article>
+        <article class="result-card">
+          <span class="result-number" data-i18n="resultSixNumber">38,000+</span>
+          <h3 data-i18n="resultSixTitle">Theatre and cinema audiences</h3>
+          <p data-i18n="resultSixCopy">In 2025.</p>
+        </article>
+        <article class="result-card">
+          <span class="result-number" data-i18n="resultThreeNumber">85%</span>
+          <h3 data-i18n="resultThreeTitle">Average audience attendance</h3>
+          <p data-i18n="resultThreeCopy">At the cultural events I promote.</p>
+        </article>
+        <article class="result-card">
+          <span class="result-number" data-i18n="resultFourNumber">500+</span>
+          <h3 data-i18n="resultFourTitle">Media placements</h3>
+          <p data-i18n="resultFourCopy">Per year.</p>
+        </article>
+        <article class="result-card">
+          <span class="result-number" data-i18n="resultFiveNumber">20+</span>
+          <h3 data-i18n="resultFiveTitle">Clients and projects</h3>
+          <p data-i18n="resultFiveCopy">Short- and long-term collaborations.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="testimonials" id="references">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow" data-i18n="referencesEyebrow">A good word goes a long way</p>
+            <h2 data-i18n="referencesTitle">What clients say</h2>
+          </div>
+          <p data-i18n="referencesIntro">A few words from the people I've worked alongside.</p>
+        </div>
+        <div class="quote-grid">
+          <article class="quote-card"><span class="quote-mark" aria-hidden="true">“</span><p class="quote-placeholder" data-i18n="quotePetr">I worked with Zuzana as Vice-Chair and Chair of the Czech Chamber of Architects. Thanks to her dedication, expertise, and friendly communication, we succeeded in raising public awareness of the purpose and value of architecture. The number of architectural competitions grew by an incredible 400% over several years.</p><p class="quote-author" data-i18n="quoteAuthorOne">Ing. arch. Petr Lešek, Ph.D.<span class="quote-role">Authorized architect · member of the Czech Chamber of Architects</span></p></article>
+          <article class="quote-card"><span class="quote-mark" aria-hidden="true">“</span><p class="quote-placeholder" data-i18n="quoteKamila">Marketing and PR in the nonprofit sector, particularly when focused on LGBTQ+ issues, is no easy task. One day you're dealing with threats on social media, the next with crisis communications in the press. Zuzana handled these situations with confidence and, given the nature of our work, with exceptional sensitivity.</p><p class="quote-author" data-i18n="quoteAuthorTwo">Kamila Fröhlichová<span class="quote-role">Director, Prague Pride Festival</span></p></article>
+        </div>
+        <div class="references-brands" aria-label="Selected collaborators" data-i18n-aria="proofLabel">
+          <span class="proof-label" data-i18n="proofIntro">Selected collaborators</span>
+          <div class="proof-logos" aria-label="Dekkadancers, Má vlast, Příběh orloje, Prague Pride Festival, Jatka78, Czech Chamber of Architects, Czech Architecture Award, Fotograf Zone, BWT Books, Lonely production, Marianne, and HOME magazine" data-i18n-aria="clientBrands">
+            <a class="client-logo client-logo-dekka" href="https://dekkadancers.cz/" target="_blank" rel="noreferrer" aria-label="Dekkadancers website">
+              <img src="assets/dekkadancers.svg" alt="Dekkadancers logo" loading="lazy">
+            </a>
+            <a class="client-logo client-logo-mavlast" href="https://www.mavlast.cz/" target="_blank" rel="noreferrer" aria-label="Má vlast website">
+              <img src="assets/ma-vlast.svg" alt="Má vlast logo" loading="lazy">
+            </a>
+            <a class="client-logo client-logo-story" href="https://puppetstories.cz/" target="_blank" rel="noreferrer" aria-label="Příběh orloje website">
+              <img src="assets/puppet-stories.png" alt="Příběh orloje logo" loading="lazy">
+            </a>
+            <a class="client-logo client-logo-pride" href="https://festival.praguepride.com/" target="_blank" rel="noreferrer" aria-label="Prague Pride Festival website">
+              <img src="assets/prague-pride-festival.svg" alt="Prague Pride Festival logo" loading="lazy">
+              <span class="logo-wordmark">Prague Pride festival</span>
+            </a>
+            <a class="client-logo client-logo-jatka" href="https://www.jatka78.cz/" target="_blank" rel="noreferrer" aria-label="Jatka78 website">
+              <img src="assets/jatka78.svg" alt="Jatka78 logo" loading="lazy">
+            </a>
+            <a class="client-logo client-logo-cka" href="https://www.cka.cz/" target="_blank" rel="noreferrer" aria-label="Česká komora architektů website">
+              <img src="assets/cka-logo.svg" alt="Česká komora architektů logo" loading="lazy">
+            </a>
+            <a class="client-logo client-logo-award" href="https://www.ceskacenazaarchitekturu.cz/" target="_blank" rel="noreferrer" aria-label="Česká cena za architekturu website">
+              <img src="assets/cca-logo-no-year.png" alt="Česká cena za architekturu logo" loading="lazy">
+            </a>
+            <a class="client-logo client-logo-fotograf" href="https://www.fotograf.zone/" target="_blank" rel="noreferrer" aria-label="Fotograf Zone website">
+              <img src="assets/fotograf-zone.png" alt="Fotograf Zone logo" loading="lazy">
+            </a>
+            <a class="client-logo client-logo-bwt" href="https://bwtbooks.cz/" target="_blank" rel="noreferrer" aria-label="BWT Books website">
+              <img src="assets/bwt-books.png" alt="BWT Books logo" loading="lazy">
+            </a>
+            <a class="client-logo client-logo-lonely" href="https://lonelyproduction.cz/" target="_blank" rel="noreferrer" aria-label="Lonely production website">
+              <img src="assets/lonely-production.png" alt="Lonely Production logo" loading="lazy">
+            </a>
+            <a class="client-logo client-logo-marianne" href="https://www.marianne.cz/" target="_blank" rel="noreferrer" aria-label="Marianne website">
+              <img src="assets/marianne.svg" alt="Marianne logo" loading="lazy">
+            </a>
+            <a class="client-logo client-logo-home" href="https://casopishome.cz/" target="_blank" rel="noreferrer" aria-label="HOME magazine website">
+              <img src="assets/home.svg" alt="HOME magazine logo" loading="lazy">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact wrap" id="contact">
+      <div>
+        <p class="eyebrow" data-i18n="contactEyebrow">Get in touch</p>
+        <h2 data-i18n="contactTitle">Have a good feeling<br>about <em>what's next?</em></h2>
+        <p class="contact-copy" data-i18n="contactCopy">Tell me what you're working on, what feels stuck, or what you're excited to try. We'll take it from there.</p>
+        <div class="contact-details">
+          <strong class="contact-name">Zuzana Hošková</strong>
+          <a href="mailto:zuzana@notanagency.cz">zuzana@notanagency.cz</a>
+          <a href="tel:+420608427516" data-i18n-aria="phoneAria" aria-label="Call Zuzana Hošková">+420 608 427 516</a>
+          <a href="https://www.linkedin.com/in/iamnotanagency/" target="_blank" rel="noreferrer"><span data-i18n="linkedinLink">LinkedIn</span> ↗</a>
+          <p class="contact-invoice"><span data-i18n="companyIdLabel">Company ID</span>: 02768232</p>
+          <p class="contact-invoice"><span data-i18n="registeredAddressLabel">Registered address</span>: Praha – Vinohrady, Kouřimská 2351/12, 130 00 Praha 3</p>
+        </div>
+      </div>
+      <a class="button contact-action" href="mailto:zuzana@notanagency.cz?subject=Let's%20talk%20about%20fractional%20CMO%20support"><span data-i18n="contactCta">Tell me about it</span> <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <a class="brand footer-brand" href="#" aria-label="Not an Agency home">
+      <span class="brand-mark" aria-hidden="true"><span><b>not</b> an</span><strong>agency</strong></span>
+      <span class="brand-caption">FRACTIONAL CMO<br>DIRECTION<br>STRATEGY</span>
+    </a>
+    <span>© 2026 Zuzana Hošková · notanagency.cz</span>
+  </footer>
+  <script>
+    const translations = {
+      en: {
+        title: "Zuzana Hošková — Not an Agency",
+        ogTitle: "Fractional CMO Zuzana Hošková | Marketing & PR",
+        description: "Fractional CMO Zuzana Hošková provides marketing strategy and PR for small businesses, personal brands, culture, and nonprofits.",
+        ogDescription: "I am not an agency. I am Zuzana, your fractional CMO.",
+        ogLocale: "en_US",
+        brandCaption: "FRACTIONAL CMO<br>DIRECTION<br>STRATEGY",
+        navLabel: "Main navigation",
+        languageLabel: "Choose language",
+        navAbout: "About Zuzana",
+        navApproach: "Services",
+        navWork: "Case studies",
+        navReferences: "References",
+        navContact: "Contact",
+        heroEyebrow: "A fractional CMO, tailored to you. Exactly as much support as you need.",
+        heroTitle: "I am not an<br>agency. I am<br>Zuzana, your<br><em>fractional CMO.</em>",
+        heroCopy: "You have specialists, but are you missing direction? I provide strategic leadership across your marketing and PR—without agency overhead, and with 20 years of experience in media, culture, and the nonprofit sector. I'll align your team, put processes in place, and get your brand growing.",
+        heroCta: "Let's move your project forward",
+        availability: "Independent CMO · Personally invested in your growth",
+        heroImageAlt: "Portrait of Zuzana Hošková",
+        aboutImageAlt: "Zuzana Hošková, fractional CMO",
+        practiceImageAlt: "A magazine feature and a publication by Zuzana Hošková",
+        photoNote: "Zuzana Hošková · Strategic support for your team",
+        proofLabel: "Selected client brands",
+        clientBrands: "Selected collaborators: Dekkadancers, Má vlast, Příběh orloje, Prague Pride Festival, Jatka78, Czech Chamber of Architects, Czech Architecture Award, Fotograf Zone, BWT Books, Lonely production, Marianne, and HOME magazine",
+        proofIntro: "Selected collaborators",
+        workEyebrow: "Selected work",
+        workTitle: "Case studies",
+        workIntro: "Two projects, each with its own story, audience, and communication challenge.",
+        caseOneArt: "Dekkadancers and The Lies Men Tell",
+        caseOnePhotoAlt: "Dancer covered in pink paint holding a roller",
+        caseOneTag: "Premiere · Dekkadancers",
+        caseOneTitle: "Lži, které muži říkají",
+        caseOneCopy: "Complete marketing and PR leadership.",
+        caseOneMeta: "Case study · Project details to follow",
+        caseTwoArt: "Má vlast",
+        caseTwoPhotoAlt: "Illustration of riders on horseback among trees",
+        caseTwoTag: "Public relations · Multi-genre project",
+        caseTwoTitle: "Má vlast",
+        caseTwoCopy: "Public relations for the co-produced theatre project Má vlast.",
+        caseTwoMeta: "Case study · Project details to follow",
+        aboutEyebrow: "A little about me",
+        aboutTitle: "Who is Zuzana?",
+        aboutStoryOne: "My name is Zuzana Hošková. My entire professional life has been intertwined with art, design, architecture, and the social impact sector. I graduated with a degree in the History and Theory of Design and New Media from UMPRUM (Academy of Arts, Architecture and Design in Prague). I never became a curator or an art historian, though—I was more interested in making these subjects accessible and finding ways to bring them to the public. For seven years, I worked in the media, writing about architecture, design, fashion, and the role of women in society.",
+        aboutStoryTwo: "I learned how to bring even complex topics into mainstream media, built strong journalistic networks, and gradually transitioned into public relations. In 2013, I became the spokesperson for the Czech Chamber of Architects, where I promoted the architectural profession, advocated for architectural competitions, and fought to save significant cultural heritage sites. I was also at the inception of the Czech Architecture Award.",
+        aboutStoryThree: "For the past 10 years, I have been working as an independent professional. I have led marketing and PR for Jatka78 theatre, the DEKKADANCERS dance company, Fotograf Zone, and the Prague Pride festival. Through media relations, I have raised the visibility of major theatrical projects (such as <em>My Country</em> and <em>The Story of the Astronomical Clock</em>) as well as independent film projects.",
+        aboutStoryFour: "I enjoy being there right at the birth of new projects, as well as stepping into ongoing ones to evaluate them and take them to the next level. While I like a clear direction, strategy, and goal at work, I happily leave them all behind in my free time. In winter, you’ll most likely find me travelling solo across Southeast Asia—often completely off-plan and with just a small backpack.",
+        approachEyebrow: "My approach",
+        approachTitle: "Fractional CMO: Marketing leadership and strategy focused on personal brands, culture, and nonprofits",
+        approachIntro: "As an external CMO, I provide marketing leadership and strategy for small businesses, personal brands, cultural projects, and nonprofit organizations. I help set a clear direction, align your team, and choose marketing activities that make sense for your goals and budget. My work can also include PR strategy and media relations.",
+        approachStoryThree: "Brands are made of stories. Let's write yours.",
+        areaCmoTitle: "Fractional CMO",
+        areaCmoCopy: "I know these environments inside out. I won't recommend unreasonably large campaign budgets or paid tools that AI can easily replace. I can work with small budgets because I know the most important things are the right strategy, elegant processes, and relationships built over years. I've built brands with annual marketing budgets in the low tens of thousands of Czech crowns. I won't bury you in marketing jargon or processes; I'll choose what works for you.",
+        areaConsultingTitle: "Marketing consulting and training",
+        areaConsultingCopy: "Don't have the budget for a marketing hire, so everything falls on your shoulders? With the right direction and priorities, you can stop wasting your energy and money. Or perhaps you have a social media manager and an online specialist, but lack a broader strategy? I'll bring a holistic view of your brand to your team's work and uncover both weak spots and untapped potential.",
+        areaAuditTitle: "Marketing audit and process setup",
+        areaAuditCopy: "Have you been active in the public sphere for a while but feel ready to take your brand further? Are you drowning in tasks and unsure where the problem lies? Instead of hiring another team member, we'll pause, assess your strengths and weaknesses, identify why some processes aren't working, and clarify roles and responsibilities within the team.",
+        areaCreativeTitle: "Creative direction for marketing campaigns",
+        areaCreativeCopy: "Launching a new project and not sure where to start with marketing? I'll develop a complete strategy—from the visual photoshoot, trailer, and videos to the right tone of voice for your copy and recommendations for social media content. I'll create an integrated schedule so every step connects and makes sense.",
+        areaPrTitle: "PR strategy and public relations",
+        areaPrCopy: "Is your marketing working, but your project needs more media visibility? I'll develop a comprehensive PR strategy, write your press release, prepare a bulletproof press kit, and distribute it to the right journalists. As a former journalist, I know how to shape even a niche topic, develop its story, and find the right people to pitch. I stay behind the scenes—you get seen.",
+        areaCultureTitle: "Connect your brand with culture",
+        areaCultureCopy: "Do you represent a commercial business looking for a meaningful connection with culture, the arts, or social-impact projects? Get in touch. I create tailored partnerships and barter collaborations that go beyond a logo on a poster—they have real impact, fit naturally into your communications, and bring value to both partners and their audiences.",
+        areaResultTitle: "And the result?",
+        areaResultCopy: "Exceptionally professional, clear work precisely tailored to your target audience.",
+        practiceTitle: "How I work: what I do and what I don't",
+        practiceExternal: "<strong>I'm an external partner, not an in-house employee.</strong> I work externally within an agreed scope and schedule. I usually work from Prague, sometimes from a different time zone.",
+        practiceLead: "<strong>I lead marketing as a whole.</strong> I understand all areas of marketing because that breadth is essential to my work and to a holistic perspective, but I don't claim to be a specialist in every discipline. For example, I don't set up PPC campaigns. I can help you understand why they're not working and connect you with experts who can train you or take over campaign management.",
+        practiceSocial: "<strong>I set the strategy for social media, but I don't manage the channels.</strong> I work alongside your social media manager as a strategic partner—bringing ideas, shaping Reels scripts, and keeping the overall direction on track.",
+        processTitle: "How does our collaboration work?",
+        processMeetingTitle: "Introductory meeting",
+        processMeetingCopy: "We'll meet to discuss our expectations and your project's priorities.",
+        processProposalTitle: "A tailored proposal",
+        processProposalCopy: "I'll propose a solution, next steps, an estimated time commitment, and send you a tailored quote.",
+        processStartTitle: "Getting started and payment terms",
+        processStartCopy: "Once you approve the proposal, we'll get to work. One-off consultations and new projects require a 50% advance payment. For ongoing collaborations, I invoice for the actual time worked at the end of each month.",
+        referencesEyebrow: "A good word goes a long way",
+        referencesTitle: "What clients say",
+        referencesIntro: "A few words from the people I've worked alongside.",
+        quoteKamila: "Marketing and PR in the nonprofit sector, particularly when focused on LGBTQ+ issues, is no easy task. One day you're dealing with threats on social media, the next with crisis communications in the press. Zuzana handled these situations with confidence and, given the nature of our work, with exceptional sensitivity.",
+        quotePetr: "I worked with Zuzana as Vice-Chair and Chair of the Czech Chamber of Architects. Thanks to her dedication, expertise, and friendly communication, we succeeded in raising public awareness of the purpose and value of architecture. The number of architectural competitions grew by an incredible 400% over several years.",
+        quoteAuthorOne: "Ing. arch. Petr Lešek, Ph.D.<span class=\"quote-role\">Authorized architect · member of the Czech Chamber of Architects</span>",
+        quoteAuthorTwo: "Kamila Fröhlichová<span class=\"quote-role\">Director, Prague Pride Festival</span>",
+        resultsEyebrow: "Experience that adds up",
+        resultsTitle: "A few things I'm proud of",
+        resultsIntro: "A track record shaped by journalism, PR, and work with people who care about what they put into the world.",
+        resultOneNumber: "13 years",
+        resultOneTitle: "In PR and marketing",
+        resultOneCopy: "Experience in communications, campaigns, brand building, and crisis PR.",
+        resultTwoNumber: "7 years",
+        resultTwoTitle: "In the media",
+        resultTwoCopy: "A journalist's perspective on what makes a story clear and worth sharing.",
+        resultThreeNumber: "85%",
+        resultThreeTitle: "Average audience attendance",
+        resultThreeCopy: "At the cultural events I promote.",
+        resultFourNumber: "500+",
+        resultFourTitle: "Media placements",
+        resultFourCopy: "Per year.",
+        resultFiveNumber: "20+",
+        resultFiveTitle: "Clients and projects",
+        resultFiveCopy: "Short- and long-term collaborations.",
+        resultSixNumber: "38,000+",
+        resultSixTitle: "Theatre and cinema audiences",
+        resultSixCopy: "In 2025.",
+        contactEyebrow: "Get in touch",
+        contactTitle: "Have a good feeling<br>about <em>what's next?</em>",
+        contactCopy: "Tell me what you're working on, what feels stuck, or what you're excited to try. We'll take it from there.",
+        contactCta: "Tell me about it",
+        emailLink: "Email",
+        phoneAria: "Call Zuzana Hošková",
+        linkedinLink: "LinkedIn",
+        companyIdLabel: "Company ID",
+        registeredAddressLabel: "Registered address"
+      },
+      cs: {
+        title: "Zuzana Hošková — Nejsem agentura",
+        ogTitle: "Externí CMO Zuzana Hošková | Marketing a PR",
+        description: "Externí marketingová ředitelka a CMO Zuzana Hošková pomáhá malým firmám, osobním značkám, kultuře a nezisku se strategií a PR.",
+        ogDescription: "Nejsem agentura. Jsem Zuzana, váš externí CMO.",
+        ogLocale: "cs_CZ",
+        brandCaption: "FRACTIONAL CMO<br>DIRECTION<br>STRATEGY",
+        navLabel: "Hlavní navigace",
+        languageLabel: "Zvolte jazyk",
+        navAbout: "Kdo je Zuzana?",
+        navApproach: "Služby",
+        navWork: "Case studies",
+        navReferences: "Reference",
+        navContact: "Kontakt",
+        heroEyebrow: "Externí marketingová ředitelka na míru. Přesně v rozsahu, který potřebujete.",
+        heroTitle: "Nejsem agentura.<br>Jsem Zuzana, váš<br><em>externí CMO.</em>",
+        heroCopy: "Máte specialisty, ale chybí vám směr? Zastřeším váš marketing a PR strategicky — bez nákladů na agenturu, zato s 20 lety praxe v médiích, kultuře a nezisku. Sjednotím tým, nastavím procesy a nastartuji růst vaší značky.",
+        heroCta: "Pojďme posunout váš projekt",
+        availability: "Nezávislá CMO · Osobně zodpovědná za váš růst",
+        heroImageAlt: "Portrét Zuzany Hoškové",
+        aboutImageAlt: "Zuzana Hošková, externí marketingová ředitelka",
+        practiceImageAlt: "Článek v časopise a publikace Zuzany Hoškové",
+        photoNote: "Zuzana Hošková · Strategická posila pro váš tým",
+        proofLabel: "Vybrané značky, se kterými jsem spolupracovala",
+        clientBrands: "Vybrané spolupráce: Dekkadancers, Má vlast, Příběh orloje, festival Prague Pride, Jatka78, Česká komora architektů, Česká cena za architekturu, Fotograf Zone, BWT Books, Lonely production, Marianne a časopis HOME",
+        proofIntro: "Značky, se kterými jsem spolupracovala",
+        workEyebrow: "Vybrané projekty",
+        workTitle: "Case studies",
+        workIntro: "Dva projekty, každý s vlastním příběhem, publikem a komunikační výzvou.",
+        caseOneArt: "Dekkadancers a Lži, které muži říkají",
+        caseOnePhotoAlt: "Tanečník pokrytý růžovou barvou drží malířský váleček",
+        caseOneTag: "Premiéra · Dekkadancers",
+        caseOneTitle: "Lži, které muži říkají",
+        caseOneCopy: "Kompletní zastřešení marketingu a PR.",
+        caseOneMeta: "Case study · Detail projektu doplníme",
+        caseTwoArt: "Má vlast",
+        caseTwoPhotoAlt: "Ilustrace jezdců na koních mezi stromy",
+        caseTwoTag: "Public relations · multižánrový projekt",
+        caseTwoTitle: "Má vlast",
+        caseTwoCopy: "Public relations pro koprodukční divadelní projekt Má vlast.",
+        caseTwoMeta: "Case study · Detail projektu doplníme",
+        aboutEyebrow: "Něco o mně",
+        aboutTitle: "Kdo je Zuzana?",
+        aboutStoryOne: "Jmenuji se Zuzana Hošková. Celý můj profesní život je spojený s uměním, designem, architekturou a společensky odpovědným sektorem. Vystudovala jsem Dějiny a teorii designu a nových médií na UMPRUM. Kurátorka ani kunsthistorička se ze mě však nikdy nestala — více mě totiž bavilo tato témata popularizovat a hledat cesty, jak je dostat k veřejnosti. Sedm let jsem působila v médiích a psala o architektuře, designu, módě i postavení žen ve společnosti.",
+        aboutStoryTwo: "Naučila jsem se prosadit i složitá témata do masmédií, budovala kontakty v novinářské sféře a postupně zamířila do oblasti public relations. V roce 2013 jsem se stala tiskovou mluvčí České komory architektů, kde jsem popularizovala profesi architekta, prosazovala architektonické soutěže a bojovala za záchranu významných kulturních památek. Stála jsem rovněž u zrodu České ceny za architekturu.",
+        aboutStoryThree: "Posledních 10 let působím na volné noze. Vedla jsem marketing a PR v divadle Jatka78, u tanečního souboru DEKKADANCERS, ve Fotograf Zone i na festivalu Prague Pride. V médiích jsem zviditelňovala velké divadelní projekty (jako <em>Má vlast</em> či <em>Příběh orloje</em>) i autorské filmové počiny.",
+        aboutStoryFour: "Baví mě být u zrodu nových projektů, ale i naskakovat do těch rozběhnutých, evaluovat je a posouvat dál. Zatímco v práci mám ráda jasný směr, strategii a cíl, ve volném čase je s radostí nechávám za sebou. V zimě mě tak nejčastěji potkáte na sólových cestách po jihovýchodní Asii — často zcela bez plánu a s malým batohem.",
+        approachEyebrow: "Můj přístup",
+        approachStoryThree: "Značky tvoří příběhy. Pojďme napsat ten váš.",
+        approachTitle: "Externí CMO: marketingová strategie pro malé firmy, osobní značky, kulturu a nezisk",
+        approachIntro: "Jako externí CMO zajišťuji marketingové vedení a strategii pro malé firmy, osobní značky, kulturní projekty a neziskové organizace. Pomáhám nastavit směr, sladit tým a vybrat takové marketingové aktivity, které dávají smysl vašim cílům i rozpočtu. Součástí mé práce může být také PR strategie a komunikace s médii.",
+        areaCmoCopy: "Toto prostředí znám jako své boty. Nebudu vám doporučovat nesmyslně velké rozpočty na kampaně ani placené nástroje, které dnes bez problému nahradí AI. Umím pracovat i s malými rozpočty, protože vím, že nejdůležitější je správná strategie, elegantní procesy a roky budované kontakty. Značky jsem budovala i s ročními marketingovými rozpočty v řádech nižších desítek tisíc korun. Nezahrnu vás hromadou marketingových pojmů a postupů, vyberu to, co bude fungovat přesně pro vás.",
+        areaConsultingTitle: "Marketingové konzultace a školení",
+        areaConsultingCopy: "Nemáte rozpočet na člověka pro marketing a všechno leží na vašich bedrech? Se správným nasměrováním a určením priorit přestanete zbytečně pálit energii i peníze. Nebo máte social media manažera a online specialistu, ale chybí vám hlubší strategie? Do práce vašeho týmu vnesu ucelený pohled na vaši značku a odhalím slabá místa i dřímající potenciál.",
+        areaAuditTitle: "Audit marketingu a nastavení procesů",
+        areaAuditCopy: "Ve veřejném prostoru fungujete už nějakou dobu, ale cítíte, že chcete značku posunout? Topíte se ve spoustě agendy a nevíte, kde je zakopaný pes? Místo přijetí dalšího člověka do týmu se na chvíli společně zastavíme, rozebereme vaše silné i slabé stránky a řekneme si, proč některé procesy nefungují a jak nastavit kompetence v týmu.",
+        areaCreativeTitle: "Kreativní vedení marketingových kampaní",
+        areaCreativeCopy: "Chystáte nový projekt a nevíte, kde s marketingem začít? Vymyslím kompletní strategii od focení vizuálu a přípravy traileru a videí přes nastavení správného tone of voice ve vašem copy až po doporučení pro obsah na sociálních sítích. Navrhnu komplexní harmonogram, aby na sebe jednotlivé kroky navazovaly a dávaly smysl.",
+        areaPrTitle: "PR strategie a public relations",
+        areaPrCopy: "Šlape vám marketing, ale chybí vám viditelnost v médiích? Navrhnu komplexní PR strategii, připravím text tiskové zprávy i neprůstřelný press kit a postarám se o jejich distribuci těm správným novinářům. Jako bývalá novinářka vím, jak uchopit i méně masové téma, jak ho zpracovat a komu ho nabídnout. Já zůstávám v pozadí, vy jste vidět.",
+        areaCultureTitle: "Propojte svůj brand s kulturou",
+        areaCultureCopy: "Jste zástupcem komerční firmy a hledáte smysluplné spojení s kulturou, uměním nebo společensky prospěšnými projekty? Ozvěte se mi. Navrhuji partnerství a bartery na míru, které nekončí jen u loga na plakátu — mají skutečný přesah, přirozeně zapadnou do vaší komunikace a budou bavit obě strany i vaše publikum.",
+        areaResultTitle: "A výsledek?",
+        areaResultCopy: "Extrémně profesionální, srozumitelná práce přesně zacílená na vaši cílovou skupinu.",
+        practiceTitle: "Jak pracuji, co dělám a co už ne?",
+        practiceExternal: "<strong>Jsem externistka, ne interní zaměstnanec.</strong> Pracuji výhradně externě v předem domluveném rozsahu a čase. Většinou pracuji z Prahy, někdy i z jiného časového pásma.",
+        practiceLead: "<strong>Zastřešuji marketing komplexně.</strong> Vyznám se ve všech oblastech marketingu, protože je to nezbytné pro moji práci a ucelený pohled. Nepovažuji se ale za specialistku ve všech širokých marketingových disciplínách. Například „neklikám“ PPC kampaně. Pomohu vám však zorientovat se v nich a zjistit, proč nefungují. Propojím vás s experty, kteří vás v oblasti PPC zaškolí nebo správu kampaní převezmou.",
+        practiceSocial: "<strong>Určuji strategii sociálních sítí, nejsem ale jejich správkyně.</strong> Působím jako strategická partnerka vedle vašeho social media manažera — přináším nápady a podněty, řeším scénáře Reels a držím celkový směr.",
+        processTitle: "Jak bude spolupráce probíhat?",
+        processMeetingTitle: "Úvodní schůzka",
+        processMeetingCopy: "Na úvodním setkání si řekneme vzájemnou představu a priority vašeho projektu.",
+        processProposalTitle: "Návrh řešení a nabídka",
+        processProposalCopy: "Navrhnu konkrétní řešení a další kroky, odhadnu časovou dotaci a zašlu vám cenovou nabídku na míru.",
+        processStartTitle: "Start spolupráce a platební podmínky",
+        processStartCopy: "Po odsouhlasení nabídky se s plnou energií pustíme do práce. U jednorázových konzultací a nových zakázek požaduji úhradu 50% zálohy předem. Při dlouhodobé spolupráci vyúčtovávám reálně odpracovaný čas zpětně za uplynulý měsíc.",
+        referencesEyebrow: "Důvěra se buduje spoluprací",
+        referencesTitle: "Co říkají klienti",
+        referencesIntro: "Pár slov od lidí, se kterými jsem spolupracovala.",
+        quoteKamila: "Marketing a PR v neziskovém sektoru se zaměřením na LGBTQ+ problematiku není lehká disciplína. Jeden den řešíte výhružky na sociálních sítích a druhý den krizovou komunikaci v médiích. Zuzana se v těchto situacích pohybovala sebejistě a vzhledem k tématu, které zastupujeme, i nanejvýš citlivě.",
+        quotePetr: "Se Zuzanou jsem spolupracoval jako místopředseda a předseda České komory architektů. Díky jejímu nasazení, erudici a přátelské komunikaci se podařilo zvýšit povědomí veřejnosti o smyslu a přínosnosti architektury. Počet architektonických soutěží za několik let neuvěřitelně vzrostl o 400 %.",
+        quoteAuthorOne: "Ing. arch. Petr Lešek, Ph.D.<span class=\"quote-role\">Autorizovaný architekt · člen České komory architektů</span>",
+        quoteAuthorTwo: "Kamila Fröhlichová<span class=\"quote-role\">Ředitelka Prague Pride festivalu</span>",
+        resultsEyebrow: "Zkušenosti, které se počítají",
+        resultsTitle: "Na co jsem hrdá",
+        resultsIntro: "Zkušenosti z médií, PR a spolupráce s lidmi, kterým záleží na tom, co přinášejí světu.",
+        resultOneNumber: "13 let",
+        resultOneTitle: "V PR a marketingu",
+        resultOneCopy: "Zkušenosti s komunikací, kampaněmi a budováním značek i krizovým PR.",
+        resultTwoNumber: "7 let",
+        resultTwoTitle: "V médiích",
+        resultTwoCopy: "Novinářský pohled na to, co dělá příběh srozumitelným a zajímavým.",
+        resultThreeNumber: "85%",
+        resultThreeTitle: "Průměrná návštěvnost",
+        resultThreeCopy: "Kulturních akcí, které propaguji.",
+        resultFourNumber: "500+",
+        resultFourTitle: "Mediálních výstupů",
+        resultFourCopy: "Za rok.",
+        resultFiveNumber: "20+",
+        resultFiveTitle: "Klientů a projektů",
+        resultFiveCopy: "Krátkodobé i dlouhodobé spolupráce.",
+        resultSixNumber: "38 000+",
+        resultSixTitle: "Diváků v divadlech a kinech",
+        resultSixCopy: "Za rok 2025.",
+        contactEyebrow: "Kontakt",
+        contactTitle: "Těšíte se na to,<br><em>co přijde dál?</em>",
+        contactCopy: "Napište mi, na čem pracujete, co vás brzdí nebo co chcete zkusit. Společně najdeme další krok.",
+        contactCta: "Napište mi",
+        emailLink: "E-mail",
+        phoneAria: "Zavolat Zuzaně Hoškové",
+        linkedinLink: "LinkedIn",
+        companyIdLabel: "IČO",
+        registeredAddressLabel: "Sídlo"
+      }
+    };
+
+    const languageButtons = document.querySelectorAll("[data-language]");
+    const contactLink = document.querySelector(".contact-action");
+    const setLanguage = (language) => {
+      const copy = translations[language];
+      document.documentElement.lang = language;
+      document.title = copy.title;
+      document.querySelector('meta[name="description"]').content = copy.description;
+      document.querySelector('meta[property="og:description"]').content = copy.ogDescription;
+      document.querySelector('meta[property="og:title"]').content = copy.ogTitle;
+      document.querySelector('meta[property="og:locale"]').content = copy.ogLocale;
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        element.innerHTML = copy[element.dataset.i18n];
+      });
+      document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+        element.alt = copy[element.dataset.i18nAlt];
+      });
+      document.querySelectorAll("[data-i18n-aria]").forEach((element) => {
+        element.setAttribute("aria-label", copy[element.dataset.i18nAria]);
+      });
+      contactLink.href = language === "cs"
+        ? "mailto:zuzana@notanagency.cz?subject=Pojdme%20probrat%20spolupraci%20externi%20CMO"
+        : "mailto:zuzana@notanagency.cz?subject=Let's%20talk%20about%20fractional%20CMO%20support";
+      languageButtons.forEach((button) => {
+        button.setAttribute("aria-pressed", String(button.dataset.language === language));
+      });
+    };
+
+    languageButtons.forEach((button) => {
+      button.addEventListener("click", () => setLanguage(button.dataset.language));
+    });
+
+    setLanguage("cs");
+  </script>
+</body>
+</html>
