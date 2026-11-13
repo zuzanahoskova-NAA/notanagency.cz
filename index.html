@@ -252,11 +252,26 @@
     .proof-ticker-separator { color: #e9c9d4; font-size: 18px; }
     .proof-ticker:hover .proof-ticker-track, .proof-ticker:focus-within .proof-ticker-track { animation-play-state: paused; }
     @keyframes proof-scroll { to { transform: translateX(-50%); } }
-    .proof-label { display: block; margin-bottom: 19px; color: var(--muted); font-size: 9px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
-    .proof-logos { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: center; gap: 20px 28px; color: var(--ink); }
-    .client-logo { display: flex; min-height: 62px; align-items: center; justify-content: center; color: var(--ink); text-align: center; text-decoration: none; }
-    .client-logo:focus-visible { outline: 2px solid var(--rose); outline-offset: 5px; }
-    .client-logo img { width: auto; max-width: min(100%, 150px); max-height: 42px; object-fit: contain; filter: brightness(0); }
+    .proof-label { display: block; margin-bottom: 23px; color: var(--muted); font-size: 9px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+    .proof-logos { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-template-rows: repeat(6, minmax(36px, auto)); align-items: stretch; gap: 18px 14px; color: var(--ink); }
+    .client-logo { display: flex; min-width: 0; min-height: 76px; align-items: center; justify-content: center; padding: 14px; border: 1px solid var(--line); background: #fffdfa; color: var(--ink); text-align: center; text-decoration: none; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease; }
+    .client-logo:nth-child(4n + 2), .client-logo:nth-child(4n + 3) { background: var(--soft); }
+    .client-logo:hover { z-index: 1; transform: translateY(-4px) rotate(0deg) !important; border-color: #c9a9b7; box-shadow: 0 12px 24px rgb(36 33 38 / 9%); }
+    .client-logo:focus-visible { outline: 2px solid var(--rose); outline-offset: 3px; }
+    .client-logo img { width: auto; max-width: min(100%, 150px); max-height: 42px; object-fit: contain; filter: brightness(0); transition: transform .25s ease; }
+    .client-logo:hover img { transform: scale(1.04); }
+    .client-logo-dekka { grid-area: 1 / 1 / span 2 / span 3; transform: rotate(-1deg); }
+    .client-logo-mavlast { grid-area: 1 / 4 / span 2 / span 2; transform: rotate(1deg); }
+    .client-logo-story { grid-area: 1 / 6 / span 2 / span 3; transform: rotate(-.6deg); }
+    .client-logo-pride { grid-area: 1 / 9 / span 2 / span 4; transform: rotate(.7deg); }
+    .client-logo-jatka { grid-area: 3 / 1 / span 2 / span 2; transform: rotate(.8deg); }
+    .client-logo-cka { grid-area: 3 / 3 / span 2 / span 4; transform: rotate(-.5deg); }
+    .client-logo-award { grid-area: 3 / 7 / span 2 / span 3; transform: rotate(.6deg); }
+    .client-logo-fotograf { grid-area: 3 / 10 / span 2 / span 3; transform: rotate(-.8deg); }
+    .client-logo-bwt { grid-area: 5 / 1 / span 2 / span 3; transform: rotate(.6deg); }
+    .client-logo-lonely { grid-area: 5 / 4 / span 2 / span 3; transform: rotate(-.7deg); }
+    .client-logo-marianne { grid-area: 5 / 7 / span 2 / span 3; transform: rotate(.5deg); }
+    .client-logo-home { grid-area: 5 / 10 / span 2 / span 3; transform: rotate(-.5deg); }
     .client-logo-dekka img { max-height: 42px; filter: grayscale(1); }
     .client-logo-cka img { width: min(260px, 100%); max-width: min(100%, 260px); max-height: 34px; }
     .client-logo-award img { width: min(220px, 100%); max-width: min(100%, 220px); max-height: 40px; filter: none; }
@@ -382,8 +397,6 @@
     .contact-name { margin: 0 0 2px; font-size: 15px; }
     .contact-invoice { margin: 4px 0 0; color: var(--muted); font-size: 11px; font-weight: 400; line-height: 1.7; }
     .contact-invoice + .contact-invoice { margin-top: -7px; }
-    .contact-action-group { display: flex; flex: 0 0 auto; align-items: flex-start; gap: 24px; }
-    .contact-action { flex: 0 0 auto; }
     .contact-brand { gap: 9px; }
     .contact-brand .brand-mark { font-size: clamp(20px, 2.2vw, 25px); }
     .contact-brand .brand-caption { font-size: 7px; }
@@ -423,7 +436,9 @@
       .hero-copy { max-width: 470px; }
       .portrait-wrap { width: min(83%, 410px); margin: 0 auto; }
       .proof-ticker { padding: 16px 0; }
-      .proof-logos { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px 20px; }
+      .proof-logos { grid-template-columns: repeat(6, minmax(0, 1fr)); grid-template-rows: none; grid-auto-rows: minmax(82px, auto); gap: 14px 12px; }
+      .client-logo { grid-area: auto !important; grid-column: span 2; min-height: 78px; transform: none !important; }
+      .client-logo-cka, .client-logo-award { grid-column: span 3; }
       .process-list { grid-template-columns: 1fr; gap: 34px; }
       .process-list li:not(:last-child)::after { top: auto; right: 50%; bottom: -30px; transform: translateX(50%); content: "↓"; }
       .about-section { padding: 72px 0; }
@@ -436,7 +451,6 @@
       .result-card:nth-child(n) { grid-column: auto; }
       .approach { padding: 68px 0; }
       .contact { align-items: flex-start; flex-direction: column; padding: 40px 20px; }
-      .contact-action-group { width: 100%; align-items: flex-start; justify-content: space-between; gap: 16px; }
       .contact-brand { gap: 7px; }
       .contact-brand .brand-mark { font-size: 20px; }
       .contact-brand .brand-caption { padding-left: 6px; font-size: 6px; }
@@ -453,7 +467,11 @@
       .about-copy h2 { margin-bottom: 20px; }
       .about-copy p { font-size: 13px; }
       .project-image { aspect-ratio: 1.35; }
-      .proof-logos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+      .proof-logos { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: minmax(78px, auto); gap: 12px 9px; }
+      .client-logo { grid-area: auto !important; grid-column: span 1; min-height: 78px; padding: 10px; }
+      .client-logo-cka, .client-logo-award { grid-column: span 2; }
+      .client-logo-dekka img { max-width: 125px; }
+      .client-logo-cka img, .client-logo-award img, .client-logo-fotograf img { max-width: min(100%, 190px); }
       .approach-story { margin: 30px 0 36px; padding: 8px 0 16px; font-size: clamp(32px, 9vw, 48px); }
       .service-grid { grid-template-columns: 1fr; }
       .service-card { min-height: 0; padding: 24px 0 22px 42px; }
@@ -760,13 +778,10 @@
           <p class="contact-invoice"><span data-i18n="registeredAddressLabel">Registered address</span>: Praha – Vinohrady, Kouřimská 2351/12, 130 00 Praha 3</p>
         </div>
       </div>
-      <div class="contact-action-group">
-        <a class="brand contact-brand" href="#" aria-label="Not an Agency home" data-i18n-aria="homeLabel">
-          <span class="brand-mark" aria-hidden="true"><span><b>not</b> an</span><strong>agency</strong></span>
-          <span class="brand-caption">FRACTIONAL CMO<br>DIRECTION<br>STRATEGY</span>
-        </a>
-        <a class="button contact-action" href="mailto:zuzana@notanagency.cz?subject=Let's%20talk%20about%20fractional%20CMO%20support"><span data-i18n="contactCta">Tell me about it</span> <span aria-hidden="true">↗</span></a>
-      </div>
+      <a class="brand contact-brand" href="#" aria-label="Not an Agency home" data-i18n-aria="homeLabel">
+        <span class="brand-mark" aria-hidden="true"><span><b>not</b> an</span><strong>agency</strong></span>
+        <span class="brand-caption">FRACTIONAL CMO<br>DIRECTION<br>STRATEGY</span>
+      </a>
     </section>
   </main>
 
@@ -922,7 +937,6 @@
         contactEyebrow: "Get in touch",
         contactTitle: "Have a good feeling<br>about <em>what's next?</em>",
         contactCopy: "Tell me what you're working on, what feels stuck, or what you're excited to try. We'll take it from there.",
-        contactCta: "Tell me about it",
         emailLink: "Email",
         phoneAria: "Call Zuzana Hošková",
         linkedinLink: "LinkedIn",
@@ -1054,7 +1068,6 @@
         contactEyebrow: "Kontakt",
         contactTitle: "Těšíte se na to,<br><em>co přijde dál?</em>",
         contactCopy: "Napište mi, na čem pracujete, co vás brzdí nebo co chcete zkusit. Společně najdeme další krok.",
-        contactCta: "Napište mi",
         emailLink: "E-mail",
         phoneAria: "Zavolat Zuzaně Hoškové",
         linkedinLink: "LinkedIn",
@@ -1070,7 +1083,6 @@
     const contactFab = document.querySelector(".contact-fab");
     const contactFabToggle = document.querySelector(".contact-fab-toggle");
     const contactMethods = document.querySelector(".contact-methods");
-    const contactLink = document.querySelector(".contact-action");
     const heroSection = document.querySelector(".hero");
     const contactSection = document.querySelector("#contact");
     if ("IntersectionObserver" in window) {
@@ -1148,9 +1160,6 @@
       document.querySelectorAll("[data-i18n-aria]").forEach((element) => {
         element.setAttribute("aria-label", copy[element.dataset.i18nAria]);
       });
-      contactLink.href = language === "cs"
-        ? "mailto:zuzana@notanagency.cz?subject=Pojdme%20probrat%20spolupraci%20externi%20CMO"
-        : "mailto:zuzana@notanagency.cz?subject=Let's%20talk%20about%20fractional%20CMO%20support";
       languageButtons.forEach((button) => {
         button.setAttribute("aria-pressed", String(button.dataset.language === language));
       });
