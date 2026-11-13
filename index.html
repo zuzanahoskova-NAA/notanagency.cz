@@ -413,11 +413,16 @@
     .contact-details { display: grid; justify-items: start; gap: 9px; margin-top: 18px; font-size: 13px; font-weight: 600; }
     .contact-details a:hover { color: var(--rose); }
     .contact-name { margin: 0 0 2px; font-size: 15px; }
-    .contact-invoice { margin: 4px 0 0; color: var(--muted); font-size: 11px; font-weight: 400; line-height: 1.7; }
-    .contact-invoice + .contact-invoice { margin-top: -7px; }
+    .contact-brand-group { display: grid; justify-items: start; gap: 17px; flex: 0 0 auto; }
     .contact-brand { gap: 9px; }
     .contact-brand .brand-mark { font-size: clamp(20px, 2.2vw, 25px); }
     .contact-brand .brand-caption { font-size: 7px; }
+    .contact-meta { display: grid; gap: 5px; color: var(--muted); font-size: 11px; line-height: 1.65; }
+    .contact-meta p { margin: 0; }
+    .contact-linkedin { display: inline-flex; min-height: 43px; align-items: center; gap: 9px; padding: 0 14px; border: 1px solid var(--ink); border-radius: 3px; background: var(--ink); color: var(--paper); font-size: 12px; font-weight: 700; transition: background .2s ease, box-shadow .2s ease, transform .2s ease; }
+    .contact-linkedin:hover { transform: translateY(-2px); background: #3a353d; box-shadow: 0 6px 16px rgb(36 33 38 / 20%); }
+    .contact-linkedin:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+    .contact-linkedin svg { width: 18px; height: 18px; flex: 0 0 auto; }
     .footer {
       display: flex;
       align-items: center;
@@ -472,6 +477,8 @@
       .contact-brand { gap: 7px; }
       .contact-brand .brand-mark { font-size: 20px; }
       .contact-brand .brand-caption { padding-left: 6px; font-size: 6px; }
+      .contact-brand-group { width: 100%; gap: 14px; }
+      .contact-meta { max-width: 100%; }
       .contact-fab { right: 16px; bottom: max(16px, env(safe-area-inset-bottom)); }
       .contact-fab-toggle { min-height: 48px; padding: 0 16px; font-size: 12px; }
       .contact-methods { min-width: 210px; }
@@ -791,15 +798,22 @@
           <strong class="contact-name">Zuzana Hošková</strong>
           <a href="mailto:zuzana@notanagency.cz">zuzana@notanagency.cz</a>
           <a href="tel:+420608427516" data-i18n-aria="phoneAria" aria-label="Call Zuzana Hošková">+420 608 427 516</a>
-          <a href="https://www.linkedin.com/in/iamnotanagency/" target="_blank" rel="noreferrer"><span data-i18n="linkedinLink">LinkedIn</span> ↗</a>
-          <p class="contact-invoice"><span data-i18n="companyIdLabel">Company ID</span>: 02768232</p>
-          <p class="contact-invoice"><span data-i18n="registeredAddressLabel">Registered address</span>: Praha – Vinohrady, Kouřimská 2351/12, 130 00 Praha 3</p>
         </div>
       </div>
-      <a class="brand contact-brand" href="#" aria-label="Not an Agency home" data-i18n-aria="homeLabel">
-        <span class="brand-mark" aria-hidden="true"><span><b>not</b> an</span><strong>agency</strong></span>
-        <span class="brand-caption">FRACTIONAL CMO<br>DIRECTION<br>STRATEGY</span>
-      </a>
+      <div class="contact-brand-group">
+        <a class="brand contact-brand" href="#" aria-label="Not an Agency home" data-i18n-aria="homeLabel">
+          <span class="brand-mark" aria-hidden="true"><span><b>not</b> an</span><strong>agency</strong></span>
+          <span class="brand-caption">FRACTIONAL CMO<br>DIRECTION<br>STRATEGY</span>
+        </a>
+        <a class="contact-linkedin" href="https://www.linkedin.com/in/iamnotanagency/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn — Zuzana Hošková" data-i18n-aria="linkedinAria">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.2 3.5a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6ZM3.7 8.5h3v11h-3v-11Zm5 0h2.9V10h.1a3.2 3.2 0 0 1 2.9-1.7c3.1 0 3.7 2 3.7 4.6v6.6h-3v-5.8c0-1.4 0-3.1-1.9-3.1s-2.2 1.5-2.2 3v5.9h-3v-11Z"></path></svg>
+          <span data-i18n="linkedinLink">LinkedIn</span><span aria-hidden="true">↗</span>
+        </a>
+        <div class="contact-meta">
+          <p><span data-i18n="companyIdLabel">Company ID</span>: 02768232</p>
+          <p><span data-i18n="registeredAddressLabel">Registered address</span>: <span data-i18n="registeredAddressValue">Praha – Vinohrady, Kouřimská 2351/12, 130 00 Praha 3</span></p>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -958,8 +972,10 @@
         emailLink: "Email",
         phoneAria: "Call Zuzana Hošková",
         linkedinLink: "LinkedIn",
+        linkedinAria: "Open Zuzana Hošková's LinkedIn profile",
         companyIdLabel: "Company ID",
-        registeredAddressLabel: "Registered address"
+        registeredAddressLabel: "Registered address",
+        registeredAddressValue: "Kouřimská 2351/12, Vinohrady, 130 00 Prague 3"
       },
       cs: {
         title: "Zuzana Hošková — Nejsem agentura",
@@ -1089,8 +1105,10 @@
         emailLink: "E-mail",
         phoneAria: "Zavolat Zuzaně Hoškové",
         linkedinLink: "LinkedIn",
+        linkedinAria: "Otevřít profil Zuzany Hoškové na LinkedIn",
         companyIdLabel: "IČO",
-        registeredAddressLabel: "Sídlo"
+        registeredAddressLabel: "Sídlo",
+        registeredAddressValue: "Praha – Vinohrady, Kouřimská 2351/12, 130 00 Praha 3"
       }
     };
 
