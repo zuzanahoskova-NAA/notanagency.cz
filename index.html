@@ -137,6 +137,16 @@
     .language-button { padding: 6px 5px; border: 0; background: transparent; color: #777b72; font: inherit; font-size: 10px; font-weight: 700; cursor: pointer; }
     .language-button[aria-pressed="true"] { color: var(--ink); }
     .language-button:hover { color: var(--ink); }
+    .contact-fab { position: fixed; right: 24px; bottom: max(24px, env(safe-area-inset-bottom)); z-index: 120; display: grid; justify-items: end; gap: 12px; }
+    .contact-fab-toggle { display: inline-flex; min-height: 52px; align-items: center; gap: 10px; padding: 0 19px; border: 0; border-radius: 999px; background: var(--rose); box-shadow: 0 8px 26px rgb(36 33 38 / 20%); color: white; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; transition: background .2s ease, transform .2s ease; }
+    .contact-fab-toggle:hover { transform: translateY(-2px); background: var(--ink); }
+    .contact-fab-toggle:focus-visible, .contact-method:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+    .contact-fab-toggle svg { width: 18px; height: 18px; flex: 0 0 auto; }
+    .contact-methods { display: grid; min-width: 220px; gap: 4px; padding: 8px; border: 1px solid var(--line); background: var(--paper); box-shadow: 0 12px 32px rgb(36 33 38 / 16%); }
+    .contact-methods[hidden] { display: none; }
+    .contact-method { display: flex; min-height: 48px; align-items: center; gap: 12px; padding: 0 12px; color: var(--ink); font-size: 13px; font-weight: 600; transition: color .2s ease, background .2s ease; }
+    .contact-method:hover { background: var(--soft); color: var(--rose); }
+    .contact-method svg { width: 20px; height: 20px; flex: 0 0 auto; color: var(--rose); }
 
     .hero {
       display: grid;
@@ -429,6 +439,9 @@
       .contact-brand { gap: 7px; }
       .contact-brand .brand-mark { font-size: 20px; }
       .contact-brand .brand-caption { padding-left: 6px; font-size: 6px; }
+      .contact-fab { right: 16px; bottom: max(16px, env(safe-area-inset-bottom)); }
+      .contact-fab-toggle { min-height: 48px; padding: 0 16px; font-size: 12px; }
+      .contact-methods { min-width: 210px; }
     }
     @media (max-width: 480px) {
       .wrap { width: calc(100% - 36px); }
@@ -756,6 +769,27 @@
     </section>
   </main>
 
+  <div class="contact-fab">
+    <div class="contact-methods" id="contact-methods" role="group" aria-label="Možnosti kontaktu" data-i18n-aria="contactOptionsLabel" hidden>
+      <a class="contact-method" href="mailto:zuzana@notanagency.cz">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>
+        <span data-i18n="contactEmail">E-mail</span>
+      </a>
+      <a class="contact-method" href="https://wa.me/420608427516" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-4.4A8.4 8.4 0 1 1 20 11.5Z"></path><path d="M8.8 8.4c.2-.5.5-.5.8-.5h.5c.2 0 .4.1.5.4l.7 1.7c.1.2 0 .4-.1.6l-.5.6c-.2.2-.2.4 0 .6.5.8 1.2 1.5 2 1.9.2.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.6.8c.3.1.4.3.4.5 0 .4-.2 1-.6 1.3-.4.4-1.1.6-1.8.5-1-.1-2.2-.7-3.5-1.8-1-.9-1.8-2.1-2.1-3.1-.3-1 .1-2 .4-2.5Z"></path></svg>
+        <span data-i18n="contactWhatsApp">WhatsApp</span>
+      </a>
+      <a class="contact-method" href="https://www.linkedin.com/in/iamnotanagency/" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.2 3.5a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6ZM3.7 8.5h3v11h-3v-11Zm5 0h2.9V10h.1a3.2 3.2 0 0 1 2.9-1.7c3.1 0 3.7 2 3.7 4.6v6.6h-3v-5.8c0-1.4 0-3.1-1.9-3.1s-2.2 1.5-2.2 3v5.9h-3v-11Z"></path></svg>
+        <span data-i18n="contactLinkedIn">LinkedIn</span>
+      </a>
+    </div>
+    <button class="contact-fab-toggle" type="button" aria-expanded="false" aria-controls="contact-methods" aria-label="Kontaktovat Zuzanu" data-i18n-aria="contactFabLabel">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-4.4A8.4 8.4 0 1 1 21 11.5Z"></path><path d="M8.5 12h7"></path><path d="M12 8.5v7"></path></svg>
+      <span data-i18n="contactFabLabel">Kontaktovat Zuzanu</span>
+    </button>
+  </div>
+
   <footer class="footer wrap">
     <span>© 2026 Zuzana Hošková · notanagency.cz</span>
   </footer>
@@ -772,6 +806,11 @@
         navLabel: "Main navigation",
         menuOpenLabel: "Open menu",
         menuCloseLabel: "Close menu",
+        contactFabLabel: "Contact Zuzana",
+        contactOptionsLabel: "Contact options",
+        contactEmail: "Email",
+        contactWhatsApp: "WhatsApp",
+        contactLinkedIn: "LinkedIn",
         languageLabel: "Choose language",
         homeLabel: "Not an Agency home",
         navAbout: "About Zuzana",
@@ -900,6 +939,11 @@
         navLabel: "Hlavní navigace",
         menuOpenLabel: "Otevřít menu",
         menuCloseLabel: "Zavřít menu",
+        contactFabLabel: "Kontaktovat Zuzanu",
+        contactOptionsLabel: "Možnosti kontaktu",
+        contactEmail: "E-mail",
+        contactWhatsApp: "WhatsApp",
+        contactLinkedIn: "LinkedIn",
         languageLabel: "Zvolte jazyk",
         homeLabel: "Domů — Not an Agency",
         navAbout: "Kdo je Zuzana?",
@@ -1022,7 +1066,25 @@
     const nav = document.querySelector(".nav");
     const navToggle = document.querySelector(".nav-toggle");
     const navMenu = document.querySelector(".nav-menu");
+    const contactFab = document.querySelector(".contact-fab");
+    const contactFabToggle = document.querySelector(".contact-fab-toggle");
+    const contactMethods = document.querySelector(".contact-methods");
     const contactLink = document.querySelector(".contact-action");
+    const closeContactMethods = () => {
+      contactMethods.hidden = true;
+      contactFabToggle.setAttribute("aria-expanded", "false");
+    };
+    contactFabToggle.addEventListener("click", () => {
+      const isExpanded = contactFabToggle.getAttribute("aria-expanded") === "true";
+      contactFabToggle.setAttribute("aria-expanded", String(!isExpanded));
+      contactMethods.hidden = isExpanded;
+    });
+    contactMethods.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeContactMethods);
+    });
+    document.addEventListener("click", (event) => {
+      if (!contactFab.contains(event.target)) closeContactMethods();
+    });
     const closeMenu = () => {
       nav.classList.remove("is-open");
       navToggle.setAttribute("aria-expanded", "false");
@@ -1041,6 +1103,10 @@
       if (event.key === "Escape" && nav.classList.contains("is-open")) {
         closeMenu();
         navToggle.focus();
+      }
+      if (event.key === "Escape" && !contactMethods.hidden) {
+        closeContactMethods();
+        contactFabToggle.focus();
       }
     });
     const setLanguage = (language) => {
@@ -1076,6 +1142,7 @@
       button.addEventListener("click", () => {
         setLanguage(button.dataset.language);
         closeMenu();
+        closeContactMethods();
       });
     });
 
