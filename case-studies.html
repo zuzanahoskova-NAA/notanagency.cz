@@ -127,7 +127,7 @@
     .fact-item dt { color: var(--muted); }
     .fact-item dd { margin: 0; font-weight: 600; }
     .credit-list { display: grid; gap: 5px; margin: 14px 0 0; padding: 0; color: var(--muted); font-size: 10px; line-height: 1.5; list-style: none; }
-    .credit-list strong { color: var(--ink); }
+    .credit-list strong { color: var(--ink); font-weight: 700; }
     .campaign-quotes { display: grid; gap: 9px; margin: 10px 0 0; padding: 0; color: var(--berry); font-family: var(--serif); font-size: 17px; font-style: italic; line-height: 1.3; list-style: none; }
     .audio-player { display: grid; gap: 9px; margin-top: 10px; }
     .audio-caption { color: var(--berry); font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
@@ -151,6 +151,19 @@
     .collage-press { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 16px; padding: 27px 38px; }
     .collage-press .collage-card { padding: 7px; }
     .collage-press .collage-card img { object-fit: contain; }
+    .spread-visual.media-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 13px; padding: 25px; background: #c3ad56; }
+    .spread-visual.media-grid--three .media-card:nth-child(3) { grid-column: 1 / -1; width: 100%; max-width: calc((100% - 13px) / 2); justify-self: center; }
+    .media-card { position: relative; display: flex; min-width: 0; flex-direction: column; justify-content: space-between; gap: 8px; padding: 14px; border: 1px solid rgb(36 33 38 / 15%); background: #fffdfa; color: var(--ink); transition: transform .2s, box-shadow .2s; }
+    .media-card:hover { box-shadow: 0 12px 30px rgb(36 33 38 / 18%); transform: translateY(-3px); }
+    .media-card:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+    .media-card:not(a) { cursor: default; }
+    .spread-visual.media-grid .media-thumbnail { position: static; display: block; width: 100%; height: clamp(70px, 10cqw, 110px); flex: 0 0 auto; object-fit: contain; object-position: center; background: #fffdfa; }
+    .media-outlet { color: var(--berry); font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .media-headline { max-width: 300px; margin: auto 0; font-family: var(--serif); font-size: clamp(15px, 2cqw, 23px); font-weight: 500; letter-spacing: -.035em; line-height: 1.12; }
+    .media-open { align-self: flex-end; color: var(--berry); font-size: 18px; line-height: 1; }
+    .spread-visual.project-logo { display: flex; align-items: center; justify-content: center; padding: 48px; background: #c3ad56; }
+    .spread-visual.project-logo img { position: static; display: block; width: min(88%, 410px); max-height: 100%; height: auto; margin: auto; object-fit: contain; }
+    .spread-visual.project-logo .visual-index { color: rgb(36 33 38 / 62%); }
     .spread-visual.collage .visual-index { z-index: 2; right: 15px; bottom: 12px; padding: 5px 7px; border-radius: 999px; background: var(--paper); }
     .book-navigation { position: absolute; z-index: 4; top: 50%; right: 12px; left: 12px; display: flex; justify-content: space-between; transform: translateY(-50%); pointer-events: none; }
     .book-arrow { display: grid; width: 46px; height: 46px; place-items: center; border: 1px solid rgb(255 253 250 / 75%); border-radius: 50%; background: rgb(255 253 250 / 92%); box-shadow: 0 4px 16px rgb(36 33 38 / 16%); color: var(--ink); font-size: 22px; transition: background .2s, color .2s, opacity .2s; pointer-events: auto; }
@@ -209,6 +222,12 @@
       .radio-title { font-size: clamp(18px, 5.4cqw, 25px); }
       .spread-visual.collage { min-height: 0; aspect-ratio: 1.05; gap: 9px; padding: 15px; }
       .spread-visual.collage-confessional { height: auto; }
+      .spread-visual.media-grid { min-height: 600px; aspect-ratio: auto; gap: 9px; padding: 15px; grid-template-rows: none; grid-auto-rows: minmax(0, 1fr); }
+      .media-card { gap: 7px; padding: 9px; }
+      .spread-visual.media-grid .media-thumbnail { height: clamp(46px, 16cqw, 62px); }
+      .media-outlet { font-size: 8px; }
+      .media-headline { font-size: clamp(12px, 4.2cqw, 16px); }
+      .media-open { font-size: 15px; }
       .collage-card { padding: 5px; }
       .collage-card figcaption { padding-top: 4px; font-size: 8px; }
       .collage-press { padding: 14px 20px; }
@@ -285,7 +304,7 @@
           <div class="case-info">
             <div>
               <p class="case-category">Má vlast</p>
-              <p class="case-summary" data-cz="Public relations pro koprodukční divadelní projekt." data-en="Public relations for a co-produced theatre project.">Public relations pro koprodukční divadelní projekt.</p>
+              <p class="case-summary" data-cz="PR pro koprodukční projekt s více než 250 mediálními výstupy." data-en="PR for a co-produced project with 250+ media features.">PR pro koprodukční projekt s více než 250 mediálními výstupy.</p>
             </div>
             <span class="case-open" aria-hidden="true">↗</span>
           </div>
@@ -443,35 +462,99 @@
         name: "Má vlast",
         title: { cs: "Má vlast", en: "Má vlast" },
         image: "assets/ma-vlast-illustration.jpg",
+        logo: "assets/ma-vlast.svg",
+        logoAlt: { cs: "Logo Má vlast", en: "Má vlast logo" },
         theme: "gold",
         pages: [
           {
             chapter: { cs: "01 / Titulní strana", en: "01 / Cover" },
             heading: { cs: "Má vlast", en: "Má vlast" },
-            lead: { cs: "Public relations pro koprodukční divadelní projekt.", en: "Public relations for a co-produced theatre project." },
-            body: { cs: "Úvodní strana pracuje s ilustrací projektu jako s přirozenou obálkou jeho příběhu.", en: "The opening page uses the project's illustration as a natural cover for its story." },
-            image: true
+            lead: { cs: "Koprodukční projekt České filharmonie, Divadla bratří Formanů a DEKKADANCERS.", en: "A co-production by the Czech Philharmonic, the Forman Brothers' Theatre, and DEKKADANCERS." },
+            body: { cs: "Public relations provázelo zrod, přípravu i výsledek multižánrového projektu.", en: "Public relations followed the project's creation, production, and premiere." },
+            image: true,
+            visualAlt: { cs: "Ilustrace k inscenaci Má vlast s krajinou, stromy a jezdci", en: "Illustration for Má vlast featuring a landscape, trees, and riders" }
           },
           {
-            chapter: { cs: "02 / Kontext", en: "02 / Context" },
-            heading: { cs: "Příběh, který<br>si najde publikum.", en: "A story finding<br>its audience." },
-            lead: { cs: "Kulturní projekt s vlastním světem a publikem.", en: "A cultural project with its own world and audience." },
-            body: { cs: "Tato kapitola může přiblížit výchozí situaci, zapojené partnery a komunikační příležitosti.", en: "This chapter can introduce the starting point, partners, and communication opportunities." },
-            image: true
+            chapter: { cs: "02 / Kampaň", en: "02 / The campaign" },
+            heading: { cs: "Od prvních příprav<br>k premiéře.", en: "From first rehearsals<br>to opening night." },
+            lead: { cs: "Kampaň odstartovala v listopadu 2024. Premiéra se konala 12. 6. 2025.", en: "The campaign launched in November 2024. The premiere took place on 12 June 2025." },
+            body: { cs: "Cílem bylo průběžně komunikovat zrod, přípravu i výsledek multižánrového projektu, přinášet rozhovory s tvůrci a zasáhnout masmédia.", en: "The goal was to tell the story of the multi-genre production from its creation and preparation through to the premiere, with interviews with its creators and broad mainstream media reach." },
+            facts: [
+              { label: { cs: "Vstupenky v prodeji", en: "Tickets on sale" }, value: { cs: "13 750", en: "13,750" } },
+              { label: { cs: "Mediální výstupy", en: "Media features" }, value: { cs: "250+", en: "250+" } },
+              { label: { cs: "Start kampaně", en: "Campaign launch" }, value: { cs: "Listopad 2024", en: "November 2024" } },
+              { label: { cs: "Premiéra", en: "Premiere" }, value: { cs: "12. 6. 2025", en: "12 June 2025" } }
+            ],
+            projectLogo: true
           },
           {
-            chapter: { cs: "03 / Public relations", en: "03 / Public relations" },
-            heading: { cs: "Najít správná<br>slova i cestu.", en: "Finding the right<br>story and route." },
-            lead: { cs: "Public relations pro koprodukční divadelní projekt.", en: "Public relations for a co-produced theatre project." },
-            body: { cs: "Samostatná kapitola pro přiblížení PR přístupu, práce s příběhem a komunikace s médii.", en: "A dedicated chapter for the PR approach, storytelling, and media relations." },
+            chapter: { cs: "03 / Tým", en: "03 / The team" },
+            heading: { cs: "Lidé za<br>projektem.", en: "The people<br>behind the project." },
+            lead: { cs: "Česká filharmonie, Divadlo bratří Formanů a DEKKADANCERS spojili síly v multižánrové inscenaci.", en: "The Czech Philharmonic, the Forman Brothers' Theatre, and DEKKADANCERS joined forces on a multi-genre production." },
+            body: { cs: "Na komunikaci projektu spolupracoval tým složený z šéfky marketingu, manažerky sociálních sítí a online specialistky. Moje role byla v public relations – zajišťování mediálních výstupů.", en: "The project communications team comprised the head of marketing, social media manager, and online specialist. My role was in public relations, securing media coverage." },
+            credits: [
+              { role: { cs: "Autoři", en: "Creators" }, name: "Bedřich Smetana, Matěj Forman, Marko Ivanović, Janek Jirků, Štěpán Pechar, Andrea Sodomková" },
+              { role: { cs: "Ilustrace", en: "Illustration" }, name: "Magdalena Rutová" },
+              { role: { cs: "Typografie", en: "Typography" }, name: "Jan Čumlivski" },
+              { role: { cs: "Producent", en: "Producer" }, name: "Štěpán Kubišta, Kniha džunglí" },
+              { role: { cs: "Head of marketing", en: "Head of Marketing" }, name: "Lenka Čápová" },
+              { role: { cs: "Public relations", en: "Public Relations" }, name: "Zuzana Hošková" },
+              { role: { cs: "Social media manager", en: "Social Media Manager" }, name: "Anna Reisigová" },
+              { role: { cs: "Online specialista", en: "Online specialist" }, name: "Téra Bártová" }
+            ],
+            image: false,
+            projectLogo: true
+          },
+          {
+            chapter: { cs: "04 / Rozhlas a televize", en: "04 / Radio & TV" },
+            heading: { cs: "Zprávy, rozhovory,<br>živé vstupy.", en: "News, interviews,<br>live appearances." },
+            lead: { cs: "Více než 250 mediálních výstupů.", en: "More than 250 media features." },
+            body: { cs: "Televizní reportáže, rozhovory s tvůrci i živé vstupy přenesly příběh Má vlast k širokému publiku.", en: "TV reports, interviews with the creators, and live appearances brought the story of Má vlast to a wide audience." },
+            mediaLinks: [
+              { href: "https://tn.nova.cz/video/4950-zive-vstupy-a-rozhovory/569108-na-prazske-vystaviste-se-vraci-predstaveni-ma-vlast-divaky-ceka-kolaz-vsech-moznych-radosti", src: "assets/ma-vlast-press-tn-live.png", alt: { cs: "Ukázka živého vstupu TN Live o představení Má vlast", en: "Screenshot of a TN Live segment about Má vlast" }, outlet: "TN Nova · TN Live", title: { cs: "Má vlast se vrací na pražské Výstaviště", en: "Má vlast returns to Prague Exhibition Grounds" } },
+              { href: "https://tn.nova.cz/zpravodajstvi/clanek/612692-smetanovu-mou-vlast-ceka-unikatni-divadelni-ztvarneni-listky-rychle-mizi", src: "assets/ma-vlast-press-tn-nova.png", alt: { cs: "Ukázka článku TN Nova o divadelním ztvárnění Mé vlasti", en: "Screenshot of a TN Nova article about the theatrical adaptation of Má vlast" }, outlet: "TN Nova", title: { cs: "Smetanovu Mou vlast čeká unikátní divadelní ztvárnění", en: "A unique theatrical adaptation of Smetana's Má vlast" } },
+              { href: "https://www.ceskatelevize.cz/porady/1148499747-sama-doma/225562220600079/", src: "assets/ma-vlast-press-sama-doma.png", alt: { cs: "Ukázka rozhovoru s tvůrci v pořadu Sama doma", en: "Screenshot of a creator interview on Sama doma" }, outlet: "Česká televize · Sama doma", title: { cs: "Rozhovor o inscenaci Má vlast", en: "An interview about the Má vlast production" } },
+              { href: "https://praha.rozhlas.cz/ma-vlast-v-sapito-azyl78-myslim-ze-se-bedrich-smetana-dobre-bavil-rika-dirigent-9489763", src: "assets/ma-vlast-press-radio-praha.png", alt: { cs: "Ukázka rozhovoru s dirigentem Markem Ivanovićem na Českém rozhlase", en: "Screenshot of an interview with conductor Marko Ivanović on Czech Radio" }, outlet: "Český rozhlas · Praha", title: { cs: "Má vlast v šapitó Azyl78: rozhovor s dirigentem", en: "Má vlast at the Azyl78 big top: an interview with the conductor" } }
+            ],
             image: false
           },
           {
-            chapter: { cs: "04 / Výsledek", en: "04 / The outcome" },
-            heading: { cs: "Co se dostalo<br>do světa?", en: "What made it<br>out into the world?" },
-            lead: { cs: "Výsledky jako závěrečná kapitola příběhu.", en: "Results as the closing chapter of the story." },
-            body: { cs: "Sem doplníme ověřitelné mediální výstupy, ohlasy nebo další konkrétní výsledky.", en: "Add verified media coverage, responses, or other concrete outcomes here." },
-            placeholder: { cs: "Konkrétní výstupy doplníme společně.", en: "Specific outcomes to be added together." },
+            chapter: { cs: "05 / Tisk a kultura", en: "05 / Press & culture" },
+            heading: { cs: "Příběh, který<br>se šířil dál.", en: "A story that<br>travelled further." },
+            lead: { cs: "Od kulturních rubrik po hlavní zpravodajství.", en: "From culture desks to the evening news." },
+            body: { cs: "Výběr dalších článků, rozhovorů a reportáží o projektu Má vlast.", en: "A selection of further articles, interviews, and reports about Má vlast." },
+            mediaLinks: [
+              { href: "https://www.ceskatelevize.cz/porady/1097206490-udalosti-v-kulture/225411000120613/", src: "assets/ma-vlast-press-ct-kultura.png", alt: { cs: "Ukázka reportáže České televize Události v kultuře", en: "Screenshot from Czech Television's Události v kultuře" }, outlet: "Česká televize · Události v kultuře", title: { cs: "Reportáž o inscenaci Má vlast", en: "A report on the Má vlast production" } },
+              { href: "https://www.idnes.cz/kultura/divadlo/jatka-78-azyl-dekkadancers-vystaviste-divadlo-bratri-formanu-ma-vlast-smetana.A250617_095251_divadlo_lysa", src: "assets/ma-vlast-press-idnes.png", alt: { cs: "Ukázka článku iDNES o inscenaci Má vlast", en: "Screenshot of an iDNES article about Má vlast" }, outlet: "iDNES.cz", title: { cs: "Bedřicha Smetanu zavedli do šapitó a přizvali loutky", en: "Smetana in a big top, with puppets joining the story" } },
+              { href: "https://art.ceskatelevize.cz/360/ma-vlast-v-azylu78-rodinna-inscenace-poklada-otazku-kdo-jsou-blanicti-rytiri-dneska-R08Ka", src: "assets/ma-vlast-press-ct-art.png", alt: { cs: "Ukázka reportáže ČT art o inscenaci Má vlast", en: "Screenshot of a ČT art report about Má vlast" }, outlet: "ČT art", title: { cs: "Kdo jsou blaničtí rytíři dneška?", en: "Who are today's Knights of Blaník?" } },
+              { src: "assets/ma-vlast-press-denik-n.jpg", alt: { cs: "Ukázka článku Deníku N o tom, jak divadelní Má vlast skládá českou národní identitu", en: "Screenshot of a Deník N feature on how the theatre production shapes Czech national identity" }, outlet: "Deník N · 30. 6. 2025", title: { cs: "Jak divadelní Má vlast skládá českou národní identitu", en: "How the theatre production of Má vlast shapes Czech national identity" } }
+            ],
+            image: false
+          },
+          {
+            chapter: { cs: "06 / Další média", en: "06 / More press" },
+            heading: { cs: "Příběh zaujal<br>i mimo kulturní rubriky.", en: "The story travelled<br>beyond culture desks." },
+            lead: { cs: "Má vlast se objevila v celostátních i městských médiích.", en: "Má vlast featured in national and local media." },
+            body: { cs: "Další výběr článků o inscenaci a jejích tvůrcích.", en: "More coverage of the production and its creators." },
+            mediaLinks: [
+              { href: "https://magazin.aktualne.cz/kultura/film/kultura-film-serial-hudba-divadlo-vystava/r~81e8e17c47a811f0bb77ac1f6b220ee8/v~sl:05dcfc315385e0304c72cc73b2b36d86/", src: "assets/ma-vlast-press-aktualne.png", alt: { cs: "Ukázka článku Aktuálně.cz Smetana není out o nové show Má vlast", en: "Screenshot of the Aktuálně.cz article Smetana Isn't Out about the new Má vlast show" }, outlet: "Aktuálně.cz", title: { cs: "Kultura: příběh inscenace Má vlast", en: "Culture: the story of Má vlast" } },
+              { href: "https://www.denik.cz/kultura/ma-vlast-show-divadlo-bratri-formani-ceska-filharmonie/", src: "assets/ma-vlast-press-denik.png", alt: { cs: "Ukázka článku Deník.cz Kulturní tipy s fotografií inscenace Má vlast", en: "Screenshot of a Deník.cz culture picks article featuring the Má vlast production" }, outlet: "Deník.cz", title: { cs: "Česká filharmonie a bratři Formanovi uvádějí Má vlast", en: "The Czech Philharmonic and the Forman Brothers present Má vlast" } },
+              { src: "assets/ma-vlast-press-blesk.png", alt: { cs: "Výstřižek článku Blesku o inscenaci Má vlast s Matějem Formanem", en: "Blesk clipping about Má vlast with Matěj Forman" }, outlet: "Blesk", title: { cs: "Má vlast s Formanem", en: "Má vlast with Forman" } },
+              { src: "assets/ma-vlast-press-hobulet.jpg", alt: { cs: "Dvoustánkový článek časopisu Hobulet o inscenaci Má vlast", en: "Two-page Hobulet article about Má vlast" }, outlet: "Hobulet · červen 2025", title: { cs: "Potěcha pro uši, ale i pro oči", en: "A treat for the ears and the eyes" } }
+            ],
+            image: false
+          },
+          {
+            chapter: { cs: "07 / Recenze a reflexe", en: "07 / Reviews & features" },
+            heading: { cs: "Klasika<br>v novém světle.", en: "A classic<br>in a new light." },
+            lead: { cs: "Také kulturní média přinesla vlastní pohled na Má vlast.", en: "Culture publications offered their own perspectives on Má vlast." },
+            body: { cs: "Články a recenze doplnily mediální obraz projektu.", en: "Features and reviews added further perspectives on the production." },
+            mediaLinks: [
+              { src: "assets/ma-vlast-press-reflex.jpg", alt: { cs: "Článek časopisu Reflex Klasika, jak ji neznáte", en: "Reflex feature Klasika, jak ji neznáte (A classic like you've never known it)" }, outlet: "Reflex · 26. 6. 2025", title: { cs: "Klasika, jak ji neznáte", en: "A classic like you've never known it" } },
+              { src: "assets/ma-vlast-press-metro.png", alt: { cs: "Článek deníku Metro Má vlast se poprvé představí jako divadlo", en: "Metro article Má vlast to make its debut as theatre" }, outlet: "Metro · 29. 11. 2024", title: { cs: "Má vlast se poprvé představí jako divadlo", en: "Má vlast to make its debut as theatre" } },
+              { src: "assets/ma-vlast-press-vlasta-matej-forman.png", alt: { cs: "Rozhovor s Matějem Formanem v časopise Vlasta", en: "Interview with Matěj Forman in Vlasta magazine" }, outlet: "Vlasta · 2. 7. 2025", title: { cs: "Vyprávět příběh", en: "Telling a story" } },
+              { src: "assets/ma-vlast-press-loutkar-ma-vlast.png", alt: { cs: "Článek časopisu Loutkář Má vlast v loutkovém hávu", en: "Loutkář article Má vlast in puppet garb" }, outlet: "Loutkář · 11. 11. 2025", title: { cs: "Má vlast v loutkovém hávu", en: "Má vlast in puppet garb" } }
+            ],
             image: false
           }
         ]
@@ -535,7 +618,24 @@
               : `<figure class="collage-card"><img src="${visual.src}" alt="${visual.alt[language]}"><figcaption>${visual.caption[language]}</figcaption></figure>`).join("")}
             <span class="visual-index">${String(activePage + 1).padStart(2, "0")} / ${String(project.pages.length).padStart(2, "0")}</span>
           </div>`
-        : page.radioVisual
+        : page.mediaLinks
+          ? `<div class="spread-visual media-grid${page.mediaLinks.length === 3 ? " media-grid--three" : ""}">
+              ${page.mediaLinks.map((item) => `${item.href
+                ? `<a class="media-card" href="${item.href}" target="_blank" rel="noopener noreferrer" aria-label="${item.outlet}: ${item.title[language]}">`
+                : '<div class="media-card">'}
+                ${item.src ? `<img class="media-thumbnail" src="${item.src}" alt="${item.alt[language]}">` : ""}
+                <span class="media-outlet">${item.outlet}</span>
+                <span class="media-headline">${item.title[language]}</span>
+                ${item.href ? '<span class="media-open" aria-hidden="true">↗</span>' : ""}
+              ${item.href ? "</a>" : "</div>"}`).join("")}
+              <span class="visual-index">${String(activePage + 1).padStart(2, "0")} / ${String(project.pages.length).padStart(2, "0")}</span>
+            </div>`
+          : page.projectLogo
+            ? `<div class="spread-visual project-logo">
+                <img src="${project.logo}" alt="${project.logoAlt[language]}">
+                <span class="visual-index">${String(activePage + 1).padStart(2, "0")} / ${String(project.pages.length).padStart(2, "0")}</span>
+              </div>`
+          : page.radioVisual
           ? `<div class="spread-visual radio">
               <div class="radio-composition">
                 <img class="radio-photo" src="${page.radioPhotos[0].src}" alt="${page.radioPhotos[0].alt[language]}">

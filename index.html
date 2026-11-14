@@ -385,11 +385,11 @@
     .project-card-copy { max-width: 480px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.75; }
     .project-meta { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--line); color: var(--muted); font-size: 10px; }
     .testimonials { padding: 80px 0; background: var(--soft); border-block: 1px solid var(--line); }
-    .quote-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-    .quote-card { display: flex; min-height: 170px; flex-direction: column; justify-content: space-between; padding: 21px; border: 1px solid var(--line); background: white; }
-    .quote-mark { color: var(--rose); font-family: Georgia, serif; font-size: 36px; line-height: .8; }
-    .quote-placeholder { margin: 18px 0 24px; color: var(--muted); font-size: 12px; line-height: 1.65; }
-    .quote-author { margin: 0; font-size: 11px; font-weight: 600; }
+    .quote-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; align-items: stretch; }
+    .quote-card { position: relative; display: flex; min-width: 0; flex-direction: column; padding: 25px 20px 20px; }
+    .quote-mark { position: absolute; top: 0; left: 10px; color: rgb(142 75 102 / 18%); font-family: Georgia, serif; font-size: 118px; line-height: .85; pointer-events: none; }
+    .quote-placeholder { position: relative; margin: 43px 0 30px; color: var(--muted); font-size: 12px; line-height: 1.75; }
+    .quote-author { margin: auto 0 0; padding-top: 15px; border-top: 1px solid var(--line); font-size: 11px; font-weight: 600; }
     .quote-role { display: block; margin-top: 4px; color: var(--muted); font-size: 10px; font-weight: 400; }
     .references-brands { margin-top: 52px; padding-top: 30px; border-top: 1px solid var(--line); }
 
@@ -478,6 +478,7 @@
       .section-heading { align-items: flex-start; flex-direction: column; gap: 14px; }
       .projects { gap: 32px; }
       .quote-grid, .result-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .quote-card:last-child:nth-child(odd) { grid-column: 1 / -1; width: min(100%, 520px); justify-self: center; }
       .result-card:nth-child(n) { grid-column: auto; }
       .approach { padding: 68px 0; }
       .contact { align-items: flex-start; flex-direction: column; padding: 40px 20px; }
@@ -513,6 +514,7 @@
       .approach-practice .approach-subtitle { font-size: clamp(28px, 8vw, 36px); }
       .process-list li { padding: 60px 20px 20px; }
       .quote-grid, .result-grid { grid-template-columns: 1fr; }
+      .quote-card:last-child:nth-child(odd) { grid-column: auto; width: auto; }
       .footer { align-items: flex-start; flex-direction: column; }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -750,6 +752,7 @@
         <div class="quote-grid">
           <article class="quote-card"><span class="quote-mark" aria-hidden="true">“</span><p class="quote-placeholder" data-i18n="quotePetr">I worked with Zuzana as Vice-Chair and Chair of the Czech Chamber of Architects. Thanks to her dedication, expertise, and friendly communication, we succeeded in raising public awareness of the purpose and value of architecture. The number of architectural competitions grew by an incredible 400% over several years.</p><p class="quote-author" data-i18n="quoteAuthorOne">Ing. arch. Petr Lešek, Ph.D.<span class="quote-role">Authorized architect · member of the Czech Chamber of Architects</span></p></article>
           <article class="quote-card"><span class="quote-mark" aria-hidden="true">“</span><p class="quote-placeholder" data-i18n="quoteKamila">Marketing and PR in the nonprofit sector, particularly when focused on LGBTQ+ issues, is no easy task. One day you're dealing with threats on social media, the next with crisis communications in the press. Zuzana handled these situations with confidence and, given the nature of our work, with exceptional sensitivity.</p><p class="quote-author" data-i18n="quoteAuthorTwo">Kamila Fröhlichová<span class="quote-role">Director, Prague Pride Festival</span></p></article>
+          <article class="quote-card"><span class="quote-mark" aria-hidden="true">“</span><p class="quote-placeholder" data-i18n="quoteKanya">We worked with Zuzana Hošková to promote our film <em>Kanya</em>, which made it all the way to the semifinals of the Student Academy Awards. For an independent film with a limited budget, getting media attention is far from easy, especially for a short film. Zuzana identified compelling angles, communicated them effectively, and brought our film to audiences we would otherwise have struggled to reach. It was clear she genuinely cared about the project. Working with her was not only professional, but also a real pleasure on a personal level.</p><p class="quote-author" data-i18n="quoteAuthorThree">Michal Sikora<span class="quote-role">Founder and film producer · Lonely production</span></p></article>
         </div>
         <div class="references-brands" aria-label="Selected collaborators" data-i18n-aria="proofLabel">
           <span class="proof-label" data-i18n="proofIntro">Selected collaborators</span>
@@ -899,7 +902,7 @@
         caseTwoPhotoAlt: "Illustration of riders on horseback among trees",
         caseTwoTag: "Public relations · Multi-genre project",
         caseTwoTitle: "Má vlast",
-        caseTwoCopy: "Public relations for the co-produced theatre project Má vlast.",
+        caseTwoCopy: "PR for a co-produced project with 250+ media features.",
         aboutEyebrow: "A little about me",
         aboutTitle: "Who is Zuzana?",
         aboutStoryOne: "My name is Zuzana Hošková. My entire professional life has been intertwined with art, design, architecture, and the social impact sector. I graduated with a degree in the History and Theory of Design and New Media from UMPRUM (Academy of Arts, Architecture and Design in Prague). I never became a curator or an art historian, though—I was more interested in making these subjects accessible and finding ways to bring them to the public. For seven years, I worked in the media, writing about architecture, design, fashion, and the role of women in society.",
@@ -951,6 +954,8 @@
         quotePetr: "I worked with Zuzana as Vice-Chair and Chair of the Czech Chamber of Architects. Thanks to her dedication, expertise, and friendly communication, we succeeded in raising public awareness of the purpose and value of architecture. The number of architectural competitions grew by an incredible 400% over several years.",
         quoteAuthorOne: "Ing. arch. Petr Lešek, Ph.D.<span class=\"quote-role\">Authorized architect · member of the Czech Chamber of Architects</span>",
         quoteAuthorTwo: "Kamila Fröhlichová<span class=\"quote-role\">Director, Prague Pride Festival</span>",
+        quoteKanya: "We worked with Zuzana Hošková to promote our film <em>Kanya</em>, which made it all the way to the semifinals of the Student Academy Awards. For an independent film with a limited budget, getting media attention is far from easy, especially for a short film. Zuzana identified compelling angles, communicated them effectively, and brought our film to audiences we would otherwise have struggled to reach. It was clear she genuinely cared about the project. Working with her was not only professional, but also a real pleasure on a personal level.",
+        quoteAuthorThree: "Michal Sikora<span class=\"quote-role\">Founder and film producer · Lonely production</span>",
         resultsEyebrow: "Experience that adds up",
         resultsTitle: "A few things I'm proud of",
         resultsIntro: "A track record shaped by journalism, PR, and work with people who care about what they put into the world.",
@@ -1032,7 +1037,7 @@
         caseTwoPhotoAlt: "Ilustrace jezdců na koních mezi stromy",
         caseTwoTag: "Public relations · multižánrový projekt",
         caseTwoTitle: "Má vlast",
-        caseTwoCopy: "Public relations pro koprodukční divadelní projekt Má vlast.",
+        caseTwoCopy: "PR pro koprodukční projekt s více než 250 mediálními výstupy.",
         aboutEyebrow: "Něco o mně",
         aboutTitle: "Kdo je Zuzana?",
         aboutStoryOne: "Jmenuji se Zuzana Hošková. Celý můj profesní život je spojený s uměním, designem, architekturou a společensky odpovědným sektorem. Vystudovala jsem Dějiny a teorii designu a nových médií na UMPRUM. Kurátorka ani kunsthistorička se ze mě však nikdy nestala — více mě totiž bavilo tato témata popularizovat a hledat cesty, jak je dostat k veřejnosti. Sedm let jsem působila v médiích a psala o architektuře, designu, módě i postavení žen ve společnosti.",
@@ -1079,10 +1084,12 @@
         referencesEyebrow: "Důvěra se buduje spoluprací",
         referencesTitle: "Co říkají klienti",
         referencesIntro: "Pár slov od lidí, se kterými jsem spolupracovala.",
-        quoteKamila: "Marketing a PR v neziskovém sektoru se zaměřením na LGBTQ+ problematiku není lehká disciplína. Jeden den řešíte výhružky na sociálních sítích a druhý den krizovou komunikaci v médiích. Zuzana se v těchto situacích pohybovala sebejistě a vzhledem k tématu, které zastupujeme, i nanejvýš citlivě.",
+        quoteKamila: "Marketing a PR v neziskovém sektoru se zaměřením na LGBTQ+ problematiku není lehká disciplína. Jeden den řešíte výhružky na sociálních sítích a druhý den krizovou komunikaci v médiích. Zuzka se v těchto situacích pohybovala sebejistě a vzhledem k tématu, které zastupujeme, i nanejvýš citlivě.",
         quotePetr: "Se Zuzanou jsem spolupracoval jako místopředseda a předseda České komory architektů. Díky jejímu nasazení, erudici a přátelské komunikaci se podařilo zvýšit povědomí veřejnosti o smyslu a přínosnosti architektury. Počet architektonických soutěží za několik let neuvěřitelně vzrostl o 400 %.",
         quoteAuthorOne: "Ing. arch. Petr Lešek, Ph.D.<span class=\"quote-role\">Autorizovaný architekt · člen České komory architektů</span>",
         quoteAuthorTwo: "Kamila Fröhlichová<span class=\"quote-role\">Ředitelka Prague Pride festivalu</span>",
+        quoteKanya: "Se Zuzkou Hoškovou jsme spolupracovali na propagaci našeho filmu <em>Kanya</em>, který se dostal až do semifinále studentských Oscarů. U nezávislého filmu s omezeným rozpočtem není vůbec jednoduché získat pozornost médií, zvlášť když jde o krátký film. Zuzka ale dokázala identifikovat zajímavá témata, dobře je odkomunikovala a dostala náš film k lidem, ke kterým bychom se jinak těžko dostávali. Bylo vidět, že jí na projektu opravdu záleží. Spolupráce s ní byla nejen profesionální, ale i lidsky moc příjemná.",
+        quoteAuthorThree: "Michal Sikora<span class=\"quote-role\">Founder a filmový producent · Lonely production</span>",
         resultsEyebrow: "Zkušenosti, které se počítají",
         resultsTitle: "Na co jsem hrdá",
         resultsIntro: "Zkušenosti z médií, PR a spolupráce s lidmi, kterým záleží na tom, co přinášejí světu.",
