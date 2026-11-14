@@ -517,6 +517,10 @@
       .quote-card:last-child:nth-child(odd) { grid-column: auto; width: auto; }
       .footer { align-items: flex-start; flex-direction: column; }
     }
+    @media (min-width: 641px) and (max-width: 760px) {
+      .quote-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+      .quote-card:last-child:nth-child(odd) { grid-column: auto; width: auto; }
+    }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
       .proof-ticker { overflow-x: auto; }
