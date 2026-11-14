@@ -368,6 +368,10 @@
     .project-art-dekka { min-height: 0; aspect-ratio: 1.55; padding: 0; background: #e9e0e5; }
     .project-art-dekka::before, .project-art-dekka::after { display: none; }
     .project-art-dekka .project-photo { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; object-fit: cover; filter: none; }
+    .project-art-link { position: absolute; z-index: 2; right: 16px; bottom: 16px; display: inline-flex; min-height: 42px; align-items: center; gap: 12px; padding: 0 15px; border: 1px solid rgb(255 255 255 / 78%); border-radius: 999px; background: var(--paper); box-shadow: 0 5px 20px rgb(36 33 38 / 18%); color: var(--ink); font-size: 11px; font-weight: 700; transition: background .2s ease, color .2s ease, transform .2s ease; }
+    .project-art-link:hover { transform: translateY(-2px); background: var(--ink); color: white; }
+    .project-art-link:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+    .project-art-link span:last-child { font-size: 17px; }
     .project-art-dekka::before { position: absolute; top: -105px; left: -80px; width: 290px; height: 290px; border: 1px solid #8e4b6666; border-radius: 50%; content: ""; }
     .project-art-mavlast { min-height: 0; aspect-ratio: 1.55; padding: 0; background: #c4a943; }
     .project-art-mavlast::after { display: none; }
@@ -380,7 +384,6 @@
     .project-card h3 { margin: 0 0 8px; font-family: var(--serif); font-size: 24px; font-weight: 600; letter-spacing: -.045em; line-height: 1.15; }
     .project-card-copy { max-width: 480px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.75; }
     .project-meta { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--line); color: var(--muted); font-size: 10px; }
-
     .testimonials { padding: 80px 0; background: var(--soft); border-block: 1px solid var(--line); }
     .quote-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
     .quote-card { display: flex; min-height: 170px; flex-direction: column; justify-content: space-between; padding: 21px; border: 1px solid var(--line); background: white; }
@@ -716,13 +719,13 @@
       </div>
       <div class="projects">
         <article class="project-card">
-          <div class="project-art project-art-dekka" aria-label="Dekkadancers and Lži, které muži říkají" data-i18n-aria="caseOneArt">
+          <div class="project-art project-art-dekka" aria-label="DEKKADANCERS and Lži, které muži říkají" data-i18n-aria="caseOneArt">
             <img class="project-photo" src="assets/lzi-ktere-muzi-rikaji.jpg" alt="Dancer covered in pink paint holding a roller" data-i18n-alt="caseOnePhotoAlt" loading="lazy">
+            <a class="project-art-link" href="case-studies.html"><span data-i18n="caseStudiesLink">Prohlédnout případové studie</span><span aria-hidden="true">↗</span></a>
           </div>
-          <p class="project-tag" data-i18n="caseOneTag">Premiéra · Dekkadancers</p>
+          <p class="project-tag" data-i18n="caseOneTag">Premiéra · DEKKADANCERS</p>
           <h3 data-i18n="caseOneTitle">Lži, které muži říkají</h3>
-          <p class="project-card-copy" data-i18n="caseOneCopy">Příprava premiéry a komunikace představení souboru Dekkadancers.</p>
-          <p class="project-meta" data-i18n="caseOneMeta">Case study · detail projektu doplníme</p>
+          <p class="project-card-copy" data-i18n="caseOneCopy">Příprava premiéry a komunikace představení souboru DEKKADANCERS.</p>
         </article>
         <article class="project-card">
           <div class="project-art project-art-mavlast" aria-label="Má vlast" data-i18n-aria="caseTwoArt">
@@ -731,7 +734,6 @@
           <p class="project-tag" data-i18n="caseTwoTag">Public relations · kultura</p>
           <h3 data-i18n="caseTwoTitle">PR k Mé vlasti</h3>
           <p class="project-card-copy" data-i18n="caseTwoCopy">Public relations pro kulturní projekt Má vlast.</p>
-          <p class="project-meta" data-i18n="caseTwoMeta">Case study · detail projektu doplníme</p>
         </article>
       </div>
     </section>
@@ -751,9 +753,9 @@
         </div>
         <div class="references-brands" aria-label="Selected collaborators" data-i18n-aria="proofLabel">
           <span class="proof-label" data-i18n="proofIntro">Selected collaborators</span>
-          <div class="proof-logos" aria-label="Dekkadancers, Má vlast, Příběh orloje, Prague Pride Festival, Jatka78, Czech Chamber of Architects, Czech Architecture Award, Fotograf Zone, BWT Books, Lonely production, Marianne, and HOME magazine" data-i18n-aria="clientBrands">
-            <a class="client-logo client-logo-dekka" href="https://dekkadancers.cz/" target="_blank" rel="noreferrer" aria-label="Dekkadancers website">
-              <img src="assets/dekkadancers.svg" alt="Dekkadancers logo" loading="lazy">
+          <div class="proof-logos" aria-label="DEKKADANCERS, Má vlast, Příběh orloje, Prague Pride Festival, Jatka78, Czech Chamber of Architects, Czech Architecture Award, Fotograf Zone, BWT Books, Lonely production, Marianne, and HOME magazine" data-i18n-aria="clientBrands">
+            <a class="client-logo client-logo-dekka" href="https://dekkadancers.cz/" target="_blank" rel="noreferrer" aria-label="DEKKADANCERS website">
+              <img src="assets/dekkadancers.svg" alt="DEKKADANCERS logo" loading="lazy">
             </a>
             <a class="client-logo client-logo-mavlast" href="https://www.mavlast.cz/" target="_blank" rel="noreferrer" aria-label="Má vlast website">
               <img src="assets/ma-vlast.svg" alt="Má vlast logo" loading="lazy">
@@ -882,23 +884,22 @@
         practiceImageAlt: "A magazine feature and a publication by Zuzana Hošková",
         photoNote: "Zuzana Hošková · Strategic support for your team",
         proofLabel: "Selected client brands",
-        clientBrands: "Selected collaborators: Dekkadancers, Má vlast, Příběh orloje, Prague Pride Festival, Jatka78, Czech Chamber of Architects, Czech Architecture Award, Fotograf Zone, BWT Books, Lonely production, Marianne, and HOME magazine",
+        clientBrands: "Selected collaborators: DEKKADANCERS, Má vlast, Příběh orloje, Prague Pride Festival, Jatka78, Czech Chamber of Architects, Czech Architecture Award, Fotograf Zone, BWT Books, Lonely production, Marianne, and HOME magazine",
         proofIntro: "Selected collaborators",
         workEyebrow: "Selected work",
         workTitle: "Case studies",
         workIntro: "Two projects, each with its own story, audience, and communication challenge.",
-        caseOneArt: "Dekkadancers and The Lies Men Tell",
+        caseStudiesLink: "Explore the case studies",
+        caseOneArt: "DEKKADANCERS and The Lies Men Tell",
         caseOnePhotoAlt: "Dancer covered in pink paint holding a roller",
-        caseOneTag: "Premiere · Dekkadancers",
+        caseOneTag: "Premiere · DEKKADANCERS",
         caseOneTitle: "Lži, které muži říkají",
         caseOneCopy: "Complete marketing and PR leadership.",
-        caseOneMeta: "Case study · Project details to follow",
         caseTwoArt: "Má vlast",
         caseTwoPhotoAlt: "Illustration of riders on horseback among trees",
         caseTwoTag: "Public relations · Multi-genre project",
         caseTwoTitle: "Má vlast",
         caseTwoCopy: "Public relations for the co-produced theatre project Má vlast.",
-        caseTwoMeta: "Case study · Project details to follow",
         aboutEyebrow: "A little about me",
         aboutTitle: "Who is Zuzana?",
         aboutStoryOne: "My name is Zuzana Hošková. My entire professional life has been intertwined with art, design, architecture, and the social impact sector. I graduated with a degree in the History and Theory of Design and New Media from UMPRUM (Academy of Arts, Architecture and Design in Prague). I never became a curator or an art historian, though—I was more interested in making these subjects accessible and finding ways to bring them to the public. For seven years, I worked in the media, writing about architecture, design, fashion, and the role of women in society.",
@@ -1016,23 +1017,22 @@
         practiceImageAlt: "Článek v časopise a publikace Zuzany Hoškové",
         photoNote: "Zuzana Hošková · Strategická posila pro váš tým",
         proofLabel: "Vybrané značky, se kterými jsem spolupracovala",
-        clientBrands: "Vybrané spolupráce: Dekkadancers, Má vlast, Příběh orloje, festival Prague Pride, Jatka78, Česká komora architektů, Česká cena za architekturu, Fotograf Zone, BWT Books, Lonely production, Marianne a časopis HOME",
+        clientBrands: "Vybrané spolupráce: DEKKADANCERS, Má vlast, Příběh orloje, festival Prague Pride, Jatka78, Česká komora architektů, Česká cena za architekturu, Fotograf Zone, BWT Books, Lonely production, Marianne a časopis HOME",
         proofIntro: "Značky, se kterými jsem spolupracovala",
         workEyebrow: "Vybrané projekty",
         workTitle: "Case studies",
         workIntro: "Dva projekty, každý s vlastním příběhem, publikem a komunikační výzvou.",
-        caseOneArt: "Dekkadancers a Lži, které muži říkají",
+        caseStudiesLink: "Prohlédnout případové studie",
+        caseOneArt: "DEKKADANCERS a Lži, které muži říkají",
         caseOnePhotoAlt: "Tanečník pokrytý růžovou barvou drží malířský váleček",
-        caseOneTag: "Premiéra · Dekkadancers",
+        caseOneTag: "Premiéra · DEKKADANCERS",
         caseOneTitle: "Lži, které muži říkají",
         caseOneCopy: "Kompletní zastřešení marketingu a PR.",
-        caseOneMeta: "Case study · Detail projektu doplníme",
         caseTwoArt: "Má vlast",
         caseTwoPhotoAlt: "Ilustrace jezdců na koních mezi stromy",
         caseTwoTag: "Public relations · multižánrový projekt",
         caseTwoTitle: "Má vlast",
         caseTwoCopy: "Public relations pro koprodukční divadelní projekt Má vlast.",
-        caseTwoMeta: "Case study · Detail projektu doplníme",
         aboutEyebrow: "Něco o mně",
         aboutTitle: "Kdo je Zuzana?",
         aboutStoryOne: "Jmenuji se Zuzana Hošková. Celý můj profesní život je spojený s uměním, designem, architekturou a společensky odpovědným sektorem. Vystudovala jsem Dějiny a teorii designu a nových médií na UMPRUM. Kurátorka ani kunsthistorička se ze mě však nikdy nestala — více mě totiž bavilo tato témata popularizovat a hledat cesty, jak je dostat k veřejnosti. Sedm let jsem působila v médiích a psala o architektuře, designu, módě i postavení žen ve společnosti.",
@@ -1239,4 +1239,35 @@
 
       const countUp = (element, delay, language) => {
         const target = Number(element.dataset.countTo);
-        const finalText = element.textCon
+        const finalText = element.textContent.trim();
+        const suffix = finalText.replace(/[\d,.\s]+/g, "");
+        const numberFormat = new Intl.NumberFormat(language === "cs" ? "cs-CZ" : "en-US");
+        const duration = 900;
+
+        window.setTimeout(() => {
+          const startTime = performance.now();
+          const animate = (timestamp) => {
+            const progress = Math.min((timestamp - startTime) / duration, 1);
+            const easedProgress = 1 - (1 - progress) ** 3;
+            element.textContent = `${numberFormat.format(Math.round(target * easedProgress))}${suffix}`;
+            if (progress < 1) requestAnimationFrame(animate);
+            else element.textContent = finalText;
+          };
+          requestAnimationFrame(animate);
+        }, delay);
+      };
+
+      const resultsObserver = new IntersectionObserver((entries, observer) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+        resultGrid.classList.add("is-visible");
+        resultCards.forEach((card, index) => {
+          const number = card.querySelector(".result-number");
+          if (number) countUp(number, index * 100, document.documentElement.lang);
+        });
+        observer.disconnect();
+      }, { threshold: 0.2 });
+      resultsObserver.observe(resultGrid);
+    }
+  </script>
+</body>
+</html>

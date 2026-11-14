@@ -4,7 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f9f6f0">
-  <title>Case studies — návrh | Not an Agency</title>
+  <meta name="description" content="Případové studie Zuzany Hoškové: marketing, public relations a příběhy projektů v kultuře.">
+  <link rel="canonical" href="https://notanagency.cz/case-studies.html">
+  <meta property="og:title" content="Case studies | Not an Agency">
+  <meta property="og:description" content="Příběhy projektů, marketingu a public relations Zuzany Hoškové.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://notanagency.cz/case-studies.html">
+  <title>Case studies | Not an Agency</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
@@ -60,7 +66,7 @@
     .case-card:nth-child(2) .cover { min-height: 325px; }
     .cover::after { position: absolute; z-index: -1; inset: 30% 0 0; background: linear-gradient(transparent, rgb(29 24 29 / 74%)); content: ""; }
     .cover img { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .7s cubic-bezier(.2,.7,.2,1); }
-    .case-card:first-child .cover img { object-position: center 26%; }
+    .case-card:first-child .cover img { object-position: center top; }
     .case-card:nth-child(2) .cover img { object-position: center 54%; }
     .case-card:hover .cover img, .case-card:focus-visible .cover img { transform: scale(1.035); }
     .cover-index { position: absolute; top: 22px; left: 23px; display: grid; width: 43px; height: 43px; place-items: center; border: 1px solid rgb(255 255 255 / 55%); border-radius: 50%; color: white; font-size: 11px; }
@@ -89,15 +95,23 @@
     .spread-visual { position: relative; min-height: 550px; overflow: hidden; background: var(--soft); }
     .spread-visual img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; object-position: center 22%; }
     .spread-visual.campaign-photo { padding: 22px; background: var(--campaign-pink); }
-    .spread-visual.campaign-photo img { inset: 22px; width: calc(100% - 44px); height: calc(100% - 44px); object-position: center 24%; }
-    .spread-visual.tone { display: grid; place-items: center; padding: 40px; background: var(--berry); color: white; }
+    .spread-visual.campaign-photo img { inset: 22px; width: calc(100% - 44px); height: calc(100% - 44px); object-position: center top; }
+    .spread-visual.tone { display: grid; place-items: center; padding: 40px; background: var(--berry); color: white; container-type: inline-size; }
     .spread-visual.tone.berry { background: var(--campaign-pink); color: var(--ink); }
     .spread-visual.tone.gold { background: #c3ad56; color: var(--ink); }
+    .spread-visual.radio { display: grid; place-items: center; padding: 32px; background: #ff67c4; color: var(--ink); container-type: inline-size; }
+    .radio-composition { display: grid; width: 100%; grid-template-columns: minmax(0, .9fr) minmax(0, 1fr) minmax(0, .9fr); align-items: center; gap: 12px; }
+    .spread-visual.radio .radio-photo { position: static; display: block; width: 100%; height: clamp(230px, 48cqw, 340px); object-fit: cover; }
+    .radio-lockup { display: grid; justify-items: center; gap: 16px; text-align: center; }
+    .radio-icon { width: clamp(86px, 20cqw, 125px); overflow: visible; }
+    .radio-icon path, .radio-icon rect, .radio-icon line { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 3; }
+    .radio-title { margin: 0; font-family: var(--sans); font-size: clamp(27px, 5.5cqw, 43px); font-weight: 700; letter-spacing: -.075em; line-height: .96; }
+    .radio-title em { display: block; margin-top: 5px; font-family: var(--serif); font-size: .84em; font-weight: 500; letter-spacing: -.055em; }
     .spread-visual.statement { place-items: center; padding: clamp(32px, 5vw, 68px); background: var(--campaign-pink); color: var(--ink); }
     .statement-quote { max-width: 470px; font-family: var(--sans); font-size: clamp(47px, 7vw, 91px); font-weight: 700; letter-spacing: -.09em; line-height: .87; text-align: center; }
     .statement-quote span { display: block; color: white; font-family: var(--serif); font-size: .68em; font-style: italic; font-weight: 500; letter-spacing: -.06em; }
     .statement-quote small { display: block; margin-top: 23px; color: rgb(36 33 38 / 66%); font-family: var(--sans); font-size: 9px; font-style: normal; font-weight: 700; letter-spacing: .16em; }
-    .visual-word { max-width: 450px; font-family: var(--serif); font-size: clamp(45px, 7vw, 94px); font-weight: 500; letter-spacing: -.08em; line-height: .9; text-align: center; }
+    .visual-word { width: 100%; max-width: 450px; font-family: var(--serif); font-size: clamp(24px, 8cqw, 76px); font-weight: 500; letter-spacing: -.08em; line-height: .9; overflow-wrap: anywhere; text-align: center; }
     .visual-index { position: absolute; right: 23px; bottom: 20px; color: rgb(255 255 255 / 75%); font-size: 10px; letter-spacing: .12em; }
     .spread-visual.tone.berry .visual-index { color: rgb(36 33 38 / 62%); }
     .spread-visual.statement .visual-index, .spread-visual.editorial .visual-index, .spread-visual.collage .visual-index { color: rgb(36 33 38 / 62%); }
@@ -118,29 +132,37 @@
     .audio-player { display: grid; gap: 9px; margin-top: 10px; }
     .audio-caption { color: var(--berry); font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
     .audio-player audio { display: block; width: 100%; max-width: 440px; }
-    .spread-visual.editorial { padding: 20px; background: var(--campaign-pink); }
+    .spread-visual.editorial { padding: 20px; background: #ff67c4; }
     .spread-visual.editorial img { inset: 20px; width: calc(100% - 40px); height: calc(100% - 40px); object-fit: contain; object-position: center; }
     .spread-visual.collage { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); align-content: center; gap: 14px; padding: 26px; background: var(--campaign-pink); }
     .collage-card { display: flex; min-width: 0; min-height: 0; flex-direction: column; margin: 0; padding: 8px; overflow: hidden; background: #fffdfa; box-shadow: 0 9px 24px rgb(36 33 38 / 17%); }
     .collage-card img { position: static; display: block; width: 100%; min-height: 0; flex: 1; object-fit: contain; background: var(--soft); }
-    .collage-card figcaption { padding-top: 6px; color: var(--muted); font-size: 9px; font-weight: 600; line-height: 1.3; }
+    .collage-card figcaption, .collage-caption { padding-top: 6px; color: var(--muted); font-size: 9px; font-weight: 600; line-height: 1.3; }
+    .collage-card[href] { color: inherit; transition: transform .2s, box-shadow .2s; }
+    .collage-card[href]:hover { box-shadow: 0 12px 30px rgb(36 33 38 / 24%); transform: translateY(-3px); }
+    .collage-card[href]:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+    .collage-card[href] .collage-caption::after { color: var(--berry); content: " ↗"; }
     .collage-social .collage-card:first-child { grid-row: span 2; }
     .collage-social .collage-card img, .collage-confessional .collage-card img { object-fit: cover; }
     .collage-social .collage-card img, .collage-confessional .collage-card:first-child img { object-fit: contain; }
     .collage-confessional { grid-template-columns: .9fr 1.1fr; }
     .spread-visual.collage-confessional { height: min(650px, calc(100vh - 210px)); }
     .collage-confessional .collage-card:nth-child(3) { grid-column: 1 / -1; }
-    .collage-press { grid-template-columns: 1fr; grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 16px; padding: 27px 38px; }
+    .collage-press { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 16px; padding: 27px 38px; }
     .collage-press .collage-card { padding: 7px; }
     .collage-press .collage-card img { object-fit: contain; }
     .spread-visual.collage .visual-index { z-index: 2; right: 15px; bottom: 12px; padding: 5px 7px; border-radius: 999px; background: var(--paper); }
+    .book-navigation { position: absolute; z-index: 4; top: 50%; right: 12px; left: 12px; display: flex; justify-content: space-between; transform: translateY(-50%); pointer-events: none; }
+    .book-arrow { display: grid; width: 46px; height: 46px; place-items: center; border: 1px solid rgb(255 253 250 / 75%); border-radius: 50%; background: rgb(255 253 250 / 92%); box-shadow: 0 4px 16px rgb(36 33 38 / 16%); color: var(--ink); font-size: 22px; transition: background .2s, color .2s, opacity .2s; pointer-events: auto; }
+    .book-arrow:hover:not(:disabled) { background: var(--ink); color: white; }
+    .book-arrow:focus-visible { outline: 3px solid var(--berry); outline-offset: 3px; }
+    .book-arrow:disabled { opacity: .35; cursor: not-allowed; }
     .result-placeholder { display: grid; min-height: 135px; align-content: center; gap: 8px; margin-top: 15px; padding: 19px 22px; border-left: 2px solid var(--berry); background: var(--soft); color: var(--muted); font-size: 11px; line-height: 1.65; }
     .result-placeholder strong { color: var(--berry); font-size: 10px; letter-spacing: .09em; text-transform: uppercase; }
     .story-controls { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 20px; margin-top: 20px; }
     .page-nav { display: inline-flex; min-height: 42px; align-items: center; gap: 9px; justify-self: start; padding: 0 15px; border: 1px solid var(--line); background: transparent; color: var(--ink); font-size: 11px; font-weight: 600; transition: border-color .2s, background .2s; }
     .page-nav:hover:not(:disabled) { border-color: var(--berry); background: var(--soft); }
     .page-nav:disabled { opacity: .38; cursor: not-allowed; }
-    .page-nav.next { justify-self: end; }
     .page-indicators { display: flex; align-items: center; gap: 8px; }
     .page-dot { width: 7px; height: 7px; padding: 0; border: 0; border-radius: 50%; background: #d3c8cc; transition: width .2s, border-radius .2s, background .2s; }
     .page-dot[aria-current="step"] { width: 25px; border-radius: 6px; background: var(--berry); }
@@ -179,6 +201,12 @@
       .spread-visual.campaign-photo img { inset: 12px; width: calc(100% - 24px); height: calc(100% - 24px); }
       .spread-visual.statement { padding: 25px; }
       .statement-quote { font-size: clamp(48px, 14vw, 74px); }
+      .spread-visual.radio { padding: 16px 12px; aspect-ratio: 1.05; }
+      .radio-composition { gap: 7px; }
+      .spread-visual.radio .radio-photo { height: clamp(125px, 42cqw, 190px); }
+      .radio-lockup { gap: 9px; }
+      .radio-icon { width: clamp(52px, 21cqw, 78px); }
+      .radio-title { font-size: clamp(18px, 5.4cqw, 25px); }
       .spread-visual.collage { min-height: 0; aspect-ratio: 1.05; gap: 9px; padding: 15px; }
       .spread-visual.collage-confessional { height: auto; }
       .collage-card { padding: 5px; }
@@ -209,7 +237,7 @@
       <span class="brand-caption">FRACTIONAL CMO<br>DIRECTION<br>STRATEGY</span>
     </a>
     <div class="top-actions">
-      <span class="concept-note" data-cz="Interaktivní koncept" data-en="Interactive concept">Interaktivní koncept</span>
+      <span class="concept-note" data-cz="Příběhy projektů" data-en="Project stories">Příběhy projektů</span>
       <a class="back-home" href="index.html" aria-label="Zpět na web Zuzany" data-cz="← Zpět na web" data-en="← Back to site">← Zpět na web</a>
       <div class="language" aria-label="Jazyk">
         <button type="button" data-language="cs" aria-pressed="true">CZ</button>
@@ -229,7 +257,7 @@
       </div>
 
       <div class="case-grid">
-        <article class="case-card" tabindex="0" role="button" data-project="dekkadancers" aria-label="Otevřít případovou studii Dekkadancers">
+        <article class="case-card" tabindex="0" role="button" data-project="dekkadancers" aria-label="Otevřít případovou studii DEKKADANCERS">
           <div class="cover">
             <img src="assets/dekkadancers-campaign-hero.jpg" alt="Tanečník Patrik Čermák natřený růžovou barvou pro vizuál kampaně">
             <span class="cover-index">01</span>
@@ -239,7 +267,7 @@
           </div>
           <div class="case-info">
             <div>
-              <p class="case-category">Dekkadancers</p>
+              <p class="case-category">DEKKADANCERS</p>
               <p class="case-summary" data-cz="Marketingová a PR kampaň s cílem prodat 1 710 vstupenek." data-en="A marketing and PR campaign with a goal of selling 1,710 tickets.">Marketingová a PR kampaň s cílem prodat 1 710 vstupenek.</p>
             </div>
             <span class="case-open" aria-hidden="true">↗</span>
@@ -265,7 +293,7 @@
       </div>
 
       <div class="gallery-foot">
-        <span data-cz="Koncept prezentace případových studií" data-en="Case study presentation concept">Koncept prezentace případových studií</span>
+        <span data-cz="Případové studie" data-en="Case studies">Případové studie</span>
         <span>NOT AN AGENCY · ZUZANA HOŠKOVÁ</span>
       </div>
     </section>
@@ -277,11 +305,14 @@
       </div>
       <div class="book">
         <article class="spread"></article>
+        <div class="book-navigation" role="group" aria-label="Navigace v příběhu">
+          <button class="book-arrow book-previous" type="button" aria-label="Předchozí strana"><span aria-hidden="true">←</span></button>
+          <button class="book-arrow book-next" type="button" aria-label="Další strana"><span aria-hidden="true">→</span></button>
+        </div>
       </div>
       <div class="story-controls">
         <button class="page-nav previous" type="button"><span aria-hidden="true">←</span><span class="page-nav-label" data-cz="Předchozí" data-en="Previous">Předchozí</span></button>
         <div class="page-indicators" role="group" aria-label="Stránky příběhu"></div>
-        <button class="page-nav next" type="button"><span class="page-nav-label" data-cz="Další" data-en="Next">Další</span><span aria-hidden="true">→</span></button>
         <span class="page-count"></span>
       </div>
       <div class="story-switch">
@@ -294,7 +325,7 @@
   <script>
     const projects = {
       dekkadancers: {
-        name: "Dekkadancers",
+        name: "DEKKADANCERS",
         title: { cs: "Lži, které muži říkají", en: "The Lies Men Tell" },
         image: "assets/dekkadancers-campaign-hero.jpg",
         theme: "berry",
@@ -303,7 +334,7 @@
             chapter: { cs: "01 / Titulní strana", en: "01 / Cover" },
             heading: { cs: "Lži, které<br>muži říkají", en: "The Lies<br>Men Tell" },
             lead: { cs: "Komponovaný taneční večer souboru DEKKADANCERS.", en: "A composed dance evening by DEKKADANCERS." },
-            body: { cs: "Kampaň, která z růžové barvy a obyčejné lži vytvořila výrazný příběh napříč médii i živým zážitkem.", en: "A campaign that turned the colour pink and an everyday lie into a distinctive story across media and live experiences." },
+            body: { cs: "Kampaň, která z růžové barvy a obyčejné lži vytvořila výrazný příběh napříč sociálními sítěmi, médii i přímo v divadle se zapojením diváků.", en: "A campaign that turned pink and an everyday lie into a distinctive story across social media, the press, and the theatre itself, with audiences taking part." },
             image: true,
             visualType: "campaign-photo",
             visualAlt: { cs: "Tanečník Patrik Čermák natřený růžovou barvou pro vizuál kampaně", en: "Dancer Patrik Čermák painted pink for the campaign visual" }
@@ -311,11 +342,11 @@
           {
             chapter: { cs: "02 / Zadání", en: "02 / The brief" },
             heading: { cs: "1 710 vstupenek.<br>Jedna růžová kampaň.", en: "1,710 tickets.<br>One pink campaign." },
-            lead: { cs: "Podpořit prodej a dostat premiéru i soubor do širšího povědomí.", en: "Drive ticket sales and raise awareness of the premiere and the company." },
-            body: { cs: "Kampaň odstartovala v listopadu 2025. Premiéra se konala 4. 11. 2026 v Jatka78.", en: "The campaign began in November 2025. The premiere took place on 4 November 2026 at Jatka78." },
+            lead: { cs: "Podpoření prodeje a cíl dostat premiéru do širšího povědomí. Udržet pozici DEKKADANCERS jako lovebrandu.", en: "Supporting ticket sales and bringing the premiere to a wider audience, while maintaining DEKKADANCERS' position as a love brand." },
+            body: { cs: "Kampaň odstartovala v listopadu 2025 spuštěním předprodeje a rozesílkou newsletteru. Premiéra se konala o rok později – 4. 11. 2026 v divadle Jatka78.", en: "The campaign launched in November 2025 with the start of advance ticket sales and a newsletter. The premiere took place a year later, on 4 November 2026 at Jatka78 theatre." },
             facts: [
               { label: { cs: "Cíl kampaně", en: "Campaign goal" }, value: { cs: "Prodat 1 710 vstupenek na premiéru a reprízy v roce 2026", en: "Sell 1,710 tickets for the premiere and 2026 performances" } },
-              { label: { cs: "Kanály", en: "Channels" }, value: { cs: "Online · OOH · kino · rádio · PR", en: "Online · OOH · cinema · radio · PR" } },
+              { label: { cs: "Kanály", en: "Channels" }, value: { cs: "SoMe · Online · OOH · kino · rádio · PR", en: "Social media · Online · OOH · cinema · radio · PR" } },
               { label: { cs: "Místo", en: "Venue" }, value: { cs: "Jatka78, Praha", en: "Jatka78, Prague" } }
             ]
           },
@@ -327,7 +358,7 @@
             credits: [
               { role: { cs: "Vedení marketingu, komunikace a PR", en: "Head of Marketing, Communications & PR" }, name: "Zuzana Hošková" },
               { role: { cs: "Fotografie", en: "Photography" }, name: "Pavel Hejný" },
-              { role: { cs: "Sociální sítě", en: "Social media" }, name: "Hynek Toman" },
+              { role: { cs: "Sociální sítě a grafika", en: "Social media & graphic design" }, name: "Hynek Toman" },
               { role: { cs: "Online specialista", en: "Online specialist" }, name: "Tadeáš Melíšek" }
             ]
           },
@@ -336,6 +367,9 @@
             heading: { cs: "Lakovat svět<br>narůžovo.", en: "Paint the world<br>pink." },
             lead: { cs: "Výrazný vizuál se stal začátkem příběhu kampaně.", en: "A bold visual became the starting point for the campaign story." },
             body: { cs: "Růžová barva a natírání těla odkazují k rčení „lakovat něco narůžovo“. Ústřední postavou je tanečník Patrik Čermák. Růžová se postupně proměnila v rozpoznatelný komunikační motiv — lidé mluvili o „růžové premiéře“.", en: "The pink paint and the act of painting a body reference the Czech saying “to paint something pink” — to gloss over reality. Dancer Patrik Čermák is at the centre of the visual. Pink became a recognisable campaign motif, with people referring to it as “the pink premiere”." },
+            credits: [
+              { role: { cs: "Vizuál", en: "Visual" }, name: "Pavel Hejný" }
+            ],
             visualImage: "assets/dekkadancers-campaign-hero.jpg",
             visualType: "campaign-photo",
             visualAlt: { cs: "Kreativní koncept růžového vizuálu s tanečníkem Patrikem Čermákem", en: "Creative concept for the pink campaign visual featuring dancer Patrik Čermák" }
@@ -344,7 +378,7 @@
             chapter: { cs: "05 / Tone of voice", en: "05 / Tone of voice" },
             heading: { cs: "Každý někdy<br>lakuje pravdu.", en: "We all give the truth<br>a little polish." },
             lead: { cs: "Hříčky s pravdou a lží, bez zbytečného pocitu viny.", en: "A playful take on truth and lies, without making anyone feel too guilty." },
-            body: { cs: "Komunikační linka vycházela z otázky: komu nejčastěji lžeme — druhým, nebo sami sobě?", en: "The campaign's central question: who do we lie to most — other people, or ourselves?" },
+            body: { cs: "Komunikační linka vycházela z otázky: Komu nejčastěji lžeme — druhým, nebo sami sobě? Následovalo rozvíjení copy na téma lží a tance.", en: "The campaign started with a question: who do we lie to most — other people, or ourselves? From there, the copy developed around lies and dance." },
             quotes: [
               { cs: "Lžu tělem.", en: "I lie with my body." },
               { cs: "Pohyby nelžou — lidé ano.", en: "Movements don't lie. People do." },
@@ -380,33 +414,27 @@
           },
           {
             chapter: { cs: "08 / Rádio", en: "08 / Radio" },
-            heading: { cs: "Kampaň, kterou<br>šlo i slyšet.", en: "A campaign<br>you could hear." },
+            heading: { cs: "Kampaň, která<br>byla vidět i slyšet.", en: "A campaign<br>seen and heard." },
             lead: { cs: "Rádiový spot pro kampaň Lži, které muži říkají.", en: "The radio spot for The Lies Men Tell campaign." },
-            body: { cs: "Rádio bylo jedním z komunikačních kanálů kampaně. Pusťte si spot přímo tady.", en: "Radio was one of the campaign's communication channels. Listen to the spot right here." },
+            body: { cs: "Sociální sítě, OOH, letáky ve formě záložky, program se samolepkami, ale i trailer v síti Cinema City nebo spot na Radiu 1. Růžová byla všem na dosah.", en: "Social media, OOH, bookmark-shaped flyers, a programme with stickers, a trailer in Cinema City cinemas, and a spot on Radio 1. The campaign brought pink within everyone's reach." },
             audio: true,
-            visualImage: "assets/dekkadancers-slide-8.jpg",
-            visualAlt: { cs: "Vizuál rozhlasové kampaně Lži, které muži říkají", en: "Visual from The Lies Men Tell radio campaign" }
-          },
-          {
-            chapter: { cs: "09 / Rozhovory", en: "09 / Interviews" },
-            heading: { cs: "Růžová se dostala<br>do éteru.", en: "The pink story<br>made the airwaves." },
-            lead: { cs: "Příběh inscenace a souboru v rozhovorech pro Český rozhlas.", en: "The story of the production and company featured in Czech Radio interviews." },
-            body: { cs: "Ukázky zachycují rozhovor se Štěpánem Pecharem o humoru v tanci i povídání o nové premiéře DEKKADANCERS.", en: "The examples include an interview with Štěpán Pechar on humour in dance and a feature about the new DEKKADANCERS premiere." },
-            collage: "collage-press",
-            visuals: [
-              { src: "assets/dekkadancers-press-radio-1.jpg", alt: { cs: "Článek Českého rozhlasu s rozhovorem o premiéře Lži, které muži říkají", en: "Czech Radio article about The Lies Men Tell premiere" }, caption: { cs: "Český rozhlas · Rádio Praha", en: "Czech Radio · Radio Prague" } },
-              { src: "assets/dekkadancers-press-radio-2.jpg", alt: { cs: "Rozhovor se Štěpánem Pecharem na mujRozhlas", en: "Interview with Štěpán Pechar on mujRozhlas" }, caption: { cs: "mujRozhlas · rozhovor", en: "mujRozhlas · interview" } }
+            radioVisual: { cs: "Spot<br><em>v rádiu</em>", en: "Radio<br><em>spot</em>" },
+            radioPhotos: [
+              { src: "assets/dekkadancers-radio-social.jpg", alt: { cs: "Instagramový příspěvek DEKKADANCERS s růžovým tanečníkem", en: "DEKKADANCERS Instagram post featuring the pink-painted dancer" } },
+              { src: "assets/dekkadancers-radio-print.jpeg", alt: { cs: "Program a leták inscenace Lži, které muži říkají", en: "Programme and flyer for The Lies Men Tell" } }
             ]
           },
           {
-            chapter: { cs: "10 / Mediální výstupy", en: "10 / Media coverage" },
-            heading: { cs: "Pozvánka, která<br>zůstala růžová.", en: "An invitation<br>in pink." },
-            lead: { cs: "Příběh se propsal i do kulturních přehledů a online médií.", en: "The story also appeared in cultural listings and online publications." },
-            body: { cs: "Prezentace zachycuje ukázky pozvánek na představení v Jatka78 a článek na PragMoon.", en: "The presentation includes examples of listings for performances at Jatka78 and an article on PragMoon." },
+            chapter: { cs: "09 / Public relations", en: "09 / Public relations" },
+            heading: { cs: "Příběh, který<br>se šířil dál.", en: "A story that<br>travelled further." },
+            lead: { cs: "Média, která pomohla dostat DEKKADANCERS a premiéru k širšímu publiku.", en: "Media coverage helped bring DEKKADANCERS and the premiere to a wider audience." },
+            body: { cs: "Rozhovory, kulturní přehledy i pozvánky na představení. Otevřete si jednotlivé mediální výstupy.", en: "Interviews, cultural listings, and invitations to the performance. Open each media feature." },
             collage: "collage-press",
             visuals: [
-              { src: "assets/dekkadancers-press-listing.jpg", alt: { cs: "Online kulturní pozvánka na představení Lži, které muži říkají v Jatka78", en: "Online cultural listing for The Lies Men Tell at Jatka78" }, caption: { cs: "Kulturní pozvánka · Jatka78", en: "Cultural listing · Jatka78" } },
-              { src: "assets/dekkadancers-press-magazine.jpg", alt: { cs: "Článek PragMoon o inscenaci Lži, které muži říkají", en: "PragMoon article about The Lies Men Tell" }, caption: { cs: "PragMoon · rozhovor a představení", en: "PragMoon · feature and listing" } }
+              { src: "assets/dekkadancers-press-radio-1.jpg", href: "https://www.mujrozhlas.cz/host-lenky-vahalove/stepan-pechar-z-dekkadancers-nove-predstaveni-je-plne-lzi-k-tanecnikum-se-prida", alt: { cs: "Článek Českého rozhlasu s rozhovorem o premiéře Lži, které muži říkají", en: "Czech Radio article about The Lies Men Tell premiere" }, caption: { cs: "Rádio Praha · Host Lenky Vahalové", en: "Radio Prague · Host Lenka Vahalová" } },
+              { src: "assets/dekkadancers-press-radio-2.jpg", href: "https://www.mujrozhlas.cz/vizitka/v-tanci-neni-lehke-delat-humor-v-tom-je-ta-vyzva-rika-stepan-pechar", alt: { cs: "Rozhovor se Štěpánem Pecharem na mujRozhlas", en: "Interview with Štěpán Pechar on mujRozhlas" }, caption: { cs: "mujRozhlas · Vizitka", en: "mujRozhlas · Vizitka" } },
+              { src: "assets/dekkadancers-press-listing.jpg", href: "https://www.jatka78.cz/cs/inscenace/lzi-ktere-muzi-rikaji", alt: { cs: "Online kulturní pozvánka na představení Lži, které muži říkají v Jatka78", en: "Online cultural listing for The Lies Men Tell at Jatka78" }, caption: { cs: "Jatka78 · pozvánka na představení", en: "Jatka78 · performance listing" } },
+              { src: "assets/dekkadancers-press-magazine.jpg", href: "https://www.pragmoon.cz/clanky/divadlo-v-praze-na-podzim-2026-8-tipu-na-predstaveni-ktera-stoji-za-videni", alt: { cs: "Článek PragMoon o inscenaci Lži, které muži říkají", en: "PragMoon article about The Lies Men Tell" }, caption: { cs: "PragMoon · kulturní tip", en: "PragMoon · culture pick" } }
             ]
           }
         ]
@@ -502,10 +530,31 @@
       spread.classList.toggle("reverse", direction < 0);
       const visualMarkup = page.visuals
         ? `<div class="spread-visual collage ${page.collage}">
-            ${page.visuals.map((visual) => `<figure class="collage-card"><img src="${visual.src}" alt="${visual.alt[language]}"><figcaption>${visual.caption[language]}</figcaption></figure>`).join("")}
+            ${page.visuals.map((visual) => visual.href
+              ? `<a class="collage-card" href="${visual.href}" target="_blank" rel="noopener noreferrer" aria-label="${visual.caption[language]} ↗"><img src="${visual.src}" alt="${visual.alt[language]}"><span class="collage-caption">${visual.caption[language]}</span></a>`
+              : `<figure class="collage-card"><img src="${visual.src}" alt="${visual.alt[language]}"><figcaption>${visual.caption[language]}</figcaption></figure>`).join("")}
             <span class="visual-index">${String(activePage + 1).padStart(2, "0")} / ${String(project.pages.length).padStart(2, "0")}</span>
           </div>`
-        : page.visualStatement
+        : page.radioVisual
+          ? `<div class="spread-visual radio">
+              <div class="radio-composition">
+                <img class="radio-photo" src="${page.radioPhotos[0].src}" alt="${page.radioPhotos[0].alt[language]}">
+                <div class="radio-lockup">
+                  <svg class="radio-icon" viewBox="0 0 160 128" aria-hidden="true">
+                    <path d="M25 67V58a55 55 0 0 1 110 0v9" />
+                    <rect x="17" y="61" width="25" height="43" rx="12" />
+                    <rect x="118" y="61" width="25" height="43" rx="12" />
+                    <path d="M130 105c-5 12-16 17-31 17h-9" />
+                    <line x1="148" y1="34" x2="158" y2="27" />
+                    <line x1="150" y1="48" x2="162" y2="46" />
+                  </svg>
+                  <p class="radio-title">${page.radioVisual[language]}</p>
+                </div>
+                <img class="radio-photo" src="${page.radioPhotos[1].src}" alt="${page.radioPhotos[1].alt[language]}">
+              </div>
+              <span class="visual-index">${String(activePage + 1).padStart(2, "0")} / ${String(project.pages.length).padStart(2, "0")}</span>
+            </div>`
+          : page.visualStatement
           ? `<div class="spread-visual tone statement">
               <div class="statement-quote">${page.visualStatement[language]}<span>${page.visualNote[language]}</span><small>${String(activePage + 1).padStart(2, "0")} / ${String(project.pages.length).padStart(2, "0")}</small></div>
             </div>`
@@ -514,7 +563,7 @@
                 ? `<img src="${page.visualImage}" alt="${page.visualAlt[language]}">`
                 : page.image
                   ? `<img src="${project.image}" alt="${page.visualAlt ? page.visualAlt[language] : project.title[language]}">`
-                  : `<span class="visual-word">${activeProject === "dekkadancers" ? "Dekkadancers<br><em>on stage</em>" : "Má<br><em>vlast</em>"}</span>`}
+                  : `<span class="visual-word">${activeProject === "dekkadancers" ? "DEKKADANCERS<br><em>on stage</em>" : "Má<br><em>vlast</em>"}</span>`}
               <span class="visual-index">${String(activePage + 1).padStart(2, "0")} / ${String(project.pages.length).padStart(2, "0")}</span>
             </div>`;
       spread.innerHTML = `
@@ -527,18 +576,23 @@
           ${page.facts ? `<dl class="fact-grid">${page.facts.map((item) => `<div class="fact-item"><dt>${item.label[language]}</dt><dd>${item.value[language]}</dd></div>`).join("")}</dl>` : ""}
           ${page.credits ? `<ul class="credit-list">${page.credits.map((credit) => `<li>${credit.role[language]}: <strong>${credit.name}</strong></li>`).join("")}</ul>` : ""}
           ${page.quotes ? `<ul class="campaign-quotes">${page.quotes.map((quote) => `<li>“${quote[language]}”</li>`).join("")}</ul>` : ""}
-          ${page.audio ? `<div class="audio-player"><span class="audio-caption">${language === "cs" ? "Rádiový spot · 20 s" : "Radio spot · 20 sec"}</span><audio controls preload="metadata" aria-label="${language === "cs" ? "Přehrát rádiový spot Dekkadancers" : "Play the Dekkadancers radio spot"}"><source src="assets/dekkadancers-radio-spot.mp3" type="audio/mpeg">${language === "cs" ? "Váš prohlížeč nepodporuje přehrávání zvuku." : "Your browser does not support audio playback."}</audio></div>` : ""}
+          ${page.audio ? `<div class="audio-player"><span class="audio-caption">${language === "cs" ? "Rádiový spot · 20 s" : "Radio spot · 20 sec"}</span><audio controls preload="metadata" aria-label="${language === "cs" ? "Přehrát rádiový spot DEKKADANCERS" : "Play the DEKKADANCERS radio spot"}"><source src="assets/dekkadancers-radio-spot.mp3" type="audio/mpeg">${language === "cs" ? "Váš prohlížeč nepodporuje přehrávání zvuku." : "Your browser does not support audio playback."}</audio></div>` : ""}
           ${page.placeholder ? `<div class="result-placeholder"><strong>${language === "cs" ? "Pracovní koncept" : "Concept in progress"}</strong><span>${page.placeholder[language]}</span></div>` : ""}
         </div>`;
       spread.style.animation = "none";
       requestAnimationFrame(() => { spread.style.animation = ""; });
       document.querySelector(".previous").disabled = activePage === 0;
-      document.querySelector(".next").disabled = activePage === project.pages.length - 1;
+      document.querySelector(".book-previous").disabled = activePage === 0;
+      document.querySelector(".book-next").disabled = activePage === project.pages.length - 1;
+      document.querySelector(".book-next").hidden = activePage === project.pages.length - 1;
+      document.querySelector(".book-previous").setAttribute("aria-label", language === "cs" ? "Předchozí strana" : "Previous page");
+      document.querySelector(".book-next").setAttribute("aria-label", language === "cs" ? "Další strana" : "Next page");
+      document.querySelector(".book-navigation").setAttribute("aria-label", language === "cs" ? "Navigace v příběhu" : "Story navigation");
       document.querySelector(".page-count").textContent = `${String(activePage + 1).padStart(2, "0")}  /  ${String(project.pages.length).padStart(2, "0")}`;
       dots.innerHTML = project.pages.map((item, index) => `<button class="page-dot" type="button" aria-label="${language === "cs" ? "Strana" : "Page"} ${index + 1}: ${item.chapter[language]}" ${index === activePage ? 'aria-current="step"' : ""} data-page="${index}"></button>`).join("");
       dots.querySelectorAll(".page-dot").forEach((dot) => dot.addEventListener("click", () => goToPage(Number(dot.dataset.page))));
       document.querySelector(".project-previous").textContent = activeProject === "mavlast"
-        ? (language === "cs" ? "← Předchozí projekt: Dekkadancers" : "← Previous project: Dekkadancers")
+        ? (language === "cs" ? "← Předchozí projekt: DEKKADANCERS" : "← Previous project: DEKKADANCERS")
         : (language === "cs" ? "← Všechny příběhy" : "← All stories");
       document.querySelector(".project-next").textContent = activeProject === "dekkadancers"
         ? (language === "cs" ? "Další projekt: Má vlast →" : "Next project: Má vlast →")
@@ -565,7 +619,8 @@
     document.querySelectorAll(".language button").forEach((button) => button.addEventListener("click", () => setLanguage(button.dataset.language)));
     document.querySelector(".back-gallery").addEventListener("click", () => closeProject());
     document.querySelector(".previous").addEventListener("click", () => goToPage(activePage - 1));
-    document.querySelector(".next").addEventListener("click", () => goToPage(activePage + 1));
+    document.querySelector(".book-previous").addEventListener("click", () => goToPage(activePage - 1));
+    document.querySelector(".book-next").addEventListener("click", () => goToPage(activePage + 1));
     document.querySelector(".project-previous").addEventListener("click", () => activeProject === "mavlast" ? openProject("dekkadancers") : closeProject());
     document.querySelector(".project-next").addEventListener("click", () => activeProject === "dekkadancers" ? openProject("mavlast") : closeProject());
     document.addEventListener("keydown", (event) => {
