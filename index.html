@@ -9,10 +9,10 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
   <meta name="author" content="Zuzana Hošková">
   <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="description" content="Zuzana Hošková pomáhá malým firmám, osobním značkám, kultuře a nezisku se strategií, marketingem a PR – jako externí CMO, ne agentura.">
+  <meta name="description" content="Zuzana Hošková je externí CMO pro marketing na míru a osobní PR. Pomáhá značkám i odborníkům budovat osobní značku, reputaci a mediální viditelnost.">
   <link rel="canonical" href="https://notanagency.cz/">
-  <meta property="og:title" content="Zuzana Hošková | Externí CMO pro marketing a PR">
-  <meta property="og:description" content="Pomáhám malým firmám, osobním značkám, kultuře a nezisku se strategií, marketingem a PR – jako externí CMO, ne agentura.">
+  <meta property="og:title" content="Zuzana Hošková | Externí CMO &amp; marketingová strategie">
+  <meta property="og:description" content="Zuzana Hošková je externí CMO pro marketing na míru a osobní PR. Pomáhá značkám i odborníkům budovat osobní značku, reputaci a mediální viditelnost.">
   <meta property="og:site_name" content="Not an Agency">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://notanagency.cz/">
@@ -23,11 +23,11 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Zuzana Hošková — Externí CMO &amp; Public relations — Not an Agency">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Zuzana Hošková | Externí CMO pro marketing a PR">
-  <meta name="twitter:description" content="Pomáhám malým firmám, osobním značkám, kultuře a nezisku se strategií, marketingem a PR – jako externí CMO, ne agentura.">
+  <meta name="twitter:title" content="Zuzana Hošková | Externí CMO &amp; marketingová strategie">
+  <meta name="twitter:description" content="Zuzana Hošková je externí CMO pro marketing na míru a osobní PR. Pomáhá značkám i odborníkům budovat osobní značku, reputaci a mediální viditelnost.">
   <meta name="twitter:image" content="https://notanagency.cz/assets/og-zuzana.jpg">
   <meta name="twitter:image:alt" content="Zuzana Hošková — Externí CMO &amp; Public relations — Not an Agency">
-  <title>Zuzana Hošková — Nejsem agentura</title>
+  <title>Zuzana Hošková | Externí CMO &amp; marketingová strategie</title>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -329,13 +329,13 @@
     .service-card::before { position: absolute; top: 27px; left: 0; color: var(--rose); font-family: var(--serif); font-size: 14px; font-weight: 700; letter-spacing: .04em; content: "0" counter(service); }
     .service-card h3 { margin: 0 0 12px; color: var(--ink); font-size: 17px; font-weight: 600; letter-spacing: -.02em; line-height: 1.45; }
     .service-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.85; }
-    .service-card-result h3 { display: flex; align-items: center; gap: 9px; }
-    .service-card-result svg { width: 20px; height: 20px; flex: 0 0 auto; color: var(--rose); }
-    .service-card-result { align-self: stretch; min-height: 160px; padding: 28px 24px 26px 52px; border: 0; border-top: 2px solid var(--rose); background: linear-gradient(135deg, var(--soft), #ead9e0); }
-    .service-card-result::before { top: 24px; left: 18px; font-size: 20px; content: "→"; }
-    .service-card-result.is-arrival-pending { opacity: 0; transform: translate(-64px, 24px) rotate(-2deg) scale(.94); }
-    .service-card-result.is-arrival-visible { animation: result-card-arrival 850ms cubic-bezier(.2, .75, .25, 1) both; }
-    @keyframes result-card-arrival { to { opacity: 1; transform: translate(0) rotate(0) scale(1); } }
+    .service-outcome { position: relative; max-width: 940px; margin: 50px auto 10px; padding: 26px 32px 28px; text-align: center; }
+    .service-outcome-label { margin: 0 0 12px; color: var(--rose); font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .service-outcome-title { margin: 0; font-family: var(--serif); font-size: clamp(30px, 4.5vw, 52px); font-weight: 500; letter-spacing: -.045em; line-height: 1.15; }
+    .service-outcome-title em { color: var(--rose); font-weight: 600; }
+    .service-outcome.is-arrival-pending { opacity: 0; transform: translateX(-38px); }
+    .service-outcome.is-arrival-visible { animation: service-outcome-arrival 900ms cubic-bezier(.2, .75, .25, 1) both; }
+    @keyframes service-outcome-arrival { to { opacity: 1; transform: translateX(0); } }
     .approach-practice { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(240px, .6fr); align-items: start; gap: 30px; margin-top: 58px; padding: 30px; border: 1px solid #d9c5cf; background: transparent; }
     .approach-practice .approach-subtitle { max-width: 760px; margin-bottom: 22px; font-size: clamp(28px, 3.8vw, 43px); letter-spacing: -.05em; line-height: 1.12; }
     .approach-practice .approach-subtitle em { color: var(--rose); font-style: normal; }
@@ -508,8 +508,7 @@
       .approach-story { margin: 30px 0 36px; padding: 8px 0 16px; font-size: clamp(32px, 9vw, 48px); }
       .service-grid { grid-template-columns: 1fr; }
       .service-card { min-height: 0; padding: 24px 0 22px 42px; }
-      .service-card-result { min-height: 0; padding: 24px 18px 22px 50px; }
-      .service-card-result::before { top: 20px; left: 16px; }
+      .service-outcome { margin: 36px auto 0; padding: 20px 8px; }
       .approach-practice { padding: 20px; }
       .approach-practice .approach-subtitle { font-size: clamp(28px, 8vw, 36px); }
       .process-list li { padding: 60px 20px 20px; }
@@ -528,8 +527,8 @@
       .proof-ticker-set[aria-hidden="true"] { display: none; }
       .proof-ticker-set { flex-wrap: wrap; justify-content: center; gap: 10px 18px; padding: 0 20px; white-space: normal; }
       .result-grid.has-reveal .result-card { opacity: 1; transform: none; animation: none; }
-      .service-card-result.is-arrival-pending { opacity: 1; transform: none; }
-      .service-card-result.is-arrival-visible { animation: none; }
+      .service-outcome.is-arrival-pending { opacity: 1; transform: none; }
+      .service-outcome.is-arrival-visible { animation: none; }
     }
   </style>
 </head>
@@ -682,13 +681,17 @@
           <p data-i18n="areaPrCopy">Is your marketing working, but your project needs more media visibility? I'll develop a comprehensive PR strategy, write your press release, prepare a bulletproof press kit, and distribute it to the right journalists. As a former journalist, I know how to shape even a niche topic, develop its story, and find the right people to pitch. I stay behind the scenes—you get seen.</p>
         </article>
         <article class="service-card">
+          <h3 data-i18n="areaPersonalPrTitle">Personal branding and PR for experts</h3>
+          <p data-i18n="areaPersonalPrCopy">Are you an expert, founder, or leader with a story worth sharing? I'll help you define your positioning and key messages, identify relevant media topics, and build your visibility and reputation over time. I can prepare your press materials, connect your story with the right journalists, and get you ready for media interviews.</p>
+        </article>
+        <article class="service-card">
           <h3 data-i18n="areaCultureTitle">Connect your brand with culture</h3>
           <p data-i18n="areaCultureCopy">Do you represent a commercial business looking for a meaningful connection with culture, the arts, or social-impact projects? Get in touch. I create tailored partnerships and barter collaborations that go beyond a logo on a poster—they have real impact, fit naturally into your communications, and bring value to both partners and their audiences.</p>
         </article>
-        <article class="service-card service-card-result">
-          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m8 12 2.5 2.5L16.5 9"></path></svg><span data-i18n="areaResultTitle">And the result?</span></h3>
-          <p data-i18n="areaResultCopy">Exceptionally professional, clear work precisely tailored to your target audience.</p>
-        </article>
+      </div>
+      <div class="service-outcome" aria-labelledby="service-outcome-title">
+        <p class="service-outcome-label" data-i18n="areaResultTitle">And the result?</p>
+        <h3 class="service-outcome-title" id="service-outcome-title" data-i18n="areaResultCopy">Exceptionally professional, clear work precisely tailored to your target audience.</h3>
       </div>
       <div id="collaboration">
       <div class="approach-practice">
@@ -858,9 +861,9 @@
   <script>
     const translations = {
       en: {
-        title: "Zuzana Hošková — Not an Agency",
-        ogTitle: "Fractional CMO Zuzana Hošková | Marketing & PR",
-        description: "Fractional CMO Zuzana Hošková provides marketing strategy and PR for small businesses, personal brands, culture, and nonprofits.",
+        title: "Zuzana Hošková | Fractional CMO & Marketing Strategy",
+        ogTitle: "Zuzana Hošková | Fractional CMO & Marketing Strategy",
+        description: "Fractional CMO Zuzana Hošková provides tailored marketing and personal PR, helping brands and experts build their reputation and media visibility.",
         ogDescription: "I am not an agency. I am Zuzana, your fractional CMO.",
         ogLocale: "en_US",
         ogImageAlt: "Zuzana Hošková — Fractional CMO & Public Relations — Not an Agency",
@@ -883,7 +886,7 @@
         navContact: "Contact",
         heroEyebrow: "A fractional CMO, tailored to you. Exactly as much support as you need.",
         heroTitle: "I am not an<br>agency. I am<br>Zuzana, your<br><em>fractional CMO.</em>",
-        heroCopy: "You have specialists, but are you missing direction? I provide strategic leadership across your marketing and PR—without agency overhead, and with 20 years of experience in media, culture, and the nonprofit sector. I'll align your team, put processes in place, and get your brand growing.",
+        heroCopy: "You have specialists, but are you missing direction? I provide strategic leadership across your marketing and PR—and help experts build a trusted personal brand and media profile. No agency overhead, just 20 years of experience in media, culture, and the nonprofit sector.",
         heroCta: "Let's move your project forward",
         availability: "Independent CMO · Personally invested in your growth",
         heroImageAlt: "Portrait of Zuzana Hošková",
@@ -914,8 +917,8 @@
         aboutStoryThree: "For the past 10 years, I have been working as an independent professional. I have led marketing and PR for Jatka78 theatre, the DEKKADANCERS dance company, Fotograf Zone, and the Prague Pride festival. Through media relations, I have raised the visibility of major theatrical projects (such as <em>My Country</em> and <em>The Story of the Astronomical Clock</em>) as well as independent film projects.",
         aboutStoryFour: "I enjoy being there right at the birth of new projects, as well as stepping into ongoing ones to evaluate them and take them to the next level. While I like a clear direction, strategy, and goal at work, I happily leave them all behind in my free time. In winter, you’ll most likely find me travelling solo across Southeast Asia—often completely off-plan and with just a small backpack.",
         approachEyebrow: "My approach",
-        approachTitle: "Fractional CMO: Marketing leadership and strategy focused on personal brands, culture, and nonprofits",
-        approachIntro: "CMO (Chief Marketing Officer) is the person who holds the overall vision and leads the marketing strategy. As an external CMO, I bring this role to small businesses, personal brands, cultural projects, and nonprofit organizations that don't need or can't afford a full-time marketing director. I help set a clear direction, align your team, and choose marketing activities that make sense for your goals and budget. My work can also include PR strategy and media relations.",
+        approachTitle: "Fractional CMO, personal branding, and PR for experts, culture, and nonprofits",
+        approachIntro: "CMO (Chief Marketing Officer) is the person who holds the overall vision and leads the marketing strategy. As an external CMO, I bring this role to small businesses, personal brands, cultural projects, and nonprofit organizations that don't need or can't afford a full-time marketing director. I also help experts and leaders define their positioning, build a trusted personal brand, and earn meaningful media visibility through strategic PR.",
         approachStoryThree: "Brands are made of <em>stories.</em><br>Let's write <em>yours.</em>",
         tickerLabel: "Marketing services",
         tickerStrategy: "Strategy that keeps you on course",
@@ -936,10 +939,12 @@
         areaCreativeCopy: "Launching a new project and not sure where to start with marketing? I'll develop a complete strategy—from the visual photoshoot, trailer, and videos to the right tone of voice for your copy and recommendations for social media content. I'll create an integrated schedule so every step connects and makes sense.",
         areaPrTitle: "PR strategy and public relations",
         areaPrCopy: "Is your marketing working, but your project needs more media visibility? I'll develop a comprehensive PR strategy, write your press release, prepare a bulletproof press kit, and distribute it to the right journalists. As a former journalist, I know how to shape even a niche topic, develop its story, and find the right people to pitch. I stay behind the scenes—you get seen.",
+        areaPersonalPrTitle: "Personal branding and PR for experts",
+        areaPersonalPrCopy: "Are you an expert, founder, or leader with a story worth sharing? I'll help you define your positioning and key messages, identify relevant media topics, and build your visibility and reputation over time. I can prepare your press materials, connect your story with the right journalists, and get you ready for media interviews.",
         areaCultureTitle: "Connect your brand with culture",
         areaCultureCopy: "Do you represent a commercial business looking for a meaningful connection with culture, the arts, or social-impact projects? Get in touch. I create tailored partnerships and barter collaborations that go beyond a logo on a poster—they have real impact, fit naturally into your communications, and bring value to both partners and their audiences.",
         areaResultTitle: "And the result?",
-        areaResultCopy: "Exceptionally professional, clear work precisely tailored to your target audience.",
+        areaResultCopy: "Exceptionally professional, clear work—<em>tailored precisely to your audience.</em>",
         practiceTitle: "What you can expect from me — <em>and what you can’t</em>?",
         practiceExternal: "<strong>I work as an independent professional, not as a member of your in-house team.</strong> That means a clearly defined scope, full focus on the outcome, and the freedom to decide when and where I work. Whether I’m in Prague or on the other side of the world, agreed schedules and deadlines remain my top priority.",
         practiceLead: "<strong>I lead marketing as a whole.</strong> I understand all areas of marketing because that breadth is essential to my work and to a holistic perspective, but I don't claim to be a specialist in every discipline. For example, I don't set up PPC campaigns. I can help you understand why they're not working and connect you with experts who can train you or take over campaign management.",
@@ -993,10 +998,10 @@
         registeredAddressValue: "Kouřimská 2351/12, Vinohrady, 130 00 Prague 3"
       },
       cs: {
-        title: "Zuzana Hošková — Nejsem agentura",
-        ogTitle: "Externí CMO Zuzana Hošková | Marketing a PR",
-        description: "Externí marketingová ředitelka a CMO Zuzana Hošková pomáhá malým firmám, osobním značkám, kultuře a nezisku se strategií a PR.",
-        ogDescription: "Nejsem agentura. Jsem Zuzana, váš externí CMO.",
+        title: "Zuzana Hošková | Externí CMO & marketingová strategie",
+        ogTitle: "Zuzana Hošková | Externí CMO & marketingová strategie",
+        description: "Zuzana Hošková je externí CMO pro marketing na míru a osobní PR. Pomáhá značkám i odborníkům budovat osobní značku, reputaci a mediální viditelnost.",
+        ogDescription: "Externí CMO Zuzana Hošková pomáhá značkám i odborníkům s marketingem na míru, osobní značkou a PR.",
         ogLocale: "cs_CZ",
         ogImageAlt: "Zuzana Hošková — Externí CMO & Public relations — Not an Agency",
         brandCaption: "FRACTIONAL CMO<br>DIRECTION<br>STRATEGY",
@@ -1018,7 +1023,7 @@
         navContact: "Kontakt",
         heroEyebrow: "Externí marketingová ředitelka na míru. Přesně v rozsahu, který potřebujete.",
         heroTitle: "Nejsem agentura.<br>Jsem Zuzana, váš<br><em>externí CMO.</em>",
-        heroCopy: "Máte specialisty, ale chybí vám směr? Zastřeším váš marketing a PR strategicky — bez nákladů na agenturu, zato s 20 lety praxe v médiích, kultuře a nezisku. Sjednotím tým, nastavím procesy a nastartuji růst vaší značky.",
+        heroCopy: "Máte specialisty, ale chybí vám směr? Převezmu strategické řízení marketingu a PR — a pomohu také odborníkům budovat důvěryhodnou osobní značku a mediální viditelnost. Bez nákladů na agenturu, zato s 20 lety praxe v médiích, kultuře a nezisku.",
         heroCta: "Pojďme posunout váš projekt",
         availability: "Nezávislá CMO · Osobně zodpovědná za váš růst",
         heroImageAlt: "Portrét Zuzany Hoškové",
@@ -1059,8 +1064,8 @@
         tickerProcesses: "Procesy, ve kterých se neztratíte",
         tickerCampaigns: "Kreativní kampaně s jasným cílem",
         tickerPartner: "Opora pro váš marketingový tým",
-        approachTitle: "Externí CMO: marketingová strategie pro malé firmy, osobní značky, kulturu a nezisk",
-        approachIntro: "Zkratka CMO (Chief Marketing Officer) označuje šéfa marketingu – člověka, který drží celkovou vizi a řídí strategii. Jako externí CMO tuto roli přináším do malých firem, osobních značek, kulturních projektů a neziskových organizací, které nepotřebují nebo si nemohou dovolit marketingového ředitele na plný úvazek. Pomáhám nastavit směr, sladit tým a vybrat takové marketingové aktivity, které dávají smysl vašim cílům i rozpočtu. Součástí mé práce může být také PR strategie a komunikace s médii.",
+        approachTitle: "Externí CMO, osobní značka a PR pro odborníky, kulturu a nezisk",
+        approachIntro: "Zkratka CMO (Chief Marketing Officer) označuje člověka, který drží celkovou vizi a řídí marketingovou strategii. Jako externí CMO tuto roli přináším do malých firem, kulturních projektů a neziskových organizací. Zároveň pomáhám odborníkům a lídrům najít jejich pozici, budovat důvěryhodnou osobní značku a získat smysluplnou mediální viditelnost díky promyšlenému PR.",
         areaCmoCopy: "<strong>Menší značky, kultura a nezisk mají svá specifika. A já je znám.</strong> Nebudu vám doporučovat nesmyslně velké rozpočty na kampaně ani placené nástroje, které dnes bez problému nahradí AI. Umím pracovat i s malými rozpočty, protože vím, že nejdůležitější je správná strategie, elegantní procesy a roky budované kontakty. Značky jsem budovala i s ročními marketingovými rozpočty v řádech nižších desítek tisíc korun. Nezahrnu vás hromadou marketingových pojmů a postupů, vyberu to, co bude fungovat přesně pro vás.",
         areaConsultingTitle: "Marketingové konzultace, mentoring a školení",
         areaConsultingCopy: "Nemáte rozpočet na člověka pro marketing a všechno leží na vašich bedrech? Se správným nasměrováním a určením priorit přestanete zbytečně pálit energii i peníze. Nebo máte social media manažera a online specialistu, ale chybí vám hlubší strategie? Do práce vašeho týmu vnesu ucelený pohled na vaši značku a odhalím slabá místa i dřímající potenciál.",
@@ -1070,10 +1075,12 @@
         areaCreativeCopy: "Chystáte nový projekt a nevíte, kde s marketingem začít? Vymyslím kompletní strategii od focení vizuálu a přípravy traileru a videí přes nastavení správného tone of voice ve vašem copy až po doporučení pro obsah na sociálních sítích. Navrhnu komplexní harmonogram, aby na sebe jednotlivé kroky navazovaly a dávaly smysl.",
         areaPrTitle: "PR strategie a public relations",
         areaPrCopy: "Šlape vám marketing, ale chybí vám viditelnost v médiích? Navrhnu komplexní PR strategii, připravím text tiskové zprávy i neprůstřelný press kit a postarám se o jejich distribuci těm správným novinářům. Jako bývalá novinářka vím, jak uchopit i méně masové téma, jak ho zpracovat a komu ho nabídnout. Já zůstávám v pozadí, vy jste vidět.",
+        areaPersonalPrTitle: "Osobní značka a PR pro odborníky",
+        areaPersonalPrCopy: "Jste odborník, zakladatel nebo lídr s příběhem, který stojí za to sdílet? Pomohu vám najít jasné pozicování a klíčová sdělení, vytipovat zajímavá mediální témata a dlouhodobě budovat vaši viditelnost a reputaci. Připravím podklady pro média, propojím váš příběh se správnými novináři a připravím vás na mediální rozhovory.",
         areaCultureTitle: "Propojte svůj brand s kulturou",
         areaCultureCopy: "Jste zástupcem komerční firmy a hledáte smysluplné spojení s kulturou, uměním nebo společensky prospěšnými projekty? Ozvěte se mi. Navrhuji partnerství a bartery na míru, které nekončí jen u loga na plakátu — mají skutečný přesah, přirozeně zapadnou do vaší komunikace a budou bavit obě strany i vaše publikum.",
         areaResultTitle: "A výsledek?",
-        areaResultCopy: "Extrémně profesionální, srozumitelná práce přesně zacílená na vaši cílovou skupinu.",
+        areaResultCopy: "Extrémně profesionální, srozumitelná práce <em>přesně zacílená na vaši cílovou skupinu.</em>",
         practiceTitle: "Co ode mě čekat — <em>a co ne</em>?",
         practiceExternal: "<strong>Pracuji jako nezávislá profesionálka, ne členka vašeho interního týmu.</strong> Znamená to jasně daný rozsah spolupráce, plné soustředění na výsledek a svobodu v tom, odkud a kdy svou práci odvádím. Ať už jsem zrovna v Praze nebo na druhém konci světa, harmonogram a domluvené termíny pro mě zůstávají absolutní prioritou.",
         practiceLead: "<strong>Zastřešuji marketing komplexně.</strong> Vyznám se ve všech oblastech marketingu, protože je to nezbytné pro moji práci a ucelený pohled. Nepovažuji se ale za specialistku ve všech širokých marketingových disciplínách. Například „neklikám“ PPC kampaně. Pomohu vám však zorientovat se v nich a zjistit, proč nefungují. Propojím vás s experty, kteří vás v oblasti PPC zaškolí nebo správu kampaní převezmou.",
@@ -1228,17 +1235,17 @@
     setLanguage("cs");
 
     const resultGrid = document.querySelector(".result-grid");
-    const resultCard = document.querySelector(".service-card-result");
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (resultCard && !reducedMotion && "IntersectionObserver" in window) {
-      resultCard.classList.add("is-arrival-pending");
-      const arrivalObserver = new IntersectionObserver((entries, observer) => {
+    const serviceOutcome = document.querySelector(".service-outcome");
+    if (serviceOutcome && !reducedMotion && "IntersectionObserver" in window) {
+      serviceOutcome.classList.add("is-arrival-pending");
+      const outcomeObserver = new IntersectionObserver((entries, observer) => {
         if (!entries.some((entry) => entry.isIntersecting)) return;
-        resultCard.classList.remove("is-arrival-pending");
-        resultCard.classList.add("is-arrival-visible");
+        serviceOutcome.classList.remove("is-arrival-pending");
+        serviceOutcome.classList.add("is-arrival-visible");
         observer.disconnect();
-      }, { threshold: 0.6, rootMargin: "-20% 0px -20% 0px" });
-      arrivalObserver.observe(resultCard);
+      }, { threshold: 0.6, rootMargin: "-15% 0px -15% 0px" });
+      outcomeObserver.observe(serviceOutcome);
     }
 
     if (resultGrid && !reducedMotion && "IntersectionObserver" in window) {
