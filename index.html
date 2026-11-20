@@ -235,8 +235,8 @@
     .case-thumbnails img { height: 100%; object-fit: cover; }
     .case-thumbnails figcaption { position: absolute; right: 0; bottom: 0; left: 0; padding: 17px 10px 8px; background: linear-gradient(transparent, rgb(36 33 38 / 65%)); color: white; font-size: 8px; font-weight: 600; letter-spacing: .08em; }
     .case-link { display: inline-flex; align-items: center; gap: 10px; margin-top: 19px; color: var(--berry); font-size: 9px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
-    .case-link span { font-size: 17px; font-weight: 400; transition: transform .2s ease; }
-    .case-link:hover span { transform: translate(4px, -3px); }
+    .case-link span { font-family: var(--sans); font-size: 17px; font-weight: 400; font-variant-emoji: text; transition: transform .2s ease; }
+    .case-link:hover span:last-child { transform: translate(4px, -3px); }
 
     .references { padding: clamp(82px, 11vw, 145px) 0; }
     .references-head { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 45px; }
@@ -260,7 +260,7 @@
     .client-names a { text-decoration-thickness: 1px; text-underline-offset: .15em; }
     .client-names a:hover, .client-names a:focus-visible { color: var(--berry); text-decoration: underline; }
     .client-names a:focus-visible { outline: 2px solid var(--berry); outline-offset: 4px; }
-    .client-names b { color: var(--berry); font-family: var(--sans); font-size: 8px; font-weight: 400; }
+    .client-names b { color: var(--berry); font-family: var(--sans); font-size: 8px; font-weight: 400; font-variant-emoji: text; }
 
     .contact { padding: clamp(80px, 11vw, 145px) 0 30px; border-top: 1px solid var(--line); background: var(--paper-dark); color: var(--ink); }
     .contact-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, .7fr); align-items: center; gap: clamp(35px, 7vw, 100px); }
@@ -644,13 +644,23 @@
       .topbar { color: var(--ink); }
       .menu-button { border-color: var(--line); }
       .nav { background: var(--paper); }
-      .hero { min-height: 0; grid-template-columns: 1fr; padding: 72px var(--gutter) 45px; }
-      .hero-copy { min-height: 0; padding: 88px 0 45px; }
+      .hero {
+        min-height: 0;
+        grid-template-columns: 1fr;
+        grid-template-areas: "overline" "heading" "image" "copy" "action" "note";
+        padding: 72px var(--gutter) 45px;
+      }
+      .hero-copy { display: contents; }
+      .hero .overline { grid-area: overline; }
+      .hero h1 { grid-area: heading; margin-bottom: 30px; }
       .hero h1 { font-size: clamp(55px, 14vw, 76px); }
       html[lang="en"] .hero h1 { font-size: clamp(48px, 12.2vw, 58px); }
-      .hero-image { width: 100%; min-height: 0; aspect-ratio: 3 / 4; margin-bottom: 18px; }
+      .hero-image { grid-area: image; width: 100%; min-height: 0; aspect-ratio: 3 / 4; margin-bottom: 28px; }
       .hero-image img { object-position: 53% 37%; }
-      .hero-image figcaption { bottom: -23px; }
+      .hero-image figcaption { bottom: 0; }
+      .hero-copy-text { grid-area: copy; margin-top: 0; }
+      .hero-action { grid-area: action; }
+      .hero-note { grid-area: note; }
       .hero-index { display: none; }
       .ribbon-track { justify-content: flex-start; flex-wrap: wrap; gap: 10px 16px; }
       .about { grid-template-columns: 1fr; gap: 34px; }
@@ -748,7 +758,7 @@
         <p class="overline" data-cs="Externí marketingové vedení na míru" data-en="Senior marketing leadership, on your team">Externí marketingové vedení na míru</p>
         <h1 id="hero-title" data-cs="Nejsem<br>agentura.<br>Jsem Zuzana,<br><em>váš externí<br>CMO.</em>" data-en="I am not<br>an agency.<br>I am Zuzana,<br><em>your fractional<br>CMO.</em>">Nejsem<br>agentura.<br>Jsem Zuzana,<br><em>váš externí<br>CMO.</em></h1>
         <p class="hero-copy-text" data-cs="Máte specialisty, ale chybí vám jasný směr? Prostředí kultury, médií a nezisku má svá specifika, která běžné agentury neznají. Vnesu do vašeho marketingu a PR strategii opřenou o 20 let praxe přímo z oboru. Sjednotím tým, nastavím procesy a pomůžu vám růst." data-en="Have specialists, but no clear direction? Culture, media, and nonprofits have their own particularities—ones typical agencies don't understand. I bring 20 years of hands-on experience to your marketing and PR strategy, align your team, set up processes, and help you grow.">Máte specialisty, ale chybí vám jasný směr? Prostředí kultury, médií a nezisku má svá specifika, která běžné agentury neznají. Vnesu do vašeho marketingu a PR strategii opřenou o 20 let praxe přímo z oboru. Sjednotím tým, nastavím procesy a pomůžu vám růst.</p>
-        <a class="hero-action" href="#contact"><span data-cs="Pojďme posunout váš projekt" data-en="Let's move your project forward">Pojďme posunout váš projekt</span><span aria-hidden="true">↗</span></a>
+        <a class="hero-action" href="#contact"><span data-cs="Pojďme posunout váš projekt" data-en="Let's move your project forward">Pojďme posunout váš projekt</span><span aria-hidden="true">↗︎</span></a>
         <p class="hero-note" data-cs="Nezávislá CMO · Osobně zodpovědná za váš růst" data-en="Independent CMO · Personally invested in your growth">Nezávislá CMO · Osobně zodpovědná za váš růst</p>
       </div>
       <figure class="hero-image">
@@ -760,8 +770,8 @@
 
     <div class="ribbon" aria-label="Marketingové služby">
       <div class="ribbon-track" aria-hidden="true">
-        <span data-cs="Strategie, která drží směr" data-en="Strategy that keeps you on course">Strategie, která drží směr</span><b>✳</b><span data-cs="PR, díky kterému se o vás mluví" data-en="PR that gets you talked about">PR, díky kterému se o vás mluví</span><b>✳</b><span data-cs="Značka, kterou si lidé zapamatují" data-en="A brand people remember">Značka, kterou si lidé zapamatují</span><b>✳</b>
-        <span data-cs="Strategie, která drží směr" data-en="Strategy that keeps you on course">Strategie, která drží směr</span><b>✳</b><span data-cs="PR, díky kterému se o vás mluví" data-en="PR that gets you talked about">PR, díky kterému se o vás mluví</span><b>✳</b><span data-cs="Značka, kterou si lidé zapamatují" data-en="A brand people remember">Značka, kterou si lidé zapamatují</span><b>✳</b>
+        <span data-cs="Strategie, která drží směr" data-en="Strategy that keeps you on your course">Strategie, která drží směr</span><b>✳︎</b><span data-cs="PR, díky kterému se o vás mluví" data-en="PR that gets you talked about">PR, díky kterému se o vás mluví</span><b>✳︎</b><span data-cs="Značka, kterou si lidé zapamatují" data-en="A brand people remember">Značka, kterou si lidé zapamatují</span><b>✳︎</b>
+        <span data-cs="Strategie, která drží směr" data-en="Strategy that keeps you on course">Strategie, která drží směr</span><b>✳︎</b><span data-cs="PR, díky kterému se o vás mluví" data-en="PR that gets you talked about">PR, díky kterému se o vás mluví</span><b>✳︎</b><span data-cs="Značka, kterou si lidé zapamatují" data-en="A brand people remember">Značka, kterou si lidé zapamatují</span><b>✳︎</b>
       </div>
     </div>
 
@@ -889,7 +899,7 @@
           <div class="case-topline"><span>01 / DEKKADANCERS</span><span data-cs="Premiéra · Marketing & PR" data-en="Premiere · Marketing & PR">Premiéra · Marketing &amp; PR</span></div>
           <div class="case-visual">
             <img src="assets/dekkadancers-campaign-hero.jpg" alt="Tanečník Patrik Čermák natřený růžovou barvou pro vizuál kampaně" loading="lazy">
-            <div class="case-visual-title"><h3 data-cs="Lži, které<br>muži říkají" data-en="The Lies<br>Men Tell">Lži, které<br>muži říkají</h3><span aria-hidden="true">↗</span></div>
+            <div class="case-visual-title"><h3 data-cs="Lži, které<br>muži říkají" data-en="The Lies<br>Men Tell">Lži, které<br>muži říkají</h3><span aria-hidden="true">↗︎</span></div>
           </div>
           <div class="case-detail">
             <p class="case-description" data-cs="Kompletní zastřešení marketingu a PR pro premiéru souboru DEKKADANCERS. Kampaň propojila výrazný růžový vizuál, sociální sítě, média i zapojení diváků přímo v divadle." data-en="Full marketing and PR leadership for the DEKKADANCERS premiere. The campaign connected a bold pink visual identity, social media, press coverage, and audience participation at the theatre.">Kompletní zastřešení marketingu a PR pro premiéru souboru DEKKADANCERS. Kampaň propojila výrazný růžový vizuál, sociální sítě, média i zapojení diváků přímo v divadle.</p>
@@ -904,14 +914,14 @@
             <figure><img src="assets/dekkadancers-press-radio-1.jpg" alt="Článek Českého rozhlasu o premiéře" loading="lazy"><figcaption data-cs="Rozhovor · Český rozhlas" data-en="Interview · Czech Radio">Rozhovor · Český rozhlas</figcaption></figure>
             <figure><img src="assets/dekkadancers-press-listing.jpg" alt="Online kulturní pozvánka na představení v Jatka78" loading="lazy"><figcaption>Jatka78 · <span data-cs="pozvánka" data-en="listing">pozvánka</span></figcaption></figure>
           </div>
-          <a class="case-link" href="case-studies.html#case/dekkadancers"><span data-cs="Otevřít případovou studii" data-en="Explore the case study">Otevřít případovou studii</span><span aria-hidden="true">↗</span></a>
+          <a class="case-link" href="case-studies.html#case/dekkadancers"><span data-cs="Otevřít případovou studii" data-en="Explore the case study">Otevřít případovou studii</span><span aria-hidden="true">↗︎</span></a>
         </article>
 
         <article class="case case-mavlast reveal">
           <div class="case-topline"><span>02 / Má vlast</span><span data-cs="Public relations · Kultura" data-en="Public relations · Culture">Public relations · Kultura</span></div>
           <div class="case-visual">
             <img src="assets/ma-vlast-illustration.jpg" alt="Ilustrace jezdců na koních mezi stromy pro projekt Má vlast" loading="lazy">
-            <div class="case-visual-title"><h3>Má vlast</h3><span aria-hidden="true">↗</span></div>
+            <div class="case-visual-title"><h3>Má vlast</h3><span aria-hidden="true">↗︎</span></div>
           </div>
           <div class="case-detail">
             <p class="case-description" data-cs="Public relations pro koprodukční projekt České filharmonie, Divadla bratří Formanů a DEKKADANCERS. PR provázelo zrod, přípravu i výsledek multižánrového projektu." data-en="Public relations for a co-production by the Czech Philharmonic, the Forman Brothers' Theatre, and DEKKADANCERS. PR supported the project's creation, production, and premiere.">Public relations pro koprodukční projekt České filharmonie, Divadla bratří Formanů a DEKKADANCERS. PR provázelo zrod, přípravu i výsledek multižánrového projektu.</p>
@@ -926,7 +936,7 @@
             <figure><img src="assets/ma-vlast-press-denik-n.jpg" alt="Mediální výstup Deníku N" loading="lazy"><figcaption>Deník N</figcaption></figure>
             <figure><img src="assets/ma-vlast-press-reflex.jpg" alt="Mediální výstup časopisu Reflex" loading="lazy"><figcaption>Reflex</figcaption></figure>
           </div>
-          <a class="case-link" href="case-studies.html#case/mavlast"><span data-cs="Otevřít případovou studii" data-en="Explore the case study">Otevřít případovou studii</span><span aria-hidden="true">↗</span></a>
+          <a class="case-link" href="case-studies.html#case/mavlast"><span data-cs="Otevřít případovou studii" data-en="Explore the case study">Otevřít případovou studii</span><span aria-hidden="true">↗︎</span></a>
         </article>
       </div>
     </section>
@@ -961,7 +971,7 @@
       </div>
       <div class="client-strip reveal">
         <p data-cs="Vybrané značky, se kterými jsem spolupracovala" data-en="Selected brands I've worked with">Vybrané značky, se kterými jsem spolupracovala</p>
-        <div class="client-names" aria-label="Vybrané spolupráce"><a href="https://dekkadancers.cz/" target="_blank" rel="noopener noreferrer">DEKKADANCERS</a><b>✳</b><a href="https://www.mavlast.cz/" target="_blank" rel="noopener noreferrer">Má vlast</a><b>✳</b><a href="https://puppetstories.cz/" target="_blank" rel="noopener noreferrer" data-cs="Příběh orloje" data-en="The Story of the Astronomical Clock">Příběh orloje</a><b>✳</b><a href="https://festival.praguepride.com/" target="_blank" rel="noopener noreferrer" data-cs="Prague Pride festival" data-en="Prague Pride Festival">Prague Pride festival</a><b>✳</b><a href="https://www.jatka78.cz/" target="_blank" rel="noopener noreferrer">Jatka78</a><b>✳</b><a href="https://www.cka.cz/" target="_blank" rel="noopener noreferrer" data-cs="Česká komora architektů" data-en="Czech Chamber of Architects">Česká komora architektů</a><b>✳</b><a href="https://www.ceskacenazaarchitekturu.cz/" target="_blank" rel="noopener noreferrer" data-cs="Česká cena za architekturu" data-en="Czech Architecture Award">Česká cena za architekturu</a><b>✳</b><a href="https://www.fotograf.zone/" target="_blank" rel="noopener noreferrer">Fotograf Zone</a><b>✳</b><a href="https://bwtbooks.cz/" target="_blank" rel="noopener noreferrer">BWT Books</a><b>✳</b><a href="https://lonelyproduction.cz/" target="_blank" rel="noopener noreferrer">Lonely production</a><b>✳</b><a href="https://www.marianne.cz/" target="_blank" rel="noopener noreferrer">Marianne</a><b>✳</b><a href="https://casopishome.cz/" target="_blank" rel="noopener noreferrer" data-cs="časopis HOME" data-en="HOME magazine">časopis HOME</a></div>
+        <div class="client-names" aria-label="Vybrané spolupráce"><a href="https://dekkadancers.cz/" target="_blank" rel="noopener noreferrer">DEKKADANCERS</a><b>✳︎</b><a href="https://www.mavlast.cz/" target="_blank" rel="noopener noreferrer">Má vlast</a><b>✳︎</b><a href="https://puppetstories.cz/" target="_blank" rel="noopener noreferrer" data-cs="Příběh orloje" data-en="The Story of the Astronomical Clock">Příběh orloje</a><b>✳︎</b><a href="https://festival.praguepride.com/" target="_blank" rel="noopener noreferrer" data-cs="Prague Pride festival" data-en="Prague Pride Festival">Prague Pride festival</a><b>✳︎</b><a href="https://www.jatka78.cz/" target="_blank" rel="noopener noreferrer">Jatka78</a><b>✳︎</b><a href="https://www.cka.cz/" target="_blank" rel="noopener noreferrer" data-cs="Česká komora architektů" data-en="Czech Chamber of Architects">Česká komora architektů</a><b>✳︎</b><a href="https://www.ceskacenazaarchitekturu.cz/" target="_blank" rel="noopener noreferrer" data-cs="Česká cena za architekturu" data-en="Czech Architecture Award">Česká cena za architekturu</a><b>✳︎</b><a href="https://www.fotograf.zone/" target="_blank" rel="noopener noreferrer">Fotograf Zone</a><b>✳︎</b><a href="https://bwtbooks.cz/" target="_blank" rel="noopener noreferrer">BWT Books</a><b>✳︎</b><a href="https://lonelyproduction.cz/" target="_blank" rel="noopener noreferrer">Lonely production</a><b>✳︎</b><a href="https://www.marianne.cz/" target="_blank" rel="noopener noreferrer">Marianne</a><b>✳︎</b><a href="https://casopishome.cz/" target="_blank" rel="noopener noreferrer" data-cs="časopis HOME" data-en="HOME magazine">časopis HOME</a></div>
       </div>
     </section>
 
@@ -984,7 +994,7 @@
             </div>
             <a class="contact-linkedin" href="https://www.linkedin.com/in/iamnotanagency/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn — Zuzana Hošková">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.2 3.5a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6ZM3.7 8.5h3v11h-3v-11Zm5 0h2.9V10h.1a3.2 3.2 0 0 1 2.9-1.7c3.1 0 3.7 2 3.7 4.6v6.6h-3v-5.8c0-1.4 0-3.1-1.9-3.1s-2.2 1.5-2.2 3v5.9h-3v-11Z"></path></svg>
-              <span>LinkedIn</span><span aria-hidden="true">↗</span>
+              <span>LinkedIn</span><span aria-hidden="true">↗︎</span>
             </a>
             <div class="contact-meta">
               <p><span data-cs="IČO" data-en="Company ID">IČO</span>: 02768232</p>
