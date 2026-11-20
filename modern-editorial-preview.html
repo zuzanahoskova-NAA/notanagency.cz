@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#f7f5f0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <title>Vizuální návrh — Not an Agency</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f7f5f0;
+      --paper-alt: #efede7;
+      --ink: #252321;
+      --muted: #716d67;
+      --line: #d7d3cb;
+      --accent: #795b61;
+      --serif: "Instrument Serif", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+      --gutter: clamp(22px, 5vw, 78px);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); }
+    a { color: inherit; }
+    button { font: inherit; }
+    .wrap { width: min(100% - var(--gutter) * 2, 1320px); margin-inline: auto; }
+
+    .header {
+      position: absolute;
+      z-index: 5;
+      top: 0;
+      right: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: min(100% - var(--gutter) * 2, 1440px);
+      margin-inline: auto;
+      padding: 27px 0;
+      color: var(--paper);
+    }
+    .brand { display: flex; align-items: center; gap: 14px; color: inherit; text-decoration: none; }
+    .brand-mark { font-family: var(--serif); font-size: 24px; letter-spacing: -.05em; line-height: .8; }
+    .brand-mark span { display: block; font-size: 18px; font-style: italic; }
+    .brand-caption { padding-left: 14px; border-left: 1px solid currentColor; font-size: 8px; font-weight: 600; letter-spacing: .13em; line-height: 1.5; text-transform: uppercase; }
+    .header-right { display: flex; align-items: center; gap: 30px; }
+    .nav { display: flex; align-items: center; gap: clamp(18px, 2.8vw, 42px); }
+    .nav a { position: relative; font-size: 10px; font-weight: 600; letter-spacing: .12em; text-decoration: none; text-transform: uppercase; }
+    .nav a::after { position: absolute; right: 0; bottom: -5px; left: 0; height: 1px; background: currentColor; content: ""; transform: scaleX(0); transform-origin: left; transition: transform .25s ease; }
+    .nav a:hover::after, .nav a:focus-visible::after { transform: scaleX(1); }
+    .languages { display: flex; gap: 7px; }
+    .languages button { border: 0; padding: 4px; background: transparent; color: currentColor; cursor: pointer; font-size: 9px; opacity: .58; }
+    .languages button[aria-pressed="true"] { font-weight: 700; opacity: 1; }
+    .menu-toggle { display: none; }
+
+    .hero {
+      position: relative;
+      display: grid;
+      min-height: min(850px, 100svh);
+      min-height: max(690px, 100svh);
+      grid-template-columns: minmax(0, 1fr) minmax(320px, .75fr);
+      overflow: hidden;
+      background: var(--accent);
+      color: var(--paper);
+    }
+    .hero-copy { z-index: 2; display: flex; min-width: 0; flex-direction: column; justify-content: center; padding: 120px 24px 70px max(var(--gutter), calc((100vw - 1320px) / 2)); }
+    .eyebrow { display: flex; align-items: center; gap: 11px; margin: 0 0 25px; color: currentColor; font-size: 9px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+    .eyebrow::before { width: 25px; height: 1px; background: currentColor; content: ""; opacity: .75; }
+    .hero h1 { max-width: 850px; margin: 0; font-family: var(--serif); font-size: clamp(82px, 12.5vw, 178px); font-weight: 400; letter-spacing: -.065em; line-height: .73; }
+    .hero h1 span { display: block; }
+    .hero h1 em { font-weight: 400; }
+    .hero-lede { max-width: 590px; margin: 36px 0 25px; color: rgb(247 245 240 / 88%); font-size: clamp(14px, 1.25vw, 17px); line-height: 1.7; }
+    .hero-link { display: inline-flex; align-items: center; gap: 13px; width: fit-content; padding: 0 0 7px; border-bottom: 1px solid rgb(247 245 240 / 55%); font-size: 10px; font-weight: 700; letter-spacing: .13em; text-decoration: none; text-transform: uppercase; }
+    .hero-link span { font-size: 19px; font-weight: 400; transition: transform .25s ease; }
+    .hero-link:hover span { transform: translate(4px, -2px); }
+    .hero-note { margin: 27px 0 0; color: rgb(247 245 240 / 68%); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; }
+    .hero-photo { position: relative; min-height: 100%; margin: 0; overflow: hidden; }
+    .hero-photo::after { position: absolute; inset: 0; background: linear-gradient(90deg, rgb(121 91 97 / 23%), transparent 42%), linear-gradient(0deg, rgb(37 35 33 / 25%), transparent 45%); content: ""; }
+    .hero-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 51% center; filter: saturate(.72) contrast(1.02); }
+    .hero-photo figcaption { position: absolute; z-index: 1; right: 25px; bottom: 23px; left: 25px; display: flex; justify-content: space-between; gap: 14px; border-top: 1px solid rgb(247 245 240 / 58%); padding-top: 11px; color: var(--paper); font-size: 8px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; }
+
+    .ticker { overflow: hidden; border-bottom: 1px solid var(--line); background: var(--paper); }
+    .ticker-track { display: flex; width: max-content; align-items: center; gap: 28px; padding: 16px 0; animation: marquee 42s linear infinite; color: var(--accent); font-family: var(--serif); font-size: 24px; font-style: italic; }
+    .ticker-track b { color: var(--ink); font-family: var(--sans); font-size: 10px; font-weight: 400; }
+    @keyframes marquee { to { transform: translateX(-50%); } }
+
+    .section { padding: clamp(82px, 11vw, 150px) 0; }
+    .section-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(230px, .42fr); align-items: end; gap: 7vw; margin-bottom: 65px; }
+    .section-label { margin: 0 0 17px; color: var(--accent); font-size: 9px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+    .section h2 { max-width: 950px; margin: 0; font-family: var(--serif); font-size: clamp(49px, 8.2vw, 112px); font-weight: 400; letter-spacing: -.055em; line-height: .88; }
+    .section h2 em { color: var(--accent); font-weight: 400; }
+    .section-intro { max-width: 390px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.85; }
+
+    .about { padding: 0 0 clamp(80px, 11vw, 145px); }
+    .about-grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1fr); align-items: center; gap: clamp(44px, 9vw, 140px); }
+    .about-photo { position: relative; min-height: 600px; margin: 0; background: var(--paper-alt); }
+    .about-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 42%; filter: saturate(.55); }
+    .about-photo figcaption { position: absolute; right: 15px; bottom: 14px; color: white; font-size: 8px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; text-shadow: 0 1px 5px rgb(0 0 0 / 40%); }
+    .about-copy { max-width: 660px; }
+    .about-copy h2 { margin: 0 0 29px; font-family: var(--serif); font-size: clamp(44px, 6vw, 76px); font-weight: 400; letter-spacing: -.055em; line-height: .92; }
+    .about-copy h2 em { color: var(--accent); font-weight: 400; }
+    .about-copy p { margin: 0 0 16px; color: var(--muted); font-size: 13px; line-height: 1.85; }
+    .about-copy p strong { color: var(--ink); font-weight: 600; }
+    .text-link { display: inline-flex; align-items: center; gap: 12px; margin-top: 11px; color: var(--accent); font-size: 9px; font-weight: 700; letter-spacing: .14em; text-decoration: none; text-transform: uppercase; }
+    .text-link span { font-size: 17px; font-weight: 400; transition: transform .25s ease; }
+    .text-link:hover span { transform: translateX(4px); }
+
+    .numbers { padding: clamp(70px, 9vw, 120px) 0; background: var(--paper-alt); }
+    .numbers-top { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 53px; }
+    .numbers h2 { max-width: 700px; margin: 0; font-family: var(--serif); font-size: clamp(44px, 6vw, 78px); font-weight: 400; letter-spacing: -.055em; line-height: .92; }
+    .numbers-intro { max-width: 300px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.8; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .stat { min-height: 174px; padding: 18px 22px 18px 0; border-top: 1px solid var(--line); }
+    .stat:nth-child(3n + 2), .stat:nth-child(3n + 3) { padding-left: 24px; border-left: 1px solid var(--line); }
+    .stat-number { display: block; color: var(--accent); font-family: var(--serif); font-size: clamp(50px, 7vw, 86px); font-weight: 400; letter-spacing: -.06em; line-height: 1; }
+    .stat-label { display: block; margin-top: 9px; color: var(--ink); font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .stat-note { display: block; margin-top: 5px; color: var(--muted); font-size: 10px; }
+
+    .services { padding: clamp(88px, 12vw, 155px) 0; }
+    .services-head { margin-bottom: 44px; }
+    .services-head .section-label { margin-bottom: 13px; }
+    .services-head h2 { max-width: 1000px; }
+    .service-list { border-top: 1px solid var(--line); }
+    .service-row { display: grid; grid-template-columns: 58px minmax(210px, .82fr) minmax(0, 1fr) 30px; align-items: baseline; gap: 25px; padding: 24px 0 25px; border-bottom: 1px solid var(--line); transition: padding .25s ease, color .25s ease; }
+    .service-row:hover { padding-right: 8px; padding-left: 8px; color: var(--accent); }
+    .service-row .num { color: var(--accent); font-size: 9px; font-weight: 700; letter-spacing: .12em; }
+    .service-row h3 { margin: 0; font-family: var(--serif); font-size: clamp(27px, 3.2vw, 42px); font-weight: 400; letter-spacing: -.035em; line-height: 1; }
+    .service-row p { max-width: 550px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
+    .service-row .arrow { color: var(--accent); font-size: 21px; transition: transform .25s ease; }
+    .service-row:hover .arrow { transform: translate(3px, -3px); }
+    .outcome { max-width: 950px; margin: 70px auto 0; text-align: center; }
+    .outcome p { margin: 0 0 12px; color: var(--accent); font-size: 9px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+    .outcome h3 { margin: 0; font-family: var(--serif); font-size: clamp(38px, 6vw, 78px); font-weight: 400; letter-spacing: -.045em; line-height: .96; }
+    .outcome h3 em { color: var(--accent); }
+
+    .work { padding: clamp(82px, 11vw, 140px) 0; background: var(--accent); color: var(--paper); }
+    .work .section-label { color: #e4d7d5; }
+    .work .section-head { margin-bottom: 54px; }
+    .work .section-head h2 em { color: #e4d7d5; }
+    .work .section-intro { color: rgb(247 245 240 / 77%); }
+    .project-list { border-top: 1px solid rgb(247 245 240 / 36%); }
+    .project { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 25px; padding: 27px 0; border-bottom: 1px solid rgb(247 245 240 / 36%); text-decoration: none; }
+    .project-main { display: flex; align-items: baseline; gap: clamp(16px, 3vw, 45px); }
+    .project-kicker { min-width: 150px; color: rgb(247 245 240 / 70%); font-size: 9px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+    .project h3 { margin: 0; font-family: var(--serif); font-size: clamp(34px, 5.2vw, 70px); font-weight: 400; letter-spacing: -.045em; transition: transform .3s ease; }
+    .project-arrow { color: #e4d7d5; font-size: 24px; transition: transform .25s ease; }
+    .project:hover h3 { transform: translateX(7px); }
+    .project:hover .project-arrow { transform: translate(4px, -4px); }
+    .work-note { margin: 24px 0 0; color: rgb(247 245 240 / 72%); font-size: 11px; }
+
+    .references { padding: clamp(85px, 12vw, 155px) 0; }
+    .references-head { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 54px; }
+    .references h2 { max-width: 750px; margin: 0; font-family: var(--serif); font-size: clamp(49px, 8vw, 102px); font-weight: 400; letter-spacing: -.06em; line-height: .86; }
+    .references-head > p { max-width: 230px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
+    .quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+    .quote { position: relative; padding: 25px 24px 0 0; }
+    .quote + .quote { padding-left: 24px; border-left: 1px solid var(--line); }
+    .quote-mark { display: block; margin-bottom: -2px; color: var(--accent); font-family: var(--serif); font-size: 64px; line-height: .8; }
+    .quote-text { margin: 0; font-family: var(--serif); font-size: clamp(18px, 1.9vw, 24px); font-weight: 400; letter-spacing: -.02em; line-height: 1.32; }
+    .quote-author { margin: 23px 0 0; color: var(--ink); font-size: 10px; font-weight: 700; letter-spacing: .05em; }
+    .quote-role { display: block; margin-top: 5px; color: var(--muted); font-size: 9px; font-weight: 400; letter-spacing: 0; line-height: 1.5; }
+    .clients { margin-top: 90px; padding-top: 18px; border-top: 1px solid var(--line); }
+    .clients-label { margin: 0 0 19px; color: var(--muted); font-size: 9px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+    .client-names { display: flex; flex-wrap: wrap; align-items: baseline; gap: 9px 20px; font-family: var(--serif); font-size: clamp(18px, 2.2vw, 27px); }
+    .client-names span:nth-child(3n + 2) { font-style: italic; }
+    .client-names i { color: var(--accent); font-family: var(--sans); font-size: 8px; font-style: normal; }
+
+    .contact { position: relative; overflow: hidden; padding: clamp(78px, 12vw, 155px) 0 clamp(48px, 7vw, 85px); background: var(--paper-alt); }
+    .contact-inner { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 50px; }
+    .contact h2 { max-width: 900px; margin: 0; font-family: var(--serif); font-size: clamp(54px, 9vw, 120px); font-weight: 400; letter-spacing: -.065em; line-height: .82; }
+    .contact h2 em { color: var(--accent); }
+    .contact-copy { max-width: 320px; margin: 24px 0 0; color: var(--muted); font-size: 12px; line-height: 1.8; }
+    .contact-actions { display: grid; justify-items: start; gap: 11px; padding-bottom: 7px; }
+    .contact-actions a { display: inline-flex; align-items: center; gap: 11px; color: var(--accent); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-decoration: none; text-transform: uppercase; }
+    .contact-actions a span { font-size: 18px; font-weight: 400; transition: transform .2s ease; }
+    .contact-actions a:hover span { transform: translate(3px, -3px); }
+    .footer { display: flex; justify-content: space-between; gap: 20px; margin-top: 95px; padding-top: 14px; border-top: 1px solid var(--line); color: var(--muted); font-size: 8px; letter-spacing: .13em; text-transform: uppercase; }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s cubic-bezier(.2, .7, .25, 1); }
+    .reveal.is-visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: .08s; }
+    .reveal-delay-2 { transition-delay: .16s; }
+    .reveal-delay-3 { transition-delay: .24s; }
+    :focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: minmax(0, 1fr) minmax(280px, .68fr); }
+      .hero h1 { font-size: clamp(76px, 12vw, 130px); }
+      .about-grid { gap: 42px; }
+      .about-photo { min-height: 510px; }
+      .service-row { grid-template-columns: 38px minmax(190px, .8fr) minmax(0, 1fr) 20px; gap: 16px; }
+      .quotes { grid-template-columns: 1fr; }
+      .quote { padding: 23px 0 28px; }
+      .quote + .quote { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); }
+      .quote-text { max-width: 720px; font-size: 23px; }
+    }
+    @media (max-width: 680px) {
+      html { scroll-padding-top: 20px; }
+      .header { position: absolute; padding: 19px 0; }
+      .brand-caption { font-size: 7px; }
+      .header-right { gap: 14px; }
+      .menu-toggle { display: inline-grid; width: 40px; height: 40px; place-content: center; gap: 5px; border: 1px solid rgb(247 245 240 / 55%); border-radius: 50%; background: transparent; color: inherit; cursor: pointer; }
+      .menu-toggle span { display: block; width: 16px; height: 1px; background: currentColor; }
+      .nav { position: absolute; top: 68px; right: 0; display: none; min-width: 190px; flex-direction: column; align-items: flex-start; gap: 0; padding: 8px 18px; background: var(--paper); color: var(--ink); box-shadow: 0 12px 30px rgb(0 0 0 / 12%); }
+      .nav.is-open { display: flex; }
+      .nav a { width: 100%; padding: 13px 0; border-bottom: 1px solid var(--line); }
+      .nav a:last-child { border-bottom: 0; }
+      .hero { min-height: 0; grid-template-columns: 1fr; }
+      .hero-copy { min-height: 670px; padding: 112px var(--gutter) 54px; }
+      .hero h1 { font-size: clamp(76px, 17vw, 130px); }
+      .hero-lede { max-width: 500px; margin-top: 30px; font-size: 14px; }
+      .hero-photo { min-height: 72svh; }
+      .hero-photo img { object-position: 52% 38%; }
+      .section-head { grid-template-columns: 1fr; gap: 22px; margin-bottom: 40px; }
+      .section h2 { font-size: clamp(48px, 13vw, 78px); }
+      .about-grid { grid-template-columns: 1fr; gap: 37px; }
+      .about-photo { min-height: 500px; }
+      .about-copy h2 { font-size: 58px; }
+      .numbers-top { align-items: flex-start; flex-direction: column; gap: 19px; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .stat { min-height: 145px; }
+      .stat:nth-child(3n + 2), .stat:nth-child(3n + 3) { padding-left: 0; border-left: 0; }
+      .stat:nth-child(even) { padding-left: 16px; border-left: 1px solid var(--line); }
+      .stat-number { font-size: clamp(47px, 12vw, 68px); }
+      .service-row { grid-template-columns: 34px minmax(0, 1fr) 22px; gap: 10px; align-items: start; padding: 20px 0; }
+      .service-row h3 { grid-column: 2; grid-row: 1; font-size: 33px; }
+      .service-row .num { grid-column: 1; grid-row: 1; padding-top: 6px; }
+      .service-row p { grid-column: 2; grid-row: 2; margin-top: -1px; }
+      .service-row .arrow { grid-column: 3; grid-row: 1; padding-top: 2px; }
+      .outcome { margin-top: 54px; }
+      .outcome h3 { font-size: 47px; }
+      .work .section-head { gap: 18px; }
+      .project { grid-template-columns: 1fr 24px; gap: 14px; padding: 21px 0; }
+      .project-main { align-items: flex-start; flex-direction: column-reverse; gap: 7px; }
+      .project h3 { font-size: 39px; }
+      .references-head { align-items: flex-start; flex-direction: column; gap: 19px; margin-bottom: 36px; }
+      .references h2 { font-size: clamp(53px, 13vw, 78px); }
+      .clients { margin-top: 64px; }
+      .contact-inner { grid-template-columns: 1fr; gap: 33px; }
+      .contact h2 { font-size: clamp(58px, 15vw, 88px); }
+      .footer { flex-direction: column; margin-top: 68px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header wrap">
+    <a class="brand" href="#top" aria-label="Not an Agency">
+      <span class="brand-mark"><span>not an</span>agency</span>
+      <span class="brand-caption" data-cs="Strategie<br>Marketing<br>PR" data-en="Direction<br>Marketing<br>PR">Strategie<br>Marketing<br>PR</span>
+    </a>
+    <div class="header-right">
+      <nav class="nav" id="site-nav" aria-label="Hlavní navigace">
+        <a href="#about" data-cs="O mně" data-en="About">O mně</a>
+        <a href="#services" data-cs="Služby" data-en="Services">Služby</a>
+        <a href="#work" data-cs="Projekty" data-en="Work">Projekty</a>
+        <a href="#references" data-cs="Reference" data-en="Kind words">Reference</a>
+        <a href="#contact" data-cs="Kontakt" data-en="Contact">Kontakt</a>
+      </nav>
+      <div class="languages" role="group" aria-label="Zvolte jazyk">
+        <button type="button" lang="cs" aria-pressed="true">CZ</button>
+        <button type="button" lang="en" aria-pressed="false">EN</button>
+      </div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Otevřít navigaci"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow" data-cs="Externí CMO · Marketing · PR" data-en="Fractional CMO · Marketing · PR">Externí CMO · Marketing · PR</p>
+        <h1 id="hero-title"><span data-cs="Nejsem" data-en="Not an">Nejsem</span><span data-cs="agentura." data-en="agency.">agentura.</span><span data-cs="Jsem Zuzana." data-en="I'm Zuzana."><em>Jsem Zuzana.</em></span></h1>
+        <p class="hero-lede" data-cs="Máte specialisty, ale chybí vám jasný směr? Přinesu strategii opřenou o 20 let praxe v kultuře, médiích a nezisku." data-en="Have a team of specialists, but no clear direction? I bring strategy shaped by 20 years in culture, media, and the nonprofit sector.">Máte specialisty, ale chybí vám jasný směr? Přinesu strategii opřenou o 20 let praxe v kultuře, médiích a nezisku.</p>
+        <a class="hero-link" href="#contact"><span data-cs="Pojďme si promluvit" data-en="Let's talk">Pojďme si promluvit</span><span aria-hidden="true">↗</span></a>
+        <p class="hero-note" data-cs="Váš externí CMO · Praha a kdekoliv" data-en="Your fractional CMO · Prague and everywhere">Váš externí CMO · Praha a kdekoliv</p>
+      </div>
+      <figure class="hero-photo">
+        <img src="assets/zuzana-hoskova-balanced.jpg" alt="Portrét Zuzany Hoškové" loading="eager">
+        <figcaption><span>Zuzana Hošková</span><span data-cs="Externí CMO · Praha" data-en="Fractional CMO · Prague">Externí CMO · Praha</span></figcaption>
+      </figure>
+    </section>
+
+    <div class="ticker" aria-label="Strategie, marketing, PR, kultura, média">
+      <div class="ticker-track" aria-hidden="true">
+        <span data-cs="Strategie" data-en="Strategy">Strategie</span><b>✳</b><span>PR</span><b>✳</b><span data-cs="Kultura" data-en="Culture">Kultura</span><b>✳</b><span data-cs="Média" data-en="Media">Média</span><b>✳</b><span data-cs="Růst" data-en="Growth">Růst</span><b>✳</b>
+        <span data-cs="Strategie" data-en="Strategy">Strategie</span><b>✳</b><span>PR</span><b>✳</b><span data-cs="Kultura" data-en="Culture">Kultura</span><b>✳</b><span data-cs="Média" data-en="Media">Média</span><b>✳</b><span data-cs="Růst" data-en="Growth">Růst</span><b>✳</b>
+      </div>
+    </div>
+
+    <section class="section wrap" id="about">
+      <div class="about-grid">
+        <figure class="about-photo reveal">
+          <img src="assets/zuzana-borneo-museum-wide.jpg" alt="Zuzana Hošková před Borneo Cultures Museum" loading="lazy">
+          <figcaption data-cs="Zuzana · mimo kancelář" data-en="Zuzana · away from the desk">Zuzana · mimo kancelář</figcaption>
+        </figure>
+        <div class="about-copy reveal reveal-delay-1">
+          <p class="section-label" data-cs="O mně · 20 let v oboru" data-en="About · 20 years in the field">O mně · 20 let v oboru</p>
+          <h2 data-cs="Dobrý příběh. <em>Správní lidé.</em>" data-en="A good story. <em>The right people.</em>">Dobrý příběh. <em>Správní lidé.</em></h2>
+          <p data-cs="Začínala jsem jako novinářka. Dnes propojuji marketing, PR a lidi, kteří chtějí svou práci dostat k veřejnosti." data-en="I started as a journalist. Today, I bring marketing, PR, and people together to help meaningful work reach its audience.">Začínala jsem jako novinářka. Dnes propojuji marketing, PR a lidi, kteří chtějí svou práci dostat k veřejnosti.</p>
+          <p data-cs="Vedla jsem marketing a komunikaci pro Jatka78, DEKKADANCERS, Fotograf Zone i Prague Pride. Rozumím kultuře zevnitř — a vím, jak o ní mluvit venku." data-en="I've led marketing and communications for Jatka78, DEKKADANCERS, Fotograf Zone, and Prague Pride. I know culture from the inside—and how to make people care about it.">Vedla jsem marketing a komunikaci pro Jatka78, DEKKADANCERS, Fotograf Zone i Prague Pride. Rozumím kultuře zevnitř — a vím, jak o ní mluvit venku.</p>
+          <a class="text-link" href="#contact"><span data-cs="Více o spolupráci" data-en="Let's work together">Více o spolupráci</span><span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="numbers" id="results">
+      <div class="wrap">
+        <div class="numbers-top reveal">
+          <div>
+            <p class="section-label" data-cs="Zkušenost v číslech" data-en="Experience, in numbers">Zkušenost v číslech</p>
+            <h2 data-cs="Praxe, která<br><em>něco znamená.</em>" data-en="Experience that<br><em>makes a difference.</em>">Praxe, která<br><em>něco znamená.</em></h2>
+          </div>
+          <p class="numbers-intro" data-cs="Od redakce po premiéru. Od strategie po plný sál." data-en="From newsroom to opening night. From strategy to a full house.">Od redakce po premiéru. Od strategie po plný sál.</p>
+        </div>
+        <div class="stats">
+          <div class="stat reveal"><span class="stat-number">20</span><span class="stat-label" data-cs="Let v médiích, marketingu a PR" data-en="Years in media, marketing & PR">Let v médiích, marketingu a PR</span></div>
+          <div class="stat reveal reveal-delay-1"><span class="stat-number">500+</span><span class="stat-label" data-cs="Mediálních výstupů" data-en="Media placements">Mediálních výstupů</span><span class="stat-note" data-cs="Za rok" data-en="In a year">Za rok</span></div>
+          <div class="stat reveal reveal-delay-2"><span class="stat-number">85%</span><span class="stat-label" data-cs="Průměrná návštěvnost" data-en="Average attendance">Průměrná návštěvnost</span><span class="stat-note" data-cs="Propagovaných akcí" data-en="At promoted events">Propagovaných akcí</span></div>
+          <div class="stat reveal"><span class="stat-number">38k+</span><span class="stat-label" data-cs="Diváků v roce 2025" data-en="Theatre & cinema audiences in 2025">Diváků v roce 2025</span></div>
+          <div class="stat reveal reveal-delay-1"><span class="stat-number">400%</span><span class="stat-label" data-cs="Nárůst architektonických soutěží" data-en="Increase in architecture competitions">Nárůst architektonických soutěží</span></div>
+          <div class="stat reveal reveal-delay-2"><span class="stat-number">20+</span><span class="stat-label" data-cs="Klientů a projektů" data-en="Clients and projects">Klientů a projektů</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services wrap section" id="services">
+      <div class="services-head reveal">
+        <p class="section-label" data-cs="Co pro vás můžu udělat" data-en="How I can help">Co pro vás můžu udělat</p>
+        <h2 data-cs="Méně šumu.<br><em>Více směru.</em>" data-en="Less noise.<br><em>More direction.</em>">Méně šumu.<br><em>Více směru.</em></h2>
+      </div>
+      <div class="service-list">
+        <article class="service-row reveal"><span class="num">01</span><h3 data-cs="Externí CMO" data-en="Fractional CMO">Externí CMO</h3><p data-cs="Strategie, priority a vedení marketingu. Jasný plán pro celý tým." data-en="Strategy, priorities, and marketing leadership. A clear plan for the whole team.">Strategie, priority a vedení marketingu. Jasný plán pro celý tým.</p><span class="arrow" aria-hidden="true">↗</span></article>
+        <article class="service-row reveal"><span class="num">02</span><h3 data-cs="Marketing na míru" data-en="Marketing, tailored">Marketing na míru</h3><p data-cs="Audit, konzultace a procesy, které fungují i s menším rozpočtem." data-en="Audits, consulting, and processes that work—even with a smaller budget.">Audit, konzultace a procesy, které fungují i s menším rozpočtem.</p><span class="arrow" aria-hidden="true">↗</span></article>
+        <article class="service-row reveal"><span class="num">03</span><h3 data-cs="PR & osobní značka" data-en="PR & personal brand">PR &amp; osobní značka</h3><p data-cs="Dostanu vaše téma do médií. Připravím vás na rozhovor." data-en="I'll bring your story to the media and get you ready for the interview.">Dostanu vaše téma do médií. Připravím vás na rozhovor.</p><span class="arrow" aria-hidden="true">↗</span></article>
+        <article class="service-row reveal"><span class="num">04</span><h3 data-cs="Kampaně & projekty" data-en="Campaigns & projects">Kampaně &amp; projekty</h3><p data-cs="Kreativní vedení od prvního nápadu po premiéru nebo uvedení." data-en="Creative direction from first idea through opening night or launch.">Kreativní vedení od prvního nápadu po premiéru nebo uvedení.</p><span class="arrow" aria-hidden="true">↗</span></article>
+      </div>
+      <div class="outcome reveal">
+        <p data-cs="A výsledek?" data-en="The result?">A výsledek?</p>
+        <h3 data-cs="Profesionální práce. Jasná sdělení. <em>Správní lidé.</em>" data-en="Thoughtful work. Clear stories. <em>The right people.</em>">Profesionální práce. Jasná sdělení. <em>Správní lidé.</em></h3>
+      </div>
+    </section>
+
+    <section class="work" id="work">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="section-label" data-cs="Vybraná práce" data-en="Selected work">Vybraná práce</p>
+            <h2 data-cs="Každý projekt<br>má svůj <em>příběh.</em>" data-en="Every project<br>has a <em>story.</em>">Každý projekt<br>má svůj <em>příběh.</em></h2>
+          </div>
+          <p class="section-intro" data-cs="Dva kulturní projekty. Různé publikum i výzvy. Jedna věc společná: dostat jejich příběh ven." data-en="Two cultural projects. Different audiences and challenges. One shared goal: bringing their stories to life.">Dva kulturní projekty. Různé publikum i výzvy. Jedna věc společná: dostat jejich příběh ven.</p>
+        </div>
+        <div class="project-list">
+          <a class="project reveal" href="case-studies.html#case/dekkadancers">
+            <div class="project-main"><span class="project-kicker" data-cs="Marketing & PR · DEKKADANCERS" data-en="Marketing & PR · DEKKADANCERS">Marketing &amp; PR · DEKKADANCERS</span><h3>Lži, které muži říkají</h3></div><span class="project-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="project reveal" href="case-studies.html#case/mavlast">
+            <div class="project-main"><span class="project-kicker" data-cs="Public relations · Česká filharmonie" data-en="Public relations · Czech Philharmonic">Public relations · Česká filharmonie</span><h3>Má vlast</h3></div><span class="project-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <p class="work-note" data-cs="Má vlast · 250+ mediálních výstupů · premiéra 12. 6. 2025" data-en="Má vlast · 250+ media placements · premiered 12 June 2025">Má vlast · 250+ mediálních výstupů · premiéra 12. 6. 2025</p>
+      </div>
+    </section>
+
+    <section class="references wrap section" id="references">
+      <div class="references-head reveal">
+        <div>
+          <p class="section-label" data-cs="Důvěra se buduje spoluprací" data-en="Trust is built together">Důvěra se buduje spoluprací</p>
+          <h2 data-cs="Řekli<br><em>o spolupráci.</em>" data-en="In their<br><em>own words.</em>">Řekli<br><em>o spolupráci.</em></h2>
+        </div>
+        <p data-cs="Pár slov od lidí, se kterými jsem pracovala." data-en="A few words from people I've worked with.">Pár slov od lidí, se kterými jsem pracovala.</p>
+      </div>
+      <div class="quotes">
+        <article class="quote reveal"><span class="quote-mark" aria-hidden="true">“</span><p class="quote-text" data-cs="Zuzka se pohybovala sebejistě a vzhledem k tématu, které zastupujeme, i nanejvýš citlivě." data-en="Zuzka handled difficult situations with confidence and, given the nature of our work, with exceptional sensitivity.">Zuzka se pohybovala sebejistě a vzhledem k tématu, které zastupujeme, i nanejvýš citlivě.</p><p class="quote-author">Kamila Fröhlichová<span class="quote-role" data-cs="Ředitelka Prague Pride festivalu" data-en="Director, Prague Pride Festival">Ředitelka Prague Pride festivalu</span></p></article>
+        <article class="quote reveal reveal-delay-1"><span class="quote-mark" aria-hidden="true">“</span><p class="quote-text" data-cs="Počet architektonických soutěží za několik let neuvěřitelně vzrostl o 400 %." data-en="Over several years, the number of architectural competitions grew by an incredible 400%.">Počet architektonických soutěží za několik let neuvěřitelně vzrostl o 400 %.</p><p class="quote-author">Ing. arch. Petr Lešek, Ph.D.<span class="quote-role" data-cs="Česká komora architektů" data-en="Czech Chamber of Architects">Česká komora architektů</span></p></article>
+        <article class="quote reveal reveal-delay-2"><span class="quote-mark" aria-hidden="true">“</span><p class="quote-text" data-cs="Zuzka dokázala identifikovat zajímavá témata a dostat náš film k lidem, ke kterým bychom se jinak těžko dostávali." data-en="Zuzka identified compelling angles and brought our film to audiences we would otherwise have struggled to reach.">Zuzka dokázala identifikovat zajímavá témata a dostat náš film k lidem, ke kterým bychom se jinak těžko dostávali.</p><p class="quote-author">Michal Sikora<span class="quote-role" data-cs="Film. producent · Lonely production" data-en="Film producer · Lonely production">Film. producent · Lonely production</span></p></article>
+      </div>
+      <div class="clients reveal">
+        <p class="clients-label" data-cs="Spolupracovala jsem s" data-en="Selected collaborators">Spolupracovala jsem s</p>
+        <div class="client-names" aria-label="Vybrané spolupráce">
+          <span>DEKKADANCERS</span><i>✳</i><span>Má vlast</span><i>✳</i><span>Jatka78</span><i>✳</i><span>Prague Pride</span><i>✳</i><span>Fotograf Zone</span><i>✳</i><span data-cs="Česká komora architektů" data-en="Czech Chamber of Architects">Česká komora architektů</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <div class="contact-inner">
+          <div class="reveal">
+            <p class="section-label" data-cs="Máte projekt?" data-en="Have a project?">Máte projekt?</p>
+            <h2 data-cs="Pojďme<br><em>mu dát směr.</em>" data-en="Let's give it<br><em>direction.</em>">Pojďme<br><em>mu dát směr.</em></h2>
+            <p class="contact-copy" data-cs="Napište mi, na čem pracujete. Najdeme další krok." data-en="Tell me what you're working on. We'll find the next step.">Napište mi, na čem pracujete. Najdeme další krok.</p>
+          </div>
+          <div class="contact-actions reveal reveal-delay-1">
+            <a href="mailto:zuzana@notanagency.cz"><span data-cs="Napište mi" data-en="Email me">Napište mi</span><span aria-hidden="true">↗</span></a>
+            <a href="tel:+420608427516"><span data-cs="Zavolejte mi" data-en="Call me">Zavolejte mi</span><span aria-hidden="true">↗</span></a>
+            <a href="https://www.linkedin.com/in/iamnotanagency/" target="_blank" rel="noreferrer"><span>LinkedIn</span><span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <footer class="footer"><span>© 2026 Zuzana Hošková · Not an Agency</span><span data-cs="Návrh modernizace · nepublikováno" data-en="Redesign concept · not published">Návrh modernizace · nepublikováno</span></footer>
+      </div>
+    </section>
+  </main>
+  <script>
+    const languageButtons = document.querySelectorAll(".languages button");
+    languageButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const language = button.lang;
+        document.documentElement.lang = language;
+        document.querySelectorAll("[data-cs][data-en]").forEach((element) => {
+          element.innerHTML = element.dataset[language];
+        });
+        languageButtons.forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+        document.querySelector(".nav").setAttribute("aria-label", language === "cs" ? "Hlavní navigace" : "Main navigation");
+        document.querySelector(".languages").setAttribute("aria-label", language === "cs" ? "Zvolte jazyk" : "Choose language");
+      });
+    });
+
+    const menuButton = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".nav");
+    menuButton.addEventListener("click", () => {
+      const open = menuButton.getAttribute("aria-expanded") !== "true";
+      menuButton.setAttribute("aria-expanded", String(open));
+      menuButton.setAttribute("aria-label", open ? (document.documentElement.lang === "cs" ? "Zavřít navigaci" : "Close navigation") : (document.documentElement.lang === "cs" ? "Otevřít navigaci" : "Open navigation"));
+      nav.classList.toggle("is-open", open);
+    });
+    nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => {
+      nav.classList.remove("is-open");
+      menuButton.setAttribute("aria-expanded", "false");
+    }));
+
+    const revealItems = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const observer = new IntersectionObserver((entries, currentObserver) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          currentObserver.unobserve(entry.target);
+        });
+      }, { threshold: 0.14, rootMargin: "0px 0px -35px 0px" });
+      revealItems.forEach((item) => observer.observe(item));
+    } else {
+      revealItems.forEach((item) => item.classList.add("is-visible"));
+    }
+  </script>
+</body>
+</html>

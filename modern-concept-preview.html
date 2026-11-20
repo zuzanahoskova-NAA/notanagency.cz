@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#a63f32">
+  <title>Vizuální návrh — Not an Agency</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --red: #a63f32;
+      --red-dark: #762d2c;
+      --yellow: #f3d16b;
+      --cream: #fff3df;
+      --ink: #241d1b;
+      --line: rgba(36, 29, 27, .23);
+      --display: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      --body: "Arial", "Helvetica Neue", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--cream); color: var(--ink); font-family: var(--body); }
+    a { color: inherit; }
+    .hero {
+      position: relative;
+      display: grid;
+      min-height: min(900px, 100svh);
+      min-height: max(720px, 100svh);
+      grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr);
+      overflow: hidden;
+      background: var(--red);
+      color: var(--cream);
+    }
+    .hero-copy {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 32px clamp(28px, 5.2vw, 82px) 48px;
+    }
+    .topline { display: flex; width: 100%; align-items: center; justify-content: space-between; }
+    .wordmark { font-family: var(--display); font-size: 19px; letter-spacing: .12em; line-height: .9; text-transform: uppercase; }
+    .wordmark span { display: block; color: var(--yellow); }
+    .menu-button {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      place-content: center;
+      gap: 6px;
+      border: 1px solid rgba(255, 243, 223, .65);
+      border-radius: 50%;
+      color: var(--cream);
+    }
+    .menu-button i { display: block; width: 19px; height: 1px; background: currentColor; }
+    .intro {
+      margin: auto 0;
+      padding: 7vh 0 3vh;
+    }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 22px;
+      color: var(--yellow);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { width: 28px; height: 1px; background: currentColor; content: ""; }
+    h1 {
+      max-width: 820px;
+      margin: 0;
+      font-family: var(--display);
+      font-size: clamp(72px, 11vw, 166px);
+      font-weight: 400;
+      letter-spacing: -.035em;
+      line-height: .78;
+      text-transform: uppercase;
+    }
+    h1 span { display: block; color: var(--yellow); }
+    .subhead {
+      max-width: 435px;
+      margin: 32px 0 26px;
+      font-size: clamp(15px, 1.35vw, 19px);
+      line-height: 1.55;
+    }
+    .hero-bottom { display: flex; width: 100%; align-items: flex-end; justify-content: space-between; gap: 20px; }
+    .cta {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      gap: 20px;
+      padding: 0 20px;
+      background: var(--yellow);
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .09em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: transform .25s ease, background .25s ease;
+    }
+    .cta:hover { transform: translateY(-3px); background: #ffe694; }
+    .cta span { font-size: 20px; font-weight: 400; }
+    .years { margin: 0; color: rgba(255, 243, 223, .78); font-size: 11px; line-height: 1.5; text-align: right; }
+    .hero-image {
+      position: relative;
+      min-height: 100%;
+      overflow: hidden;
+      background: #d69160;
+    }
+    .hero-image::before {
+      position: absolute;
+      z-index: 1;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(166, 63, 50, .42), transparent 36%), linear-gradient(0deg, rgba(39, 20, 18, .45), transparent 46%);
+      content: "";
+      pointer-events: none;
+    }
+    .hero-image img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; object-position: 54% center; filter: saturate(.8) contrast(1.05); }
+    .image-caption {
+      position: absolute;
+      z-index: 2;
+      right: clamp(20px, 4vw, 58px);
+      bottom: 34px;
+      left: clamp(20px, 4vw, 58px);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+      border-top: 1px solid rgba(255, 243, 223, .75);
+      padding-top: 15px;
+      color: var(--cream);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .image-caption span:last-child { color: var(--yellow); text-align: right; }
+    .language {
+      position: absolute;
+      z-index: 3;
+      top: 36px;
+      right: 42px;
+      display: flex;
+      gap: 9px;
+      color: var(--cream);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+    }
+    .language button { border: 0; padding: 4px; background: transparent; color: inherit; font: inherit; cursor: pointer; opacity: .58; }
+    .language button[aria-pressed="true"] { color: var(--yellow); opacity: 1; }
+    .ticker { overflow: hidden; background: var(--yellow); color: var(--ink); }
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      gap: 30px;
+      padding: 17px 0;
+      animation: ticker 30s linear infinite;
+      font-family: var(--display);
+      font-size: clamp(22px, 3vw, 38px);
+      letter-spacing: .035em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .ticker-track b { color: var(--red); font-weight: 400; }
+    @keyframes ticker { to { transform: translateX(-50%); } }
+    .services { padding: clamp(60px, 9vw, 120px) clamp(24px, 7vw, 110px); background: var(--cream); }
+    .section-top { display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; margin-bottom: 48px; }
+    .section-top p { max-width: 340px; margin: 0; color: #665c55; font-size: 14px; line-height: 1.65; }
+    h2 { margin: 0; font-family: var(--display); font-size: clamp(48px, 8vw, 112px); font-weight: 400; letter-spacing: -.025em; line-height: .88; text-transform: uppercase; }
+    h2 span { color: var(--red); }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
+    .service {
+      min-height: 210px;
+      padding: 23px 24px 20px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .service + .service { padding-left: 24px; border-left: 1px solid var(--line); }
+    .service-number { display: block; margin-bottom: 34px; color: var(--red); font-size: 11px; letter-spacing: .12em; }
+    .service h3 { margin: 0 0 11px; font-family: var(--display); font-size: clamp(24px, 2.8vw, 35px); font-weight: 400; letter-spacing: -.015em; text-transform: uppercase; }
+    .service p { max-width: 330px; margin: 0; color: #665c55; font-size: 13px; line-height: 1.65; }
+    .footnote { display: flex; justify-content: space-between; gap: 20px; padding: 22px clamp(24px, 7vw, 110px); background: var(--red-dark); color: var(--cream); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+
+    @media (max-width: 760px) {
+      .hero { min-height: 0; grid-template-columns: 1fr; }
+      .hero-copy { min-height: 680px; padding: 22px 24px 30px; }
+      .intro { padding: 9vh 0 5vh; }
+      h1 { font-size: clamp(76px, 17vw, 128px); }
+      .subhead { max-width: 490px; margin-top: 27px; }
+      .hero-image { min-height: 72svh; }
+      .hero-image img { object-position: center 38%; }
+      .language { top: 28px; right: 86px; }
+      .section-top { align-items: flex-start; flex-direction: column; }
+      .section-top p { max-width: 470px; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service { min-height: 0; padding: 21px 0 24px; }
+      .service + .service { padding-left: 0; border-left: 0; }
+      .service-number { margin-bottom: 17px; }
+      .service p { max-width: 560px; }
+    }
+    @media (max-width: 440px) {
+      .hero-copy { min-height: 630px; }
+      .hero-bottom { align-items: flex-start; flex-direction: column; }
+      .years { text-align: left; }
+      .hero-image { min-height: 65svh; }
+      .footnote { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="topline">
+          <a class="wordmark" href="#top" aria-label="Not an Agency"><span>not an</span> agency</a>
+          <div class="menu-button" aria-hidden="true"><i></i><i></i></div>
+        </div>
+        <div class="intro">
+          <p class="eyebrow" data-cs="Strategie · PR · komunikace" data-en="Strategy · PR · communications">Strategie · PR · komunikace</p>
+          <h1 id="hero-title"><span data-cs="Nejsem" data-en="Not an">Nejsem</span><span data-cs="agentura." data-en="agency.">agentura.</span></h1>
+          <p class="subhead" data-cs="Jsem Zuzana, váš externí CMO. Strategický marketing a PR pro kulturu, média a nezisk — s 20 lety praxe přímo z oboru." data-en="I'm Zuzana, your fractional CMO. Strategic marketing and PR for culture, media, and nonprofits—with 20 years of hands-on experience.">Jsem Zuzana, váš externí CMO. Strategický marketing a PR pro kulturu, média a nezisk — s 20 lety praxe přímo z oboru.</p>
+          <div class="hero-bottom">
+            <a class="cta" href="mailto:zuzana@notanagency.cz"><span data-cs="Pojďme si promluvit" data-en="Let's talk">Pojďme si promluvit</span><span aria-hidden="true">↗</span></a>
+            <p class="years" data-cs="Osobní přístup<br>Skutečná zkušenost" data-en="Personal approach<br>Real-world experience">Osobní přístup<br>Skutečná zkušenost</p>
+          </div>
+        </div>
+      </div>
+      <figure class="hero-image">
+        <img src="assets/zuzana-hoskova-balanced.jpg" alt="Portrét Zuzany Hoškové">
+        <figcaption class="image-caption"><span data-cs="Zuzana Hošková" data-en="Zuzana Hošková">Zuzana Hošková</span><span data-cs="Externí CMO<br>Praha · kdekoliv" data-en="Fractional CMO<br>Prague · everywhere">Externí CMO<br>Praha · kdekoliv</span></figcaption>
+      </figure>
+      <div class="language" role="group" aria-label="Language">
+        <button type="button" lang="cs" aria-pressed="true">CZ</button>
+        <button type="button" lang="en" aria-pressed="false">EN</button>
+      </div>
+    </section>
+
+    <div class="ticker" aria-label="Strategie, PR, kultura, média, růst">
+      <div class="ticker-track" aria-hidden="true">
+        <span>Strategie</span><b>✳</b><span>PR</span><b>✳</b><span>Kultura</span><b>✳</b><span>Média</span><b>✳</b><span>Růst</span><b>✳</b>
+        <span>Strategie</span><b>✳</b><span>PR</span><b>✳</b><span>Kultura</span><b>✳</b><span>Média</span><b>✳</b><span>Růst</span><b>✳</b>
+      </div>
+    </div>
+
+    <section class="services" aria-labelledby="services-title">
+      <div class="section-top">
+        <h2 id="services-title"><span data-cs="Jasný směr." data-en="Clear direction.">Jasný směr.</span><br><span data-cs="Skutečný dopad." data-en="Real impact.">Skutečný dopad.</span></h2>
+        <p data-cs="Kultura, nezisk i menší značky mají vlastní rytmus. Umím se v něm pohybovat — a proměnit dobrou práci ve viditelné výsledky." data-en="Culture, nonprofits, and smaller brands each have their own rhythm. I know how to move with it—and turn good work into visible results.">Kultura, nezisk i menší značky mají vlastní rytmus. Umím se v něm pohybovat — a proměnit dobrou práci ve viditelné výsledky.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service">
+          <span class="service-number">01 / DIRECTION</span>
+          <h3 data-cs="Externí CMO" data-en="Fractional CMO">Externí CMO</h3>
+          <p data-cs="Strategie, která sjednotí tým, nastaví priority a pomůže značce růst." data-en="Strategy that aligns your team, sets priorities, and helps your brand grow.">Strategie, která sjednotí tým, nastaví priority a pomůže značce růst.</p>
+        </article>
+        <article class="service">
+          <span class="service-number">02 / VISIBILITY</span>
+          <h3 data-cs="PR & osobní značka" data-en="PR & personal brand">PR & osobní značka</h3>
+          <p data-cs="Dostanu vaše téma, projekt nebo expertizu k lidem, na kterých záleží." data-en="I bring your story, project, or expertise to the people who need to hear it.">Dostanu vaše téma, projekt nebo expertizu k lidem, na kterých záleží.</p>
+        </article>
+        <article class="service">
+          <span class="service-number">03 / CULTURE</span>
+          <h3 data-cs="Kampaně & projekty" data-en="Campaigns & projects">Kampaně & projekty</h3>
+          <p data-cs="Od prvního nápadu po premiéru, uvedení nebo důležitý moment značky." data-en="From first idea to opening night, launch, or the moment your brand needs to shine.">Od prvního nápadu po premiéru, uvedení nebo důležitý moment značky.</p>
+        </article>
+      </div>
+    </section>
+    <footer class="footnote"><span>Not an Agency · Zuzana Hošková</span><span>Concept preview · Not the live website</span></footer>
+  </main>
+  <script>
+    const languageButtons = document.querySelectorAll(".language button");
+    languageButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const language = button.lang;
+        document.documentElement.lang = language;
+        document.querySelectorAll("[data-cs][data-en]").forEach((element) => {
+          element.innerHTML = element.dataset[language];
+        });
+        languageButtons.forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+      });
+    });
+  </script>
+</body>
+</html>
